@@ -103,14 +103,14 @@ function AngleConstraint(a, b, c, stiffness) {
 AngleConstraint.prototype.relax = function(stepCoef) {
 	var angle = this.b.pos.angle2(this.a.pos, this.c.pos);
 	var diff = angle - this.angle;
-
+	
 	if (diff <= -Math.PI)
 		diff += 2*Math.PI;
 	else if (diff >= Math.PI)
 		diff -= 2*Math.PI;
 
 	diff *= stepCoef*this.stiffness;
-
+	
 	this.a.pos = this.a.pos.rotate(this.b.pos, diff);
 	this.c.pos = this.c.pos.rotate(this.b.pos, -diff);
 	this.b.pos = this.b.pos.rotate(this.a.pos, diff);
@@ -279,7 +279,7 @@ function test_Vec2() {
 		if (expression != true)
 			throw "assertion failed";
 	};
-
+	
 	assert("equality", (new Vec2(5,3).equals(new Vec2(5,3))));
 	assert("epsilon equality", (new Vec2(1,2).epsilonEquals(new Vec2(1.01,2.02), 0.03)));
 	assert("epsilon non-equality", !(new Vec2(1,2).epsilonEquals(new Vec2(1.01,2.02), 0.01)));
@@ -351,46 +351,46 @@ VerletJS.prototype.point = function(pos) {
 
 VerletJS.prototype.lineSegments = function(vertices, stiffness) {
 	var i;
-
+	
 	var composite = new this.Composite();
-
+	
 	for (i in vertices) {
 		composite.particles.push(new Particle(vertices[i]));
 		if (i > 0)
 			composite.constraints.push(new DistanceConstraint(composite.particles[i], composite.particles[i-1], stiffness));
 	}
-
+	
 	this.composites.push(composite);
 	return composite;
 }
 
 VerletJS.prototype.cloth = function(origin, width, height, segments, pinMod, stiffness) {
-
+	
 	var composite = new this.Composite();
-
+	
 	var xStride = width/segments;
 	var yStride = height/segments;
-
+	
 	var x,y;
 	for (y=0;y<segments;++y) {
 		for (x=0;x<segments;++x) {
 			var px = origin.x + x*xStride - width/2 + xStride/2;
 			var py = origin.y + y*yStride - height/2 + yStride/2;
 			composite.particles.push(new Particle(new Vec2(px, py)));
-
+			
 			if (x > 0)
 				composite.constraints.push(new DistanceConstraint(composite.particles[y*segments+x], composite.particles[y*segments+x-1], stiffness));
-
+			
 			if (y > 0)
 				composite.constraints.push(new DistanceConstraint(composite.particles[y*segments+x], composite.particles[(y-1)*segments+x], stiffness));
 		}
 	}
-
+	
 	for (x=0;x<segments;++x) {
 		if (x%pinMod == 0)
 		composite.pin(x);
 	}
-
+	
 	this.composites.push(composite);
 	return composite;
 }
@@ -398,25 +398,25 @@ VerletJS.prototype.cloth = function(origin, width, height, segments, pinMod, sti
 VerletJS.prototype.tire = function(origin, radius, segments, spokeStiffness, treadStiffness) {
 	var stride = (2*Math.PI)/segments;
 	var i;
-
+	
 	var composite = new this.Composite();
-
+	
 	// particles
 	for (i=0;i<segments;++i) {
 		var theta = i*stride;
 		composite.particles.push(new Particle(new Vec2(origin.x + Math.cos(theta)*radius, origin.y + Math.sin(theta)*radius)));
 	}
-
+	
 	var center = new Particle(origin);
 	composite.particles.push(center);
-
+	
 	// constraints
 	for (i=0;i<segments;++i) {
 		composite.constraints.push(new DistanceConstraint(composite.particles[i], composite.particles[(i+1)%segments], treadStiffness));
 		composite.constraints.push(new DistanceConstraint(composite.particles[i], center, spokeStiffness))
 		composite.constraints.push(new DistanceConstraint(composite.particles[i], composite.particles[(i+5)%segments], treadStiffness));
 	}
-
+		
 	this.composites.push(composite);
 	return composite;
 }
@@ -485,25 +485,25 @@ function VerletJS(width, height, canvas) {
 	this.draggedEntity = null;
 	this.selectionRadius = 20;
 	this.highlightColor = "#4f545c";
-
+	
 	this.bounds = function (particle) {
 		if (particle.pos.y > this.height-1)
 			particle.pos.y = this.height-1;
-
+		
 		if (particle.pos.x < 0)
 			particle.pos.x = 0;
 
 		if (particle.pos.x > this.width-1)
 			particle.pos.x = this.width-1;
 	}
-
+	
 	var _this = this;
-
+	
 	// prevent context menu
 	this.canvas.oncontextmenu = function(e) {
 		e.preventDefault();
 	};
-
+	
 	this.canvas.onmousedown = function(e) {
 		_this.mouseDown = true;
 		var nearest = _this.nearestEntity();
@@ -511,23 +511,23 @@ function VerletJS(width, height, canvas) {
 			_this.draggedEntity = nearest;
 		}
 	};
-
+	
 	this.canvas.onmouseup = function(e) {
 		_this.mouseDown = false;
 		_this.draggedEntity = null;
 	};
-
+	
 	this.canvas.onmousemove = function(e) {
 		var rect = _this.canvas.getBoundingClientRect();
 		_this.mouse.x = e.clientX - rect.left;
 		_this.mouse.y = e.clientY - rect.top;
-	};
-
+	};  
+	
 	// simulation params
 	this.gravity = new Vec2(0,0.2);
 	this.friction = 0.99;
 	this.groundFriction = 0.8;
-
+	
 	// holds composite entities
 	this.composites = [];
 }
@@ -537,7 +537,7 @@ VerletJS.prototype.Composite = Composite
 function Composite() {
 	this.particles = [];
 	this.constraints = [];
-
+	
 	this.drawParticles = null;
 	this.drawConstraints = null;
 }
@@ -555,10 +555,10 @@ VerletJS.prototype.frame = function(step) {
 	for (c in this.composites) {
 		for (i in this.composites[c].particles) {
 			var particles = this.composites[c].particles;
-
+			
 			// calculate velocity
 			var velocity = particles[i].pos.sub(particles[i].lastPos).scale(this.friction);
-
+		
 			// ground friction
 			if (particles[i].pos.y >= this.height-1 && velocity.length2() > 0.000001) {
 				var m = velocity.length();
@@ -566,22 +566,22 @@ VerletJS.prototype.frame = function(step) {
 				velocity.y /= m;
 				velocity.mutableScale(m*this.groundFriction);
 			}
-
+		
 			// save last good state
 			particles[i].lastPos.mutableSet(particles[i].pos);
-
+		
 			// gravity
 			particles[i].pos.mutableAdd(this.gravity);
-
-			// inertia
+		
+			// inertia  
 			particles[i].pos.mutableAdd(velocity);
 		}
 	}
-
+	
 	// handle dragging of entities
 	if (this.draggedEntity)
 		this.draggedEntity.pos.mutableSet(this.mouse);
-
+		
 	// relax
 	var stepCoef = 1/step;
 	for (c in this.composites) {
@@ -590,7 +590,7 @@ VerletJS.prototype.frame = function(step) {
 			for (j in constraints)
 				constraints[j].relax(stepCoef);
 	}
-
+	
 	// bounds checking
 	for (c in this.composites) {
 		var particles = this.composites[c].particles;
@@ -601,9 +601,9 @@ VerletJS.prototype.frame = function(step) {
 
 VerletJS.prototype.draw = function() {
 	var i, c;
-
-	this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-
+	
+	this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);  
+	
 	for (c in this.composites) {
 		// draw constraints
 		if (this.composites[c].drawConstraints) {
@@ -613,7 +613,7 @@ VerletJS.prototype.draw = function() {
 			for (i in constraints)
 				constraints[i].draw(this.ctx);
 		}
-
+		
 		// draw particles
 		if (this.composites[c].drawParticles) {
 			this.composites[c].drawParticles(this.ctx, this.composites[c]);
@@ -639,7 +639,7 @@ VerletJS.prototype.nearestEntity = function() {
 	var d2Nearest = 0;
 	var entity = null;
 	var constraintsNearest = null;
-
+	
 	// find nearest point
 	for (c in this.composites) {
 		var particles = this.composites[c].particles;
@@ -652,12 +652,12 @@ VerletJS.prototype.nearestEntity = function() {
 			}
 		}
 	}
-
+	
 	// search for pinned constraints for this entity
 	for (i in constraintsNearest)
 		if (constraintsNearest[i] instanceof PinConstraint && constraintsNearest[i].a == entity)
 			entity = constraintsNearest[i];
-
+	
 	return entity;
 }
 
