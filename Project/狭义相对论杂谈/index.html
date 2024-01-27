@@ -408,7 +408,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2024-01-27T10:18:24.101Z';
+        const searchIndexDate = '2024-01-27T15:55:38.855Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -420,9 +420,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2024-01-27T10:18:24.101Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2024-01-27T15:55:38.855Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-01-27T10:18:24.101Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-01-27T15:55:38.855Z', docs}));
             window.docs = docs
             window.index = index;
         }
@@ -894,10 +894,12 @@ s=c  ，<br>
 2、一个电荷放在一个匀速运动的车上会有磁场吗？为什么？</p>
 <p>花了些时间把自己的学习笔记整理出这篇杂文，由于自己的水平和语言表达能力有限，为了尽可能简单描述狭义相对论，可能会忽略一些自己觉得不好理解的点，这样难免会有疏漏,欢迎指出，希望大家分享给感兴趣的小伙伴一起交流，多提建议，谢谢。</p>
 <p>后续也希望能继续谈谈广义相对论和量子力学的理解，对于这些的思考在以后希望能在有更多信息支持下做深入的讨论交流</p>
-<p>联系方式: <a href="mailto:realsodo@hotmail.com" target="_blank" class="external-link">realsodo@hotmail.com</a>。<br>
-网站(最近会更新):<a href="https://knowfoot.net" target="_blank" class="external-link">https://knowfoot.net</a></p>
 <p><a class="internal-link" target="" data-note-icon="" href="/Knowledge/Story/爱因斯坦成长小记/">爱因斯坦成长小记</a></p>
 <p><a class="internal-link" target="" data-note-icon="" href="/Knowledge/Story/庞加莱与爱因斯坦(转)/">庞加莱与爱因斯坦(转)</a></p>
+<h3 id="留言板" tabindex="-1">留言板</h3>
+<iframe src="https://knowfoot.net/static/tools/messages.html" width="800" height="400" > </iframe>  
+<p>联系方式: <a href="mailto:realsodo@hotmail.com" target="_blank" class="external-link">realsodo@hotmail.com</a>。<br>
+网站(最近会更新):<a href="https://knowfoot.net" target="_blank" class="external-link">https://knowfoot.net</a></p>
 
       
       
@@ -1196,6 +1198,12 @@ s=c  ，<br>
             		</li>
 
                     <li><a href="#三、狭义相对论的一些思考">三、狭义相对论的一些思考</a>
+            
+                <ol>
+                    
+                    <li><a href="#留言板">留言板</a>
+            		</li>
+                </ol>
             		</li>
                 </ol>
             </nav>
