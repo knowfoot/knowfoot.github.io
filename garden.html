@@ -79,7 +79,7 @@
     
     
   </head>
-  <body class="theme-light markdown-preview-view markdown-rendered markdown-preview-section title-note-icon filetree-note-icon links-note-icon backlinks-note-icon">
+  
     
     
       
@@ -172,7 +172,7 @@
     
         <div x-show="isOpen" style="display:none" class="filelist">
             
-                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Story/庞加莱与爱因斯坦/">庞加莱与爱因斯坦 </a>
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Story/庞加莱与爱因斯坦(转)/">庞加莱与爱因斯坦(转) </a>
                 </div>
             
         </div>
@@ -406,7 +406,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2024-01-27T09:40:24.374Z';
+        const searchIndexDate = '2024-01-27T10:18:24.101Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -418,9 +418,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2024-01-27T09:40:24.374Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2024-01-27T10:18:24.101Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-01-27T09:40:24.374Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-01-27T10:18:24.101Z', docs}));
             window.docs = docs
             window.index = index;
         }
@@ -648,7 +648,7 @@
     }
 </script>
     
-    <main class="content cm-s-obsidian ">
+    
       <header>
       
         <h1></h1>
@@ -676,18 +676,7 @@
       </header>
       
       
-      <p><picture src="/img/user/Attachment/knowfootlogo.png" alt="knowfootlogo.png|150" width="150px"><source       media="(max-width:480px)"
-      srcset="/img/optimized/v3zF-wHjMW-300.webp"
-      type="image/webp"
-      >
-      <source       media="(max-width:480px)"
-      srcset="/img/optimized/v3zF-wHjMW-300.jpeg"
-      >
-      <img       class=""
-      src="/img/user/Attachment/knowfootlogo.png"
-      alt="knowfootlogo.png|150"
-      width="150px"
-      ></picture></p>
+      <p><img src="/img/user/Attachment/knowfootlogo.png" alt="knowfootlogo.png|150" width="150px"></p>
 <h1 id="我的博客" tabindex="-1">我的博客</h1>
 <p>欢迎大家，这个是喜欢科学改变生活的博客，分享科学技术发展，人工智能，区块链，大数据，物联网，云计算，生物医药科学知识等。</p>
 <p>更主要希望分享学习的方法论(费曼，卡片等)，思维行为的方法论(PEST,PDCA等)，包括习惯培养-阅读，思维和记忆相关训练(冥想和静坐等)，不是要读多少书，而是要读有了多少有价值的书，不是获取了多少信息，而是消缺了多少不确定性。敬请浏览，并不吝赐教。</p>
@@ -715,11 +704,12 @@
 </p></div></div>
 <hr>
 <h2 id="关于我" tabindex="-1">关于我</h2>
+mongodb+srv://knowfoot:@cluster0.ipruuni.mongodb.net/?retryWrites=true&amp;w=majority
 <p>© 2023 Copyright</p>
 
       
       
-    </main>
+    
 
     
       <aside>
@@ -1165,5 +1155,6 @@ lucide.createIcons({
             }
         });
 </script>
-    </body>
-  </html>
+    
+  
+</html>
