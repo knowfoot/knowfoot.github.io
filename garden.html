@@ -94,7 +94,7 @@
         <span style="font-size: 1.5rem; margin-right: 10px;" @click="showFilesMobile=!showFilesMobile"><i  icon-name="menu"></i></span>
         
         <a href="/" style="text-decoration: none;">
-            <h1 style="margin: 15px !important;">KF数字花园</h1>
+            <h1 style="margin: 15px !important;">数字花园</h1>
         </a>
         
     </div>
@@ -120,7 +120,7 @@
       <nav class="filetree-sidebar"  x-show.important="isDesktop || showFilesMobile" style="display: none;">
         
          <a href="/" style="text-decoration: none;">
-               <h1 style="text-align:center;">KF数字花园</h1>
+               <h1 style="text-align:center;">数字花园</h1>
          </a>
          
         
@@ -406,7 +406,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2024-01-27T15:55:38.855Z';
+        const searchIndexDate = '2024-01-28T11:58:39.962Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -418,9 +418,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2024-01-27T15:55:38.855Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2024-01-28T11:58:39.962Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-01-27T15:55:38.855Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-01-28T11:58:39.962Z', docs}));
             window.docs = docs
             window.index = index;
         }
@@ -687,15 +687,16 @@
       src="/img/user/Attachment/knowfootlogo.png"
       alt="knowfootlogo.png|150"
       width="150px"
-      ></picture></p>
-<h1 id="我的博客" tabindex="-1">我的博客</h1>
-<p>欢迎大家，这个是喜欢科学改变生活的博客，分享科学技术发展，人工智能，区块链，大数据，物联网，云计算，生物医药科学知识等。</p>
-<p>更主要希望分享学习的方法论(费曼，卡片等)，思维行为的方法论(PEST,PDCA等)，包括习惯培养-阅读，思维和记忆相关训练(冥想和静坐等)，不是要读多少书，而是要读有了多少有价值的书，不是获取了多少信息，而是消缺了多少不确定性。敬请浏览，并不吝赐教。</p>
+      ></picture><br>
+数字花园</p>
+<p>欢迎大家，这个是喜欢科学改变生活的数字花园，分享科学技术发展，人工智能，区块链，大数据，物联网，云计算，生物医药科学知识等。</p>
+<p>更主要希望分享学习的方法论(费曼，卡片等)，思维行为的方法论(PEST,PDCA等)，包括习惯培养-阅读，思维和记忆相关训练(冥想和静坐等)，也希望能交流分享一些孩子教育的思路方法，从基础知识(数学，物理，计算科学，哲学，方法论)出发培养孩子的思考习惯到思考方法。</p>
+<p>不是要读多少书，而是要读有了多少有价值的书，不是获取了多少信息，而是消缺了多少不确定性。敬请浏览，并不吝赐教。</p>
 <p>浏览提醒：</p>
 <ul>
-<li>网状笔记不同于树状笔记，没有也不需要根节点</li>
-<li>可以用左上方的搜索框搜索上一段里的_关键词_作为开端，或者搜索&quot;overview&quot;查看部分索引笔记</li>
-<li>注意观察右边的笔记链接图示，感兴趣的节点可以直接点击</li>
+<li>网状信息不同于树状信息结构，不需要太可以分类</li>
+<li>可以用左上方的搜索框搜索上一段里的_关键词_作为开端，或者搜索&quot;overview&quot;查看部分索引信息</li>
+<li>注意观察右边的信息链接图示，感兴趣的节点可以直接点击</li>
 <li>兴至而来，尽兴即返，放轻松</li>
 </ul>
 <hr>
@@ -958,10 +959,6 @@
                                           <nav class="toc">
                 <ol>
                     
-                    <li><a href="#我的博客">我的博客</a>
-            
-                <ol>
-                    
                     <li><a href="#最新更新">最新更新</a>
             		</li>
 
@@ -976,8 +973,6 @@
                 <ol>
                     
                     <li><a href="#留言板">留言板</a>
-            		</li>
-                </ol>
             		</li>
                 </ol>
             		</li>
