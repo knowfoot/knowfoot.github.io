@@ -190,6 +190,38 @@
     
         <div x-show="isOpen" style="display:none" class="filelist">
             
+                <div class="folder inner-folder"  x-data="{isOpen: $persist(false).as('Knowledge/Science')}" @click.stop="isOpen=!isOpen">
+                    <div class="foldername-wrapper align-icon">
+                    <i x-show="isOpen" style="display: none;"  icon-name="chevron-down"></i>
+                    <i x-show="!isOpen"  icon-name="chevron-right"></i>
+                    <span class="foldername">Science</span>
+                    </div>
+                    
+                        
+    
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Science/孩子高烧物理降温处理和注意事项/">孩子高烧物理降温处理和注意事项 </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                </div>
+            
+        </div>
+        
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
                 <div class="folder inner-folder"  x-data="{isOpen: $persist(false).as('Knowledge/Social')}" @click.stop="isOpen=!isOpen">
                     <div class="foldername-wrapper align-icon">
                     <i x-show="isOpen" style="display: none;"  icon-name="chevron-down"></i>
@@ -249,6 +281,28 @@
     
         <div x-show="isOpen" style="display:none" class="filelist">
             
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Social/桑德尔共同体主义/">桑德尔共同体主义 </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Social/法兰克福学派和马尔库塞、哈贝马斯 社会批判/">法兰克福学派和马尔库塞、哈贝马斯 社会批判 </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
                 <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Social/法国激进自由主义与德国浪漫自由主义/">法国激进自由主义与德国浪漫自由主义 </a>
                 </div>
             
@@ -260,7 +314,7 @@
     
         <div x-show="isOpen" style="display:none" class="filelist">
             
-                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Social/现代国家社会个人的300年/">现代国家社会个人的300年 </a>
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Social/现代国家社会个人的300年及当代主要政治哲学流派/">现代国家社会个人的300年及当代主要政治哲学流派 </a>
                 </div>
             
         </div>
@@ -272,6 +326,17 @@
         <div x-show="isOpen" style="display:none" class="filelist">
             
                 <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Social/福柯的后现代主义/">福柯的后现代主义 </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Social/罗尔斯的平等的自由主义/">罗尔斯的平等的自由主义 </a>
                 </div>
             
         </div>
@@ -294,6 +359,17 @@
         <div x-show="isOpen" style="display:none" class="filelist">
             
                 <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Social/英国的消极自由主义/">英国的消极自由主义 </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Social/阿伦特的古典共和主义/">阿伦特的古典共和主义 </a>
                 </div>
             
         </div>
@@ -530,7 +606,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2024-01-31T12:20:50.785Z';
+        const searchIndexDate = '2024-02-12T15:26:22.564Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -542,9 +618,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2024-01-31T12:20:50.785Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2024-02-12T15:26:22.564Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-01-31T12:20:50.785Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-02-12T15:26:22.564Z', docs}));
             window.docs = docs
             window.index = index;
         }
@@ -811,7 +887,7 @@
 <h3 id="结语" tabindex="-1">结语</h3>
 <p>哈耶克的《通往奴役的道路》是一部具有深远影响的著作。它提醒我们，极权主义是人类自由的大敌。为了维护自由，我们必须警惕政府的权力扩张，并努力捍卫个人自由和经济自由。</p>
 <p>在<a class="internal-link" target="" data-note-icon="" href="/Knowledge/Social/凯恩斯的通论和影响力/">凯恩斯</a>如日中天时，他不屈不挠地和凯恩斯辩论，成了大众观众的电视节目。他在萨切尔夫人和里根时代成功地令因为实行自由主义经济政策，因为带来战后经济繁荣和政治强势，他成了捍卫自由精神的一面旗帜。</p>
-<p>他从一位获得诺贝尔奖的经济学家，成为一位政治哲学家，他间接影响了战后世界格局。在新古典自由主义旗帜下，巨星云集，比如<a class="internal-link is-unresolved" href="/404" target="">罗尔斯</a>，诺奇克，弗里德曼等一批学者。诸多领域都带过哈耶克的烙印。</p>
+<p>他从一位获得诺贝尔奖的经济学家，成为一位政治哲学家，他间接影响了战后世界格局。在新古典自由主义旗帜下，巨星云集，比如<a class="internal-link" target="" data-note-icon="" href="/Knowledge/Social/罗尔斯的平等的自由主义/">罗尔斯</a>，诺奇克，弗里德曼等一批学者。诸多领域都带过哈耶克的烙印。</p>
 <p>中国改革开放后，大部分经济学家学人都是哈耶克的新古典自由主义经济思想。在2011年优酷中国意见里，被采访过的百位经济学家中七成是是哈耶克思想，代表人物由张维迎，徐晓年，周琦仁等著名经济学家。</p>
 <p>张维迎在《我为什么反对产业政策》与林尹夫辩论里说道，“在林尹夫眼里，我大概属于新自由主义者，这一点我不会否认。我信奉的是米塞斯·哈耶克范式。”这里提到的米塞斯就是哈耶克老师，奥地利学派。</p>
 <p>《通往奴役的道路》这本书是哈耶克著名的论述新古典自由主义的经济著作。里面提到的资深秩序就是后来他在政治哲学里提到的人类合作的扩展秩序的基础。</p>
@@ -1090,6 +1166,7 @@
                               <div class="backlinks">
                                     <div class="backlink-title" style="margin: 4px 0 !important;">Pages mentioning this page</div>
                                           <div class="backlink-list"><div class="backlink-card"><a href="/Knowledge/Social/吉登斯资本主义与现代社会学理论/" data-note-icon="" class="backlink">吉登斯资本主义与现代社会学理论</a>
+                                                </div><div class="backlink-card"><a href="/Knowledge/Social/现代国家社会个人的300年及当代主要政治哲学流派/" data-note-icon="" class="backlink">现代国家社会个人的300年及当代主要政治哲学流派</a>
                                                 </div><div class="backlink-card"><a href="/Knowledge/Social/英国的消极自由主义/" data-note-icon="" class="backlink">英国的消极自由主义</a>
                                                 </div></div>
                               </div>

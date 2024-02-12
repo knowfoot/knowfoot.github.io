@@ -190,6 +190,38 @@
     
         <div x-show="isOpen" style="display:none" class="filelist">
             
+                <div class="folder inner-folder"  x-data="{isOpen: $persist(false).as('Knowledge/Science')}" @click.stop="isOpen=!isOpen">
+                    <div class="foldername-wrapper align-icon">
+                    <i x-show="isOpen" style="display: none;"  icon-name="chevron-down"></i>
+                    <i x-show="!isOpen"  icon-name="chevron-right"></i>
+                    <span class="foldername">Science</span>
+                    </div>
+                    
+                        
+    
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Science/孩子高烧物理降温处理和注意事项/">孩子高烧物理降温处理和注意事项 </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                </div>
+            
+        </div>
+        
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
                 <div class="folder inner-folder"  x-data="{isOpen: $persist(false).as('Knowledge/Social')}" @click.stop="isOpen=!isOpen">
                     <div class="foldername-wrapper align-icon">
                     <i x-show="isOpen" style="display: none;"  icon-name="chevron-down"></i>
@@ -249,6 +281,28 @@
     
         <div x-show="isOpen" style="display:none" class="filelist">
             
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Social/桑德尔共同体主义/">桑德尔共同体主义 </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Social/法兰克福学派和马尔库塞、哈贝马斯 社会批判/">法兰克福学派和马尔库塞、哈贝马斯 社会批判 </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
                 <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Social/法国激进自由主义与德国浪漫自由主义/">法国激进自由主义与德国浪漫自由主义 </a>
                 </div>
             
@@ -260,7 +314,7 @@
     
         <div x-show="isOpen" style="display:none" class="filelist">
             
-                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Social/现代国家社会个人的300年/">现代国家社会个人的300年 </a>
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Social/现代国家社会个人的300年及当代主要政治哲学流派/">现代国家社会个人的300年及当代主要政治哲学流派 </a>
                 </div>
             
         </div>
@@ -272,6 +326,17 @@
         <div x-show="isOpen" style="display:none" class="filelist">
             
                 <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Social/福柯的后现代主义/">福柯的后现代主义 </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Social/罗尔斯的平等的自由主义/">罗尔斯的平等的自由主义 </a>
                 </div>
             
         </div>
@@ -294,6 +359,17 @@
         <div x-show="isOpen" style="display:none" class="filelist">
             
                 <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Social/英国的消极自由主义/">英国的消极自由主义 </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Social/阿伦特的古典共和主义/">阿伦特的古典共和主义 </a>
                 </div>
             
         </div>
@@ -530,7 +606,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2024-01-31T12:20:50.785Z';
+        const searchIndexDate = '2024-02-12T15:26:22.564Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -542,9 +618,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2024-01-31T12:20:50.785Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2024-02-12T15:26:22.564Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-01-31T12:20:50.785Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-02-12T15:26:22.564Z', docs}));
             window.docs = docs
             window.index = index;
         }
@@ -798,7 +874,7 @@
 <p>它们分别对应的价值体系是伦理、道德、法权。当今宪政国家下，我们不能在<strong>家庭里使用法律</strong>，不能在<strong>社会里使用伦理</strong>，也不能在<strong>国家上使用道德</strong>。</p>
 <p>现在宪政国家的先进性，首先体现在国家、社会、个人三者形成一定的独立性，同时又动态的相互吸附和吸纳，不断地发生相互制约、相互移交、相互让渡、相互促成、相互发展中。所以既有叠加效应，也有分工效果。</p>
 <h3 id="三者关系的发展历史" tabindex="-1">三者关系的发展历史</h3>
-<p>不同的历史时期、不同的地域、不同制度，有不同关系。比如有强国家弱社会形态，也有强社会弱国家形态。近代进程，是追求强社会弱国家形态。从洛克的“<strong>财产不可共有，权力不可私有</strong>”，卢梭的“<strong>人生而平等自由</strong>”，再到现在的<a class="internal-link is-unresolved" href="/404" target="">阿伦特</a>的“<strong>公民不服从</strong>”，都力图以个人为基础单位，以市民社会为中介，形成个人、社会、国家三者之间轻重有别的关系。</p>
+<p>不同的历史时期、不同的地域、不同制度，有不同关系。比如有强国家弱社会形态，也有强社会弱国家形态。近代进程，是追求强社会弱国家形态。从洛克的“<strong>财产不可共有，权力不可私有</strong>”，卢梭的“<strong>人生而平等自由</strong>”，再到现在的<a class="internal-link" target="" data-note-icon="" href="/Knowledge/Social/阿伦特的古典共和主义/">阿伦特</a>的“<strong>公民不服从</strong>”，都力图以个人为基础单位，以市民社会为中介，形成个人、社会、国家三者之间轻重有别的关系。</p>
 <p>从诸侯<strong>割据的领地、自治城市</strong>发展而来，国家的目的是为了更好服务于他们的社会活动，尤其是商业活动。如果不形成强社会形态，就会阻塞小国之间民间的经济活动，难以形成分工体系。这就是为何亚当斯密的理论，成为西方经济原理的原因。他认为，看不见的手取代看得见的手，才能发展社会经济。这种服务于自由经济特点，决定了欧洲国家政治的基本底色。其历史形成的<strong>自然法思想和宗教精神</strong>，都深刻影响了西方后来的社会。以约法为优先，并且产生了<strong>个体主义</strong>。马克斯·韦伯把他具体系统说出来了。</p>
 <p>大一统的历史以及大伦理政治，形成<strong>极权惯性</strong>，基本支持服务于农工型政治，而不是服务于城市型经济。所以社会活力是被压抑的，个人主义就不存在土壤。西周开始的天下观，就是一种伦理政治。社会组织更多地受到家庭和宗族的影响，国家权威通常较强，而个人在社会和国家中的地位相对较低。然而，随着现代化进程的推进，人们逐渐意识到<strong>个人权利和社会自治</strong>的重要性，开始探索适合现代社会需求的国家、社会和个人之间的新型关系。</p>
 <h3 id="一个人是从个人到社会，再到国家的过程" tabindex="-1">一个人是从个人到社会，再到国家的过程</h3>
@@ -1066,8 +1142,10 @@
                               <div class="backlinks">
                                     <div class="backlink-title" style="margin: 4px 0 !important;">Pages mentioning this page</div>
                                           <div class="backlink-list"><div class="backlink-card"><a href="/Knowledge/Social/吉登斯资本主义与现代社会学理论/" data-note-icon="" class="backlink">吉登斯资本主义与现代社会学理论</a>
-                                                </div><div class="backlink-card"><a href="/Knowledge/Social/现代国家社会个人的300年/" data-note-icon="" class="backlink">现代国家社会个人的300年</a>
                                                 </div><div class="backlink-card"><a href="/Knowledge/Social/美国自由主义/" data-note-icon="" class="backlink">美国自由主义</a>
+                                                </div><div class="backlink-card"><a href="/Knowledge/Social/桑德尔共同体主义/" data-note-icon="" class="backlink">桑德尔共同体主义</a>
+                                                </div><div class="backlink-card"><a href="/Knowledge/Social/现代国家社会个人的300年及当代主要政治哲学流派/" data-note-icon="" class="backlink">现代国家社会个人的300年及当代主要政治哲学流派</a>
+                                                </div><div class="backlink-card"><a href="/Knowledge/Social/阿伦特的古典共和主义/" data-note-icon="" class="backlink">阿伦特的古典共和主义</a>
                                                 </div></div>
                               </div>
                         

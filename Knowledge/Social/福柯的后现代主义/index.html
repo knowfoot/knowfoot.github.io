@@ -190,6 +190,38 @@
     
         <div x-show="isOpen" style="display:none" class="filelist">
             
+                <div class="folder inner-folder"  x-data="{isOpen: $persist(false).as('Knowledge/Science')}" @click.stop="isOpen=!isOpen">
+                    <div class="foldername-wrapper align-icon">
+                    <i x-show="isOpen" style="display: none;"  icon-name="chevron-down"></i>
+                    <i x-show="!isOpen"  icon-name="chevron-right"></i>
+                    <span class="foldername">Science</span>
+                    </div>
+                    
+                        
+    
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Science/孩子高烧物理降温处理和注意事项/">孩子高烧物理降温处理和注意事项 </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                </div>
+            
+        </div>
+        
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
                 <div class="folder inner-folder"  x-data="{isOpen: $persist(false).as('Knowledge/Social')}" @click.stop="isOpen=!isOpen">
                     <div class="foldername-wrapper align-icon">
                     <i x-show="isOpen" style="display: none;"  icon-name="chevron-down"></i>
@@ -249,6 +281,28 @@
     
         <div x-show="isOpen" style="display:none" class="filelist">
             
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Social/桑德尔共同体主义/">桑德尔共同体主义 </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Social/法兰克福学派和马尔库塞、哈贝马斯 社会批判/">法兰克福学派和马尔库塞、哈贝马斯 社会批判 </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
                 <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Social/法国激进自由主义与德国浪漫自由主义/">法国激进自由主义与德国浪漫自由主义 </a>
                 </div>
             
@@ -260,7 +314,7 @@
     
         <div x-show="isOpen" style="display:none" class="filelist">
             
-                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Social/现代国家社会个人的300年/">现代国家社会个人的300年 </a>
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Social/现代国家社会个人的300年及当代主要政治哲学流派/">现代国家社会个人的300年及当代主要政治哲学流派 </a>
                 </div>
             
         </div>
@@ -272,6 +326,17 @@
         <div x-show="isOpen" style="display:none" class="filelist">
             
                 <div @click.stop class="notelink active-note"><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Social/福柯的后现代主义/">福柯的后现代主义 </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Social/罗尔斯的平等的自由主义/">罗尔斯的平等的自由主义 </a>
                 </div>
             
         </div>
@@ -294,6 +359,17 @@
         <div x-show="isOpen" style="display:none" class="filelist">
             
                 <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Social/英国的消极自由主义/">英国的消极自由主义 </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Social/阿伦特的古典共和主义/">阿伦特的古典共和主义 </a>
                 </div>
             
         </div>
@@ -530,7 +606,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2024-01-31T12:20:50.785Z';
+        const searchIndexDate = '2024-02-12T15:26:22.564Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -542,9 +618,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2024-01-31T12:20:50.785Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2024-02-12T15:26:22.564Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-01-31T12:20:50.785Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-02-12T15:26:22.564Z', docs}));
             window.docs = docs
             window.index = index;
         }
@@ -814,7 +890,7 @@
 <p>推翻了这毫不犹豫的相信人类的理性光辉，相信传统文明，相信一个颠簸不破的知识世界，相信一个构建的知识秩序的观念。福柯考察了历史以来这样的知识体系列构成的原因，只知道话语构成导致人类建立了一套知识秩序。而西方的理性传统真理观价值体系就是如此形成。<strong>福柯决定来一场认识论断裂的革命，转变知识的范式</strong>。</p>
 <p>他反对的至上的主体优先话语的知识观，也就是人们总潜意识认同一个人为的价值观，在这个价值观下寻找符合他的知识。所以福柯宣称人也死了。</p>
 <p>其次福柯用知识考古学解释了理性的权力来源，福柯的知识考古学，提出了一种后线的理论和话语构成原则，打开新型文化密码。<strong>破译了现代人文学科的文化基因，解释了西方知识演进史，挑战了理性主义的主流话语霸权</strong>。</p>
-<p>福柯对权力运作的考察，是继承了<a class="internal-link is-unresolved" href="/404" target="">法兰克福学派</a>的批判性，采取尼采的权力学方法，发展了权力学。再次对现代理性结构，提出要从统治者的统治技术和战术出发去研究，所以他成了微观权力论的创始人。</p>
+<p>福柯对权力运作的考察，是继承了<a class="internal-link" target="" data-note-icon="" href="/Knowledge/Social/法兰克福学派和马尔库塞、哈贝马斯 社会批判/">法兰克福学派</a>的批判性，采取尼采的权力学方法，发展了权力学。再次对现代理性结构，提出要从统治者的统治技术和战术出发去研究，所以他成了微观权力论的创始人。</p>
 <p>再次把西方的理性加以否定，他说理性的出生没有他标榜的那样清白，他是理性就是权力的方修，把培根的知识就是生产力，视知识就是权力。他指出西方是监狱式的知识，权力的微观控制的技术和手段，普遍应用全社会各个领域。<strong>这些监控的微观权力技术和制度，主要包括规范、原型监狱、规范性判断等</strong>。建立在永恒坚实的原則上，确保权力发挥全方位控制性，注視功能的压制性体系。</p>
 <p>监狱集中体现了现代社会权力运作的诸多种重要特征，现代社会本身就是一个更加彻底的规范机构，他提到的规范性判断，指的是西方启蒙运动以来，使用人文学科及科学科成就，积极、日益丰富的实践经验，对于社会实行的监督、约束、治疗。每一个人都接受这套启蒙带来的理性，科学的评判、评说。</p>
 <p>这套系统福柯称为权力知识网络，福柯提出观察现代理性权力的方法，<strong>即不要在权力中心去分析，要去边缘和偏远，不要在权力上层去分析，要在实际运行里，不要静态分析，要在动态发展上，要在微小的底层的权力上分析等</strong>。他认为，用法权模式和经济模式去分析权力，是无法揭示本质的。实际上否定了<strong>黑格尔到马克思以来的历史微观观，他也否定历史的必然连续规律，反对这种主体性价值观</strong>。</p>
@@ -1086,7 +1162,8 @@
                               <div class="backlinks">
                                     <div class="backlink-title" style="margin: 4px 0 !important;">Pages mentioning this page</div>
                                           <div class="backlink-list"><div class="backlink-card"><a href="/Knowledge/Social/吉登斯资本主义与现代社会学理论/" data-note-icon="" class="backlink">吉登斯资本主义与现代社会学理论</a>
-                                                </div><div class="backlink-card"><a href="/Knowledge/Social/现代国家社会个人的300年/" data-note-icon="" class="backlink">现代国家社会个人的300年</a>
+                                                </div><div class="backlink-card"><a href="/Knowledge/Social/法兰克福学派和马尔库塞、哈贝马斯 社会批判/" data-note-icon="" class="backlink">法兰克福学派和马尔库塞、哈贝马斯 社会批判</a>
+                                                </div><div class="backlink-card"><a href="/Knowledge/Social/现代国家社会个人的300年及当代主要政治哲学流派/" data-note-icon="" class="backlink">现代国家社会个人的300年及当代主要政治哲学流派</a>
                                                 </div></div>
                               </div>
                         

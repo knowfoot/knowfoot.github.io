@@ -190,6 +190,38 @@
     
         <div x-show="isOpen" style="display:none" class="filelist">
             
+                <div class="folder inner-folder"  x-data="{isOpen: $persist(false).as('Knowledge/Science')}" @click.stop="isOpen=!isOpen">
+                    <div class="foldername-wrapper align-icon">
+                    <i x-show="isOpen" style="display: none;"  icon-name="chevron-down"></i>
+                    <i x-show="!isOpen"  icon-name="chevron-right"></i>
+                    <span class="foldername">Science</span>
+                    </div>
+                    
+                        
+    
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Science/孩子高烧物理降温处理和注意事项/">孩子高烧物理降温处理和注意事项 </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                </div>
+            
+        </div>
+        
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
                 <div class="folder inner-folder"  x-data="{isOpen: $persist(false).as('Knowledge/Social')}" @click.stop="isOpen=!isOpen">
                     <div class="foldername-wrapper align-icon">
                     <i x-show="isOpen" style="display: none;"  icon-name="chevron-down"></i>
@@ -249,6 +281,28 @@
     
         <div x-show="isOpen" style="display:none" class="filelist">
             
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Social/桑德尔共同体主义/">桑德尔共同体主义 </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Social/法兰克福学派和马尔库塞、哈贝马斯 社会批判/">法兰克福学派和马尔库塞、哈贝马斯 社会批判 </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
                 <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Social/法国激进自由主义与德国浪漫自由主义/">法国激进自由主义与德国浪漫自由主义 </a>
                 </div>
             
@@ -260,7 +314,7 @@
     
         <div x-show="isOpen" style="display:none" class="filelist">
             
-                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Social/现代国家社会个人的300年/">现代国家社会个人的300年 </a>
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Social/现代国家社会个人的300年及当代主要政治哲学流派/">现代国家社会个人的300年及当代主要政治哲学流派 </a>
                 </div>
             
         </div>
@@ -272,6 +326,17 @@
         <div x-show="isOpen" style="display:none" class="filelist">
             
                 <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Social/福柯的后现代主义/">福柯的后现代主义 </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Social/罗尔斯的平等的自由主义/">罗尔斯的平等的自由主义 </a>
                 </div>
             
         </div>
@@ -294,6 +359,17 @@
         <div x-show="isOpen" style="display:none" class="filelist">
             
                 <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Social/英国的消极自由主义/">英国的消极自由主义 </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Social/阿伦特的古典共和主义/">阿伦特的古典共和主义 </a>
                 </div>
             
         </div>
@@ -530,7 +606,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2024-01-31T12:20:50.785Z';
+        const searchIndexDate = '2024-02-12T15:26:22.564Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -542,9 +618,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2024-01-31T12:20:50.785Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2024-02-12T15:26:22.564Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-01-31T12:20:50.785Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-02-12T15:26:22.564Z', docs}));
             window.docs = docs
             window.index = index;
         }
@@ -832,7 +908,7 @@
 <p>很多朋友在学习政治哲学时，忘记了这样一种路径：政治哲学可以从哲学入手，也可以从经济学、社会学、政治学、法学等入手。比如 <a class="internal-link" target="" data-note-icon="" href="/Knowledge/Social/哈耶克的自由至上主义/#个人自由与经济自由">哈耶克</a>是从政治经济学走进政治哲学领域的；吉登斯是从社会学走进政治哲学的。</p>
 <p>他从社会学角度分析了<a class="internal-link" target="" data-note-icon="" href="/Knowledge/Social/福柯的后现代主义/#fe57a3">现代性</a>，标志性著作就是《现代性的后果》。他分别把20世纪最棘手的现代性危机问题做了全面分析和总结。他在《现代性的后果》开篇第一句就是：在本书中，我将按文化与认识论的比较，对现代性做出一种制度性分析。</p>
 <p>他指出，<strong>现代的社会制度在组织方面是独一无二的，其在形式上优于所有类型的传统秩序</strong>。他认为过去的社会的类型已经变化，而对新的类型又缺乏制度性分析，而马克思、涂尔干、韦伯等对社会的分析，尤其解释现代性问题上，都倾向某种单一的驾驭社会巨变的动力。马克思聚焦资本主义，涂尔干则侧重工业化，韦伯关注官僚社会的客层组织。</p>
-<p>他提出，我们面临着严峻的现代性问题，比如剧烈增长、经济机制崩溃、生态危机、核冲突与大规模战争，提出人类走出这种困境的思路。吉登斯的社会学理论很丰富，在现代性危机问题上，比<a class="internal-link is-unresolved" href="/404" target="">哈贝马斯</a>等人更具说服力。</p>
+<p>他提出，我们面临着严峻的现代性问题，比如剧烈增长、经济机制崩溃、生态危机、核冲突与大规模战争，提出人类走出这种困境的思路。吉登斯的社会学理论很丰富，在现代性危机问题上，比<a class="internal-link" target="" data-note-icon="" href="/Knowledge/Social/法兰克福学派和马尔库塞、哈贝马斯 社会批判/#哈贝马斯的社会批判">哈贝马斯</a>等人更具说服力。</p>
 <p>他在《第三条道路——社会民主主义复兴》里，提出自己的政治哲学思想，即《第三条道路》，就是指既不做<a class="internal-link" target="" data-note-icon="" href="/Knowledge/Social/哈耶克的自由至上主义/">哈耶克</a>式的老右派的自由主义，也不做马克思式的老左派的社会民主主义，而是积极的社会民主主义。</p>
 <p>他提出<strong>平等、保护弱者、有限基因管理，复兴公共空间、积极福利、社会投资性国家，超越劳动的社会等政治哲学观点</strong>。</p>
 <p>他非常关注西方社会两极分化而严重的问题，可以说，吉登斯的《第三条道路》本质上还是社会路线，市民路线，现实路线。他深受马克思关于无产阶级思想影响。</p>
@@ -840,7 +916,7 @@
 <p>吉登斯提到，社会吸纳变成单一吸纳劳动，社会和人的关系仅仅发生在劳动关系上，这是不可取的。</p>
 <p>总而言之，吉登斯重点关注人和社会这个关系组。他借马克思的话说道，在马克思看来，随着充分发达的社会主义社会的到来，国家将会消亡，在这种社会中，每个人的自由发展将是所有自由发展的条件。<strong>吉登斯深感，目前人不仅被国家束缚，也被社会冷漠对待，人与人又彼此失去传统关系，这种现代性危机带来后现代的生存状况，导致社会共同价值和个体自由空洞化、理论化</strong>。</p>
 <p>吉登斯的政治哲学思想，有<strong>马克思的社会主义思想，也有桑德尔的共同主义，也有阿伦特的个人政治自由和公共名誉，同时他也批判新古典自由主义，指出自由主义带来的现代化的同时，也带来现代性困境，社会撕裂</strong>。</p>
-<p>吉登斯被称为20世纪思想的巨人。吉登斯不仅是英国政治经济学院院长，终身教授，也是英国布莱尔时期的政府顾问。他在学术上和现实政治中，同样很有影响力。他对同时代<a class="internal-link is-unresolved" href="/404" target="">哈贝马斯</a>的一些理论，也提出过批评。</p>
+<p>吉登斯被称为20世纪思想的巨人。吉登斯不仅是英国政治经济学院院长，终身教授，也是英国布莱尔时期的政府顾问。他在学术上和现实政治中，同样很有影响力。他对同时代<a class="internal-link" target="" data-note-icon="" href="/Knowledge/Social/法兰克福学派和马尔库塞、哈贝马斯 社会批判/#哈贝马斯的社会批判">哈贝马斯</a>的一些理论，也提出过批评。</p>
 
       
       
@@ -1104,9 +1180,8 @@
                               
                               <div class="backlinks">
                                     <div class="backlink-title" style="margin: 4px 0 !important;">Pages mentioning this page</div>
-                                          <div class="backlink-list"><div class="backlink-card">
-                                                            <span class="no-backlinks-message">No other pages mentions this page</span>
-                                                      </div></div>
+                                          <div class="backlink-list"><div class="backlink-card"><a href="/Knowledge/Social/法兰克福学派和马尔库塞、哈贝马斯 社会批判/" data-note-icon="" class="backlink">法兰克福学派和马尔库塞、哈贝马斯 社会批判</a>
+                                                </div></div>
                               </div>
                         
                   
