@@ -606,7 +606,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2024-02-18T06:33:08.648Z';
+        const searchIndexDate = '2024-02-18T10:21:25.423Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -618,9 +618,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2024-02-18T06:33:08.648Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2024-02-18T10:21:25.423Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-02-18T06:33:08.648Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-02-18T10:21:25.423Z', docs}));
             window.docs = docs
             window.index = index;
         }
@@ -1166,8 +1166,8 @@
                               <div class="backlinks">
                                     <div class="backlink-title" style="margin: 4px 0 !important;">Pages mentioning this page</div>
                                           <div class="backlink-list"><div class="backlink-card"><a href="/Knowledge/Social/吉登斯资本主义与现代社会学理论/" data-note-icon="" class="backlink">吉登斯资本主义与现代社会学理论</a>
-                                                </div><div class="backlink-card"><a href="/Knowledge/Social/现代国家社会个人的300年及当代主要政治哲学流派/" data-note-icon="" class="backlink">现代国家社会个人的300年及当代主要政治哲学流派</a>
                                                 </div><div class="backlink-card"><a href="/Knowledge/Social/英国的消极自由主义/" data-note-icon="" class="backlink">英国的消极自由主义</a>
+                                                </div><div class="backlink-card"><a href="/Knowledge/Social/现代国家社会个人的300年及当代主要政治哲学流派/" data-note-icon="" class="backlink">现代国家社会个人的300年及当代主要政治哲学流派</a>
                                                 </div></div>
                               </div>
                         
