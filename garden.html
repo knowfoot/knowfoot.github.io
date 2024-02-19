@@ -604,7 +604,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2024-02-18T10:21:25.423Z';
+        const searchIndexDate = '2024-02-19T10:52:04.608Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -616,9 +616,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2024-02-18T10:21:25.423Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2024-02-19T10:52:04.608Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-02-18T10:21:25.423Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-02-19T10:52:04.608Z', docs}));
             window.docs = docs
             window.index = index;
         }
@@ -887,7 +887,7 @@
       width="150px"
       ></picture><br>
 这个世界，正随着一朵朵数字化的花朵，在我们孩子的眼中缓缓绽放。是的，您没听错，我正在谈论一个独特的存在——陪伴孩子成长的数字花园。</p>
-<p>我也曾问自己，为何要耕耘这片花园？在人工智能的时代洪流下，我们每一个人都或多或少受到了冲击。尽管我不是此领域的直接从业者，但做过神经网络、深度学习，以及以Transformer为首的大模型等开发，训练等深度实践，这些无疑是我魂牵梦系的所在。<font color="#ff0000">我深信，它们将彻底转变未来的社会，并重塑我们对世界的根本理解。这份相信，不仅是对求知后的结果，更是一种信仰</font>。</p>
+<p>我也曾问自己，为何要耕耘这片花园？在人工智能的时代洪流下，我们每一个人都或多或少受到了冲击。尽管我不是此领域的直接从业者，但做过神经网络、深度学习，以及以Transformer为首的大模型等开发，训练等深度实践，这些无疑是我魂牵梦系的所在。<font color="#ff0000">我深信，它们将彻底转变未来的社会，并重塑我们对世界的根本理解。这份相信，不仅是求知后的结果，更是一种信仰</font>。</p>
 <p>创建这片数字花园的初衷，源自于对互联网世界现状的反思。面对网络上充斥的错误信息、混乱逻辑、表面文章以及冗余不完整信息，我渴望为孩子提供一片纯净之地。<font color="#ff0000">在这里，科学与人文的知识不仅系统全面，更是简洁明了，以启发式的方法给予他们成长的指引</font>。</p>
 <p>未来，也许人工智能能做得更好，这也是我虽然目标坚定却依然犹豫的原因之一。尽管如此，我还是决定继续这件我认为仍具意义的事业。<font color="#ff0000">我也期望能将最新的AI技术和Web3.0结合至此，打造一个更具独立性和自组织性的数字花园。我真心希望，同道中人能一同参与，共同抒写这份伟大的志业</font>。</p>
 <p>这并非仅仅是关于阅读了多少书籍的问题，而是关于那些书籍能在我们内心留下多少有意义的印记。这也不仅仅是关于获取了多少信息的问题，而是关于通过这些信息消解了多少不确定性的问题。</p>
@@ -906,6 +906,7 @@
 <li><a class="internal-link" target="" data-note-icon="" href="/Knowledge/Social/现代国家社会个人的300年及当代主要政治哲学流派/">现代国家社会个人的300年及当代主要政治哲学流派</a></li>
 </ul>
 <hr>
+<p>暂时放了一点点笔记上来（其实也没打理好，主题内容应该分层，最少两层或者是两篇，浅显的概念部分和数理深入部分做成双链），希望对 孩子起到陪伴和启发作用，目标是明确的，很多笔记还没有放上来(都需要深度整理下)，主要希望能做成共建共享的自组织平台，不过具体如何实践，展示方式如何，还不清晰。本来要部署ipfs版本，但这只是技术层面去中性化，在内容产生等方面还是不清晰(可能是基于web3.0的wikipedia，但去中性化的数据库还不成熟)</p>
 <h3 id="留言板" tabindex="-1">留言板</h3>
 <iframe src="https://knowfoot.net/static/tools/messages.html" width="800" height="400" > </iframe>  
 <p>© 2023 Copyright</p>
