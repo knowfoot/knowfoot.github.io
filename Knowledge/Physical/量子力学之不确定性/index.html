@@ -760,7 +760,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2024-02-25T15:28:27.315Z';
+        const searchIndexDate = '2024-02-25T15:41:58.965Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -772,9 +772,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2024-02-25T15:28:27.315Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2024-02-25T15:41:58.965Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-02-25T15:28:27.315Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-02-25T15:41:58.965Z', docs}));
             window.docs = docs
             window.index = index;
         }
@@ -1340,6 +1340,7 @@ P乘以Q不等于Q乘以P其中P就是动量的算符，Q是位置的算符。</
                                                 </div><div class="backlink-card"><a href="/Knowledge/Physical/量子力学之薛定谔方程/" data-note-icon="" class="backlink">量子力学之薛定谔方程</a>
                                                 </div><div class="backlink-card"><a href="/Knowledge/Physical/量子力学之退相干/" data-note-icon="" class="backlink">量子力学之退相干</a>
                                                 </div><div class="backlink-card"><a href="/Knowledge/Physical/量子力学之量子隧穿/" data-note-icon="" class="backlink">量子力学之量子隧穿</a>
+                                                </div><div class="backlink-card"><a href="/Knowledge/Physical/爱因斯坦和波尔之间一场著名的论战/" data-note-icon="" class="backlink">爱因斯坦和波尔之间一场著名的论战</a>
                                                 </div></div>
                               </div>
                         
