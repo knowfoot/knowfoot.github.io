@@ -760,7 +760,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2024-02-25T14:16:42.099Z';
+        const searchIndexDate = '2024-02-25T15:28:27.315Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -772,9 +772,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2024-02-25T14:16:42.099Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2024-02-25T15:28:27.315Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-02-25T14:16:42.099Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-02-25T15:28:27.315Z', docs}));
             window.docs = docs
             window.index = index;
         }
@@ -1029,7 +1029,7 @@
 <h3 id="不确定性是粒子的内在属性" tabindex="-1">不确定性是粒子的内在属性</h3>
 <p>事实上，包括海森堡本人后来也承认，量子力学的真正奥义不是测不准，而是不确定。它是粒子的内在属性，跟你测不测量无关。</p>
 <p>在这个世界上，无论什么物体，电子光子也好，宏观物体也罢，理论上都不可能同时拥有确定的位置和动量。</p>
-<p>不确定性原理的表述很简单，它既不像薛定谔方程那样，需要微积分以及分析力学的知识，也不像矩阵力学需要线性代数的知识。它和简洁的智能方程一样，基本上谁看到都能说上两句。</p>
+<p>不确定性原理的表述很简单，它既不像<a class="internal-link" target="" data-note-icon="" href="/Knowledge/Physical/量子力学之薛定谔方程/">薛定谔方程</a>那样，需要微积分以及分析力学的知识，也不像矩阵力学需要线性代数的知识。它和简洁的智能方程一样，基本上谁看到都能说上两句。</p>
 <p>但是，在这些简洁的公式背后，往往都隐藏着这个世界最本源的秘密。<br>
 在这个世界中，Δx表示位置的不确定性，Δp表示动量的不确定性。它们的乘积必须大于等于一个常数。注意，这个Δx并不是指的位置的测量误差，而是指的位置的标准差。这种写法确实比较容易误导人，为了避免误解，后面对于这个公式用标准差的符号。</p>
 <p>测量扰动是指在对量子系统进行测量时，测量仪器或测量过程本身对系统状态造成的影响。这种扰动可能会引入额外的不确定性，使得我们对系统的状态无法完全确定。</p>
@@ -1066,7 +1066,7 @@ P乘以Q不等于Q乘以P其中P就是动量的算符，Q是位置的算符。</
 <h3 id="不确定性原理的对世界的认识" tabindex="-1">不确定性原理的对世界的认识</h3>
 <p><font color="#ff0000">量子力学的前沿理论认为，在极短的时间尺度上，能量守恒并不成立，而我们所认为的能量守恒实际上是时间较长时的一种平均效应。因此，我们所认为的真空其实并不空，而是一片充满能量起伏的活跃空间</font>。</p>
 <p>这种现象是由不确定性原理引起的，不确定性原理指出，同时测量某粒子的位置和动量无法达到绝对的精确，而这种不确定性与测量的时间尺度成反比。也就是说，在非常短的时间尺度上，粒子的位置和动量可以发生剧烈的波动，而这种波动会导致能量的凭空出现和消失。</p>
-<p>不确定性原理对我们的宏观世界也有着深远的影响。举个例子，太阳之所以能够持续稳定地发光，依靠的就是不确定性原理带来的量子隧穿效应。这种效应允许质子在核聚变反应中穿透势垒，从而使反应能够在较低的温度下发生，并持续稳定地进行。</p>
+<p>不确定性原理对我们的宏观世界也有着深远的影响。举个例子，太阳之所以能够持续稳定地发光，依靠的就是不确定性原理带来的<a class="internal-link" target="" data-note-icon="" href="/Knowledge/Physical/量子力学之量子隧穿/">量子隧穿效应</a>。这种效应允许质子在核聚变反应中穿透势垒，从而使反应能够在较低的温度下发生，并持续稳定地进行。</p>
 <p>事实上，不确定性原理是宇宙诞生的关键因素之一。宇宙大爆炸理论认为，宇宙是从一片包含能量和物质的奇点爆炸产生的，<font color="#ff0000">而这些能量和物质的来源正是来自真空中的虚拟能量涨落</font>。如果没有不确定性原理，宇宙就不会诞生，也不会存在我们今天所看到的一切。</p>
 <p>纵观宇宙的历史，不确定性原理的影响无处不在。从恒星的聚变到星系的形成，再到人类的诞生，都离不开不确定性原理的作用。可以说，不确定性原理是我们理解宇宙的基础性原理之一，它不仅揭示了量子世界的奥秘，还对我们的宏观世界产生了深远的影响。</p>
 
@@ -1336,6 +1336,10 @@ P乘以Q不等于Q乘以P其中P就是动量的算符，Q是位置的算符。</
                               <div class="backlinks">
                                     <div class="backlink-title" style="margin: 4px 0 !important;">Pages mentioning this page</div>
                                           <div class="backlink-list"><div class="backlink-card"><a href="/Knowledge/Physical/量子力学杂谈/" data-note-icon="" class="backlink">量子力学杂谈</a>
+                                                </div><div class="backlink-card"><a href="/Knowledge/Physical/量子力学之泡利不相容原理/" data-note-icon="" class="backlink">量子力学之泡利不相容原理</a>
+                                                </div><div class="backlink-card"><a href="/Knowledge/Physical/量子力学之薛定谔方程/" data-note-icon="" class="backlink">量子力学之薛定谔方程</a>
+                                                </div><div class="backlink-card"><a href="/Knowledge/Physical/量子力学之退相干/" data-note-icon="" class="backlink">量子力学之退相干</a>
+                                                </div><div class="backlink-card"><a href="/Knowledge/Physical/量子力学之量子隧穿/" data-note-icon="" class="backlink">量子力学之量子隧穿</a>
                                                 </div></div>
                               </div>
                         

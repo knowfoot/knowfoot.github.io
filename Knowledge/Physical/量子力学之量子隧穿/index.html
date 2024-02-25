@@ -760,7 +760,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2024-02-25T14:16:42.099Z';
+        const searchIndexDate = '2024-02-25T15:28:27.315Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -772,9 +772,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2024-02-25T14:16:42.099Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2024-02-25T15:28:27.315Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-02-25T14:16:42.099Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-02-25T15:28:27.315Z', docs}));
             window.docs = docs
             window.index = index;
         }
@@ -1023,11 +1023,11 @@
       
       <h3 id="数学给物理带来的惊喜" tabindex="-1">数学给物理带来的惊喜</h3>
 <p>17世纪末，牛顿提出了万有引力定律，从此，数学开始展现出对现实世界的强大统治力。日月星辰都变得有迹可循，并成功预言了海王星的存在。</p>
-<p>到了20世纪初，爱因斯坦首先通过狭义相对论，解决了时间膨胀与缩短效应，并揭示了质量和能量本质上其实等价。紧接着，又通过广义相对论的引力场方程，解决了时空弯曲，并预言了星光偏转、引力红移、引力波以及黑洞的存在。</p>
+<p>到了20世纪初，爱因斯坦首先通过<a class="internal-link" target="" data-note-icon="" href="/Knowledge/Physical/狭义相对论杂谈/">狭义相对论</a>，解决了时间膨胀与缩短效应，并揭示了质量和能量本质上其实等价。紧接着，又通过广义相对论的引力场方程，解决了时空弯曲，并预言了星光偏转、引力红移、引力波以及黑洞的存在。</p>
 <p><font color="#ff0000">每一个伟大物理定律的提出，往往都对应着一个数学公式。通过这些公式，我们可以解释一些已知的现象，同时也能预言一些超出你认知的东西。多年后，人们一验证，发现居然是真的。</font></p>
 <p>于是有人说，数学是物理学家的工具，是描述大自然的语言。但从种种迹象来看，它似乎不只是一个小小的工具，而更像是一种自然界的基本法则。而这种感觉，在你理解了量子力学后，则会变得愈发强烈。</p>
 <h3 id="薛定谔方程解带来的隧穿" tabindex="-1">薛定谔方程解带来的隧穿</h3>
-<p>薛定谔写下薛定谔方程后，马克斯·波恩很快就给出了波恩解释，即波函数绝对值的平方，代表了粒子出现在空间某处的概率。</p>
+<p>薛定谔写下<a class="internal-link" target="" data-note-icon="" href="/Knowledge/Physical/量子力学之薛定谔方程/">定谔方程后</a>，马克斯·波恩很快就给出了波恩解释，即波函数绝对值的平方，代表了粒子出现在空间某处的概率。</p>
 <p>薛定谔方程的整体含义其实就是，动能加势能等于总能量。其中，势能包括有电势能、重力势能以及核力势能等等。对于一个不受任何外部作用力的粒子，其势能为0。带入薛定谔方程中，解出来的波函数的绝对值的平方是一个常数。也就是说，一个绝对自由的粒子，出现在空间中的各个地方的概率都一样，它无处不在。</p>
 <p>当然这是理想情况，现实世界总是充满着各种限制。现在我们考虑实际情况，比如一个氢原子的核外电子。对于电子来说，它的势能主要来自原子核所带来的电势能。越往外，电子的电势能就越大。</p>
 <p>原子核外的势能场，就像是一堵厚厚的势能墙。这堵墙内的势能，比电子的总能量还要高，我们一般称其为势垒。直觉来看，在不吸收外部光子的情况下，核外电子永远都不可能穿越势垒，逃逸到原子核外。否则它在逃逸的过程中，就会出现动能小于0的情况，这显然不可能。</p>
@@ -1044,7 +1044,7 @@
 <h3 id="量子隧穿的解释" tabindex="-1">量子隧穿的解释</h3>
 <p>现在，量子隧穿虽然是实锤了，但这里有个疑问，既然V大于E，粒子为什么还能穿墙呢？难道能量守恒定律，在穿墙的那一刻被推翻了吗？</p>
 <p>其实并没有，首先粒子在隧穿前和隧穿后的整体能量，包括动能和势能，必须是一样的，否则就无法完成隧穿，这一点并不违反能量守恒，你感到奇怪的点在于，它到底是如何拥有超过墙壁势垒的能量值去穿过滤雷的。</p>
-<p>这里大概有两种解释，一种解释是，我们知道能量和时间之间满足一个不确定性原理，在时间间隔非常小的区域内，量子系统的能量可以有一个小小的涨落，只要时间足够长，涨落的次数足够多，总会有一个能量正好够用，从而完成穿墙。<font color="#ff0000">这就像是从虚空中借来了一部分能量，然后在穿墙后再归还回去</font>。</p>
+<p>这里大概有两种解释，一种解释是，我们知道能量和时间之间满足一个<a class="internal-link" target="" data-note-icon="" href="/Knowledge/Physical/量子力学之不确定性/">不确定性原理</a>，在时间间隔非常小的区域内，量子系统的能量可以有一个小小的涨落，只要时间足够长，涨落的次数足够多，总会有一个能量正好够用，从而完成穿墙。<font color="#ff0000">这就像是从虚空中借来了一部分能量，然后在穿墙后再归还回去</font>。</p>
 <p>另外一种解释是，我们之所以觉得它违反了能量守恒，是因为我们在理解量子隧穿时，脑子里仍然会将它类比为很容易理解的宏观现象，比如一个小球翻越一个高坡，<font color="#ff0000">但实际上微观世界里的粒子，在被观测前并没有一个确定的位置，而是一种概率分布的形式，弥漫在整个空间中，这个概率分布由波函数描述，而波是可以穿墙的，就像电磁波波长越长，其穿墙性能就越好，这是波的特性</font>。</p>
 <p>概率波作为一种波也同样如此。所以从波的角度来看，粒子其实并不存在什么跨越高峰穿越势垒的动作，既然波函数本来就允许它有一定的概率出现在这里，那为什么不可以呢？</p>
 <h3 id="数学带来的不仅仅是脑洞" tabindex="-1">数学带来的不仅仅是脑洞</h3>
@@ -1318,6 +1318,8 @@
                               <div class="backlinks">
                                     <div class="backlink-title" style="margin: 4px 0 !important;">Pages mentioning this page</div>
                                           <div class="backlink-list"><div class="backlink-card"><a href="/Knowledge/Physical/量子力学杂谈/" data-note-icon="" class="backlink">量子力学杂谈</a>
+                                                </div><div class="backlink-card"><a href="/Knowledge/Physical/量子力学之不确定性/" data-note-icon="" class="backlink">量子力学之不确定性</a>
+                                                </div><div class="backlink-card"><a href="/Knowledge/Physical/量子力学之泡利不相容原理/" data-note-icon="" class="backlink">量子力学之泡利不相容原理</a>
                                                 </div></div>
                               </div>
                         

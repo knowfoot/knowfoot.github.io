@@ -760,7 +760,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2024-02-25T14:16:42.099Z';
+        const searchIndexDate = '2024-02-25T15:28:27.315Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -772,9 +772,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2024-02-25T14:16:42.099Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2024-02-25T15:28:27.315Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-02-25T14:16:42.099Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-02-25T15:28:27.315Z', docs}));
             window.docs = docs
             window.index = index;
         }
@@ -1039,7 +1039,7 @@
 <p>仔细想一下就会发现，这个实验结果有多怪异。光子并没有自由意志，它们各自都应该是随机的反射和透射。它们不可能在经过镜面时，约好一起走。但事实是，它们就是非要一起走。</p>
 <p>要理解这个现象，我们需要引入量子力学中的一个新概念：全同粒子。</p>
 <p>在日常生活中，是不存在两个完全相同的东西的。比如同一批次流水线上生产出来的两部手机、两面镜子、同价值的两枚硬币，只要放大镜的分辨率足够高，就总能找出一些细微差异。更进一步，即便是它们真的完全一样，包括构成的原子数量和排列方式都完全相同，你还是能将它们区分开来。比如你可以心里默默给它编号，左边的是 1 号，右边的是 2 号。因为它们不可能同时占据同一位置。</p>
-<p>但在微观世界里，两个电子却是完全相同的。不考虑自旋，所有电子的内禀属性，包括静质量和电荷都完全相同。你无法从电子身上找到任何有差异的痕迹。你甚至无法给电子编号。</p>
+<p>但在微观世界里，两个电子却是完全相同的。不考虑<a class="internal-link" target="" data-note-icon="" href="/Knowledge/Physical/量子力学之泡利不相容原理/">自旋</a>，所有电子的内禀属性，包括静质量和电荷都完全相同。你无法从电子身上找到任何有差异的痕迹。你甚至无法给电子编号。</p>
 <p>两个篮球摆在你面前，你可以将其分为 1 号和 2 号。但如果摆在你面前的是两个电子，<font color="#ff0000">你哪怕在意念之中也无法给它们编号，因为根据不确定性原理，电子没有明确的轨道，所以你根本就不可能通过位置来区分它们</font>。</p>
 <h3 id="全同粒子的叠加态解释" tabindex="-1">全同粒子的叠加态解释</h3>
 <p>物理学家们将这种完全无法区分的粒子称之为全同粒子。像电子、质子、中子这些都是全同粒子。</p>
@@ -1322,6 +1322,8 @@
                               <div class="backlinks">
                                     <div class="backlink-title" style="margin: 4px 0 !important;">Pages mentioning this page</div>
                                           <div class="backlink-list"><div class="backlink-card"><a href="/Knowledge/Physical/量子力学杂谈/" data-note-icon="" class="backlink">量子力学杂谈</a>
+                                                </div><div class="backlink-card"><a href="/Knowledge/Physical/量子力学之延迟选择实验/" data-note-icon="" class="backlink">量子力学之延迟选择实验</a>
+                                                </div><div class="backlink-card"><a href="/Knowledge/Physical/量子力学之泡利不相容原理/" data-note-icon="" class="backlink">量子力学之泡利不相容原理</a>
                                                 </div></div>
                               </div>
                         
