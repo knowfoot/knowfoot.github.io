@@ -92,11 +92,6 @@
         </url>
     
         <url>
-            <loc>/Knowledge/Physical/量子力学之延迟选择实验/</loc>
-            <lastmod>2024-02-25T11:11:32.683Z</lastmod>
-        </url>
-    
-        <url>
             <loc>/Knowledge/Physical/量子力学之泡利不相容原理/</loc>
             <lastmod>2024-02-25T11:11:32.683Z</lastmod>
         </url>
@@ -109,11 +104,6 @@
         <url>
             <loc>/Knowledge/Physical/量子力学之狄拉克方程/</loc>
             <lastmod>2024-02-25T11:11:32.684Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/Knowledge/Physical/量子力学之纠缠/</loc>
-            <lastmod>2024-02-25T11:11:32.685Z</lastmod>
         </url>
     
         <url>
@@ -164,6 +154,16 @@
         <url>
             <loc>/</loc>
             <lastmod>2024-02-25T11:21:10.936Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/Knowledge/Physical/量子力学之延迟选择实验/</loc>
+            <lastmod>2024-02-25T11:33:29.168Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/Knowledge/Physical/量子力学之纠缠/</loc>
+            <lastmod>2024-02-25T11:33:29.174Z</lastmod>
         </url>
     
 </urlset>
