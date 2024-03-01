@@ -760,7 +760,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2024-03-01T13:41:44.822Z';
+        const searchIndexDate = '2024-03-01T14:37:42.271Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -772,9 +772,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2024-03-01T13:41:44.822Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2024-03-01T14:37:42.271Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-03-01T13:41:44.822Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-03-01T14:37:42.271Z', docs}));
             window.docs = docs
             window.index = index;
         }
@@ -1024,7 +1024,7 @@
       <h3 id="如何用电子来理解原子" tabindex="-1">如何用电子来理解原子</h3>
 <p>话说回来啊，现在有很多物理学家们信奉这么一种观点，就是说咱们眼前这个花里胡哨的世界，跟搭积木差不多，只要冰棒棍（基础规则）一开始就摆好了，那么不管啥玩意儿，都能够慢慢自己玩拼图似的浮现出来。所以嘛，物理学家们最重要的任务就是找出这几个神秘的冰棒棍（基础规则）来。而这个神秘的“量子电动力学”，就是这堆冰棒棍里边的一枚。</p>
 <p>量子力学这个庞然大物咱肯定听过，像<a class="internal-link" target="" data-note-icon="" href="/Knowledge/Physical/量子力学之不确定性/">量子力学之不确定性</a>，咱都听说过，还有那个<a class="internal-link" target="" data-note-icon="" href="/Knowledge/Physical/量子力学之薛定谔方程/">薛定谔方程</a>，再加上那个<a class="internal-link" target="" data-note-icon="" href="/Knowledge/Physical/量子力学之狄拉克方程/">狄拉克方程</a>。不过说到这儿啊，你要问了，薛定谔方程和狄拉克方程都是用来描述单个粒子运动的吧？那要是现实中除了那个小小的氢原子之外，其他原子都是带着好几个小孩子到处乱跑的，那这种现象怎么计算呢？毕竟，二者不能混为一团呐！</p>
-<p>咱们都清楚，<a class="internal-link" target="" data-note-icon="" href="/Knowledge/Physical/狭义相对论杂谈/">相对论</a>和<a class="internal-link" target="" data-note-icon="" href="/Knowledge/Physical/量子力学杂谈/">量子力学</a>，这两座大厦始终瞩目着现代物理学的天空。引力这个大家伙，虽然归属广义相对论管辖；原子肿瘤内部的强相互作用和弱相互作用，则需要量子色动力学那样高难度的理论来解读。剩下来的那个戏份较多的角色——电磁相互作用，可就是量子电动力学的舞台啦！量子色动力学和电子电动力学都算是量子场论里头的一员猛将哦。所以呀，除了引力以外，那些原子核外面的事儿，全都交给量子电动力学就对了。</p>
+<p>咱们都清楚，<a class="internal-link" target="" data-note-icon="" href="/Knowledge/Physical/狭义相对论杂谈/">相对论</a>和<a class="internal-link" target="" data-note-icon="" href="/Knowledge/Physical/量子力学杂谈/">量子力学</a>，这两座大厦始终瞩目着现代物理学的天空。引力这个大家伙，虽然归属广义相对论管辖；原子内部的强相互作用和弱相互作用，则需要量子色动力学那样高难度的理论来解读。剩下来的那个戏份较多的角色——电磁相互作用，可就是量子电动力学的舞台啦！量子色动力学和电子电动力学都算是量子场论里头的一员猛将哦。所以呀，除了引力以外，那些原子核外面的事儿，全都交给量子电动力学就对了。</p>
 <p>想要了解咱们身处的这个世界到底怎么回事，得先啃明白量子电动力学这块硬骨头。而要搞定量子电动力学，还是得从了解原子这货做起。想用原子说说咱们的世界，得先弄懂原子里面那些调皮捣蛋的电子才行。先举个例子给你听哈，看看常规教材怎么评价真实的电子哦。它们把电子描绘成一个围着原子核打转的小球，既然说是小球嘛，那肯定就是有体积对吧？然而实际上啊，电子可能压根儿就没有体积嘞，甚至迄今为止，我们都没办法确认电子的大小到底有没有上限！那各位，你可以试试把这个电子想象成一个抽象的小点点，但是同时，它留下的那串脚印，却是云一般的形状，漂浮在原子核的附近。这就像是捉迷藏一般，挺好玩的。</p>
 <p>既然电子压根儿就没有体积，那问题来了，我们平时用的扫描隧道显微镜观察到的那些齐刷刷地排列的小球，究竟是啥玩意儿呢？实际上，在我们之前提到的量子隧穿这部分内容中早就说了，那不过是原子中的电子和碳针之间发生<a class="internal-link" target="" data-note-icon="" href="/Knowledge/Physical/量子力学之量子隧穿/">量子隧穿</a>的可能性罢了。所以，想要让你触碰到任何物质，包括你的女朋友，这可是不太可能滴。但要是你能缩小到原子级别，你或许就能体会到，微观世界简直是寂静空旷得令人窒息。</p>
 <p>好了，再说说那个为什么用拳头砸大门，手总会痛呢？这都是电磁相互作用搞的鬼。我们生活的地球上，任何大到足够让你看得见摸得着的东西，都是由原子组成的。每个原子都有一颗核心和包围在外头的电子。这些电子全都带着负面电荷，所以碰巧相遇的话，免不了得互相推开挤兑。我们的各种感觉，说白了全是从这些微小的力量在荡漾中糅合产生出来的。日常生活中的许多事物，例如车子被撞了、玻璃杯碎了，还有那些化学反应，其实跟原子核没什么关系。化学这个领域，从本质上来讲，就是电子以及电子之间的密谋谈话。</p>

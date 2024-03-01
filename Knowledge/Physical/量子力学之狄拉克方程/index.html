@@ -760,7 +760,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2024-03-01T13:41:44.822Z';
+        const searchIndexDate = '2024-03-01T14:37:42.271Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -772,9 +772,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2024-03-01T13:41:44.822Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2024-03-01T14:37:42.271Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-03-01T13:41:44.822Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-03-01T14:37:42.271Z', docs}));
             window.docs = docs
             window.index = index;
         }
@@ -1305,10 +1305,10 @@
                               
                               <div class="backlinks">
                                     <div class="backlink-title" style="margin: 4px 0 !important;">Pages mentioning this page</div>
-                                          <div class="backlink-list"><div class="backlink-card"><a href="/Knowledge/Physical/量子力学之泡利不相容原理/" data-note-icon="" class="backlink">量子力学之泡利不相容原理</a>
-                                                </div><div class="backlink-card"><a href="/Knowledge/Physical/量子力学之物质波/" data-note-icon="" class="backlink">量子力学之物质波</a>
+                                          <div class="backlink-list"><div class="backlink-card"><a href="/Knowledge/Physical/量子力学之物质波/" data-note-icon="" class="backlink">量子力学之物质波</a>
                                                 </div><div class="backlink-card"><a href="/Knowledge/Physical/量子力学之薛定谔方程/" data-note-icon="" class="backlink">量子力学之薛定谔方程</a>
                                                 </div><div class="backlink-card"><a href="/Knowledge/Physical/量子力学杂谈/" data-note-icon="" class="backlink">量子力学杂谈</a>
+                                                </div><div class="backlink-card"><a href="/Knowledge/Physical/量子力学之泡利不相容原理/" data-note-icon="" class="backlink">量子力学之泡利不相容原理</a>
                                                 </div></div>
                               </div>
                         

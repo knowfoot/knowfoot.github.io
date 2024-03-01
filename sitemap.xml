@@ -47,11 +47,6 @@
         </url>
     
         <url>
-            <loc>/Knowledge/Physical/量子力学之泡利不相容原理/</loc>
-            <lastmod>2024-03-01T08:05:16.425Z</lastmod>
-        </url>
-    
-        <url>
             <loc>/Knowledge/Physical/量子力学之物质波/</loc>
             <lastmod>2024-03-01T08:05:16.426Z</lastmod>
         </url>
@@ -164,6 +159,11 @@
         <url>
             <loc>/Knowledge/Physical/量子力学杂谈/</loc>
             <lastmod>2024-03-01T13:41:40.349Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/Knowledge/Physical/量子力学之泡利不相容原理/</loc>
+            <lastmod>2024-03-01T14:37:37.986Z</lastmod>
         </url>
     
 </urlset>
