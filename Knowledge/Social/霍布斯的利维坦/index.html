@@ -760,7 +760,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2024-03-01T06:43:09.709Z';
+        const searchIndexDate = '2024-03-01T08:05:21.181Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -772,9 +772,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2024-03-01T06:43:09.709Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2024-03-01T08:05:21.181Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-03-01T06:43:09.709Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-03-01T08:05:21.181Z', docs}));
             window.docs = docs
             window.index = index;
         }
@@ -1078,7 +1078,7 @@
 <li>人民必须服从政府的权威，政府的权力来自于人民的授权。</li>
 <li>政府的目的是保护人民免受自然状态的混乱和暴力的影响，尽管政府的权力是绝对的，但其权力应当为人民的利益服务。</li>
 </ul>
-<p>然而，在现代社会中，利维坦的观念也存在一些问题。例如，过度集中的权力可能导致滥用和不公平。解决这些问题的关键在于建立有效的制衡机制和监督体系，以确保政府的权力受到限制和监督，同时保障人民的基本权利和自由。另外，也需要加强民主参与和公民权利保障，以确保政府真正代表人民的利益，而不是仅仅追求自身的利益和权力。</p>
+<p>然而，在现代社会中，利维坦的观念也存在一些问题。<font color="#ff0000">例如，过度集中的权力可能导致滥用和不公平。解决这些问题的关键在于建立有效的制衡机制和监督体系，以确保政府的权力受到限制和监督，同时保障人民的基本权利和自由</font>。另外，<font color="#ff0000">也需要加强民主参与和公民权利保障，以确保政府真正代表人民的利益，而不是仅仅追求自身的利益和权力</font>。</p>
 
       
       

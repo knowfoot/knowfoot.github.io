@@ -760,7 +760,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2024-03-01T06:43:09.709Z';
+        const searchIndexDate = '2024-03-01T08:05:21.181Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -772,9 +772,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2024-03-01T06:43:09.709Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2024-03-01T08:05:21.181Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-03-01T06:43:09.709Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-03-01T08:05:21.181Z', docs}));
             window.docs = docs
             window.index = index;
         }
@@ -1021,7 +1021,19 @@
       </header>
       
       
-      <p>在这个提倡人人都是极客的时代，肯定有人疑惑：咱们这些普通人怎么着也去琢磨琢磨相对论、量子力学和宇宙这类高大上的玩意儿？别笑，这些东西确实有点吃饭喝水穿衣这类“小事”过家家的意思，难道还能让人填饱肚皮不成嘛！那么，对于这些持不同看法的朋友们，在下倒有自己一套道理——学点儿这些玩艺儿，不只是能让你看起来更聪明些，更多是能引发你那股子好奇宝宝的劲头，让咱的生活变得有趣又多姿多彩呢！</p>
+      <p><picture src="/img/user/Attachment/quantum.jpg" alt="quantum.jpg"><source       media="(max-width:480px)"
+      srcset="/img/optimized/V4NTpdldTv-450.webp"
+      type="image/webp"
+      >
+      <source       media="(max-width:480px)"
+      srcset="/img/optimized/V4NTpdldTv-450.jpeg"
+      >
+      <img       class=""
+      src="/img/user/Attachment/quantum.jpg"
+      alt="quantum.jpg"
+      width=""
+      ></picture><br>
+在这个提倡人人都是极客的时代，肯定有人疑惑：咱们这些普通人怎么着也去琢磨琢磨相对论、量子力学和宇宙这类高大上的玩意儿？别笑，这些东西确实有点吃饭喝水穿衣这类“小事”过家家的意思，难道还能让人填饱肚皮不成嘛！那么，对于这些持不同看法的朋友们，在下倒有自己一套道理——学点儿这些玩艺儿，不只是能让你看起来更聪明些，更多是能引发你那股子好奇宝宝的劲头，让咱的生活变得有趣又多姿多彩呢！</p>
 <p>对于那些觉得这类事不关己高高挂起的大侠们，我又有些话要说了。你们可知道，知识这东西，本身就是价值连城的好货！我们活在一个满是未知数和解不开的诺曼底之谜中，怎能把眼一闭，耳一捂，对生活中的各种奥妙统统束之高阁呢？即便咱可能半懂不懂这些高度深奥的理论，但至少也要从中分得几块小小的乐趣和灵感。</p>
 <p>就如同那个太空专家霍金说的那样，无论咱生活中有多少挫折，咱都要记得抬头仰望天空的那片繁星点点。仰望星空，不仅让我们感受到了宇宙的无边无际和不可思议的奥秘，更让我们意识到在这个浩瀚无垠的宇宙面前，咱们究竟是多么的微不足道却又如此神圣卓越。我们应当珍视那份向往知识的心以及对世界的好奇之心，让自己的生活丰富精彩，活得多姿多彩。</p>
 <p>在这个繁杂喧闹的世界里，我们要始终怀揣着那份探究知识的渴望，不断地探寻未知的世界，保持一颗清澄明澈的心态。尽管相对论、量子力学和宇宙这些玩意儿未必就能直接影响咱们普罗大众的日常生活，但是其中带给咱们的启示和激励却是无可估量的啊。所以啊，就让我们共同珍爱这美好的奔赴，让我们的生活因为知识变得更加丰富多彩吧！这也是一种超越了功利主义的精神追求，正是推动人类文明进程的洪荒之力哟！</p>
