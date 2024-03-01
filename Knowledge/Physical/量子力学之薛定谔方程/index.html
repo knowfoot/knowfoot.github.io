@@ -760,7 +760,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2024-02-25T15:41:58.965Z';
+        const searchIndexDate = '2024-03-01T06:43:09.709Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -772,9 +772,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2024-02-25T15:41:58.965Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2024-03-01T06:43:09.709Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-02-25T15:41:58.965Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-03-01T06:43:09.709Z', docs}));
             window.docs = docs
             window.index = index;
         }
@@ -1315,14 +1315,14 @@
                               
                               <div class="backlinks">
                                     <div class="backlink-title" style="margin: 4px 0 !important;">Pages mentioning this page</div>
-                                          <div class="backlink-list"><div class="backlink-card"><a href="/Knowledge/Physical/量子力学杂谈/" data-note-icon="" class="backlink">量子力学杂谈</a>
-                                                </div><div class="backlink-card"><a href="/Knowledge/Physical/量子力学之不确定性/" data-note-icon="" class="backlink">量子力学之不确定性</a>
+                                          <div class="backlink-list"><div class="backlink-card"><a href="/Knowledge/Physical/量子力学之不确定性/" data-note-icon="" class="backlink">量子力学之不确定性</a>
                                                 </div><div class="backlink-card"><a href="/Knowledge/Physical/量子力学之泡利不相容原理/" data-note-icon="" class="backlink">量子力学之泡利不相容原理</a>
                                                 </div><div class="backlink-card"><a href="/Knowledge/Physical/量子力学之物质波/" data-note-icon="" class="backlink">量子力学之物质波</a>
                                                 </div><div class="backlink-card"><a href="/Knowledge/Physical/量子力学之狄拉克方程/" data-note-icon="" class="backlink">量子力学之狄拉克方程</a>
                                                 </div><div class="backlink-card"><a href="/Knowledge/Physical/量子力学之退相干/" data-note-icon="" class="backlink">量子力学之退相干</a>
                                                 </div><div class="backlink-card"><a href="/Knowledge/Physical/量子力学之量子隧穿/" data-note-icon="" class="backlink">量子力学之量子隧穿</a>
                                                 </div><div class="backlink-card"><a href="/Knowledge/Physical/爱因斯坦和波尔之间一场著名的论战/" data-note-icon="" class="backlink">爱因斯坦和波尔之间一场著名的论战</a>
+                                                </div><div class="backlink-card"><a href="/Knowledge/Physical/量子力学杂谈/" data-note-icon="" class="backlink">量子力学杂谈</a>
                                                 </div></div>
                               </div>
                         
