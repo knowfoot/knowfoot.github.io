@@ -760,7 +760,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2024-03-01T08:54:08.616Z';
+        const searchIndexDate = '2024-03-01T13:41:44.822Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -772,9 +772,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2024-03-01T08:54:08.616Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2024-03-01T13:41:44.822Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-03-01T08:54:08.616Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-03-01T13:41:44.822Z', docs}));
             window.docs = docs
             window.index = index;
         }
@@ -1070,7 +1070,7 @@
 <p>说到大统一的那一刻，咱得感慨啊，得十亿倍于地球上所有加速器的能量才能到达，眼下最牛逼的加速器也不过只有大约<mjx-container class="MathJax" jax="SVG" style="direction: ltr; position: relative;"><svg style="overflow: visible; min-height: 1px; min-width: 1px; vertical-align: -0.05ex;" xmlns="http://www.w3.org/2000/svg" width="7.727ex" height="2.022ex" role="img" focusable="false" viewBox="0 -871.8 3415.6 893.8" aria-hidden="true"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msup"><g data-mml-node="mn"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z" style="stroke-width: 3;"></path><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z" transform="translate(500,0)" style="stroke-width: 3;"></path></g><g data-mml-node="mn" transform="translate(1033,393.1) scale(0.707)"><path data-c="34" d="M462 0Q444 3 333 3Q217 3 199 0H190V46H221Q241 46 248 46T265 48T279 53T286 61Q287 63 287 115V165H28V211L179 442Q332 674 334 675Q336 677 355 677H373L379 671V211H471V165H379V114Q379 73 379 66T385 54Q393 47 442 46H471V0H462ZM293 211V545L74 212L183 211H293Z" style="stroke-width: 3;"></path></g></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(1436.6,0)"><g data-mml-node="mi"><path data-c="47" d="M56 342Q56 428 89 500T174 615T283 681T391 705Q394 705 400 705T408 704Q499 704 569 636L582 624L612 663Q639 700 643 704Q644 704 647 704T653 705H657Q660 705 666 699V419L660 413H626Q620 419 619 430Q610 512 571 572T476 651Q457 658 426 658Q401 658 376 654T316 633T254 592T205 519T177 411Q173 369 173 335Q173 259 192 201T238 111T302 58T370 31T431 24Q478 24 513 45T559 100Q562 110 562 160V212Q561 213 557 216T551 220T542 223T526 225T502 226T463 227H437V273H449L609 270Q715 270 727 273H735V227H721Q674 227 668 215Q666 211 666 108V6Q660 0 657 0Q653 0 639 10Q617 25 600 42L587 54Q571 27 524 3T406 -22Q317 -22 238 22T108 151T56 342Z" style="stroke-width: 3;"></path><path data-c="65" d="M28 218Q28 273 48 318T98 391T163 433T229 448Q282 448 320 430T378 380T406 316T415 245Q415 238 408 231H126V216Q126 68 226 36Q246 30 270 30Q312 30 342 62Q359 79 369 104L379 128Q382 131 395 131H398Q415 131 415 121Q415 117 412 108Q393 53 349 21T250 -11Q155 -11 92 58T28 218ZM333 275Q322 403 238 411H236Q228 411 220 410T195 402T166 381T143 340T127 274V267H333V275Z" transform="translate(785,0)" style="stroke-width: 3;"></path><path data-c="56" d="M114 620Q113 621 110 624T107 627T103 630T98 632T91 634T80 635T67 636T48 637H19V683H28Q46 680 152 680Q273 680 294 683H305V637H284Q223 634 223 620Q223 618 313 372T404 126L490 358Q575 588 575 597Q575 616 554 626T508 637H503V683H512Q527 680 627 680Q718 680 724 683H730V637H723Q648 637 627 596Q627 595 515 291T401 -14Q396 -22 382 -22H374H367Q353 -22 348 -14Q346 -12 231 303Q114 617 114 620Z" transform="translate(1229,0)" style="stroke-width: 3;"></path></g></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline" style="top: 0px; left: 0px; clip: rect(1px, 1px, 1px, 1px); -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; position: absolute; padding: 1px 0px 0px 0px; border: 0px; display: block; width: auto; overflow: hidden;"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mn>10</mn><mn>4</mn></msup><mrow data-mjx-texclass="ORD"><mi data-mjx-auto-op="false">GeV</mi></mrow></math></mjx-assistive-mml></mjx-container>的级别而已。</p>
 <h4 id="时间可能就是状态概率演化的方向导致" tabindex="-1">时间可能就是状态概率演化的方向导致</h4>
 <p>时光荏苒，从牛顿的高大上的绝对时空观走到相对论，把纷繁复杂的时空统一起来描述，我们对时间那高深莫测的好奇心也愈加浓烈了呢。许多人都觉得，那个暗藏玄机的热力学第二定律，说不定就是时间的那啥——“时矢”，是时间方向的一种<font color="#ff0000">神秘投影</font>。大家都觉得这个规则太耐人寻味儿，简直就是宇宙中的不可反驳的物理定理。这货从提出那天起就一直在折腾，经过漫长岁月的洗礼，物理学终于通过统计学在微观领域为其添砖加瓦进行了解说。</p>
-<p>热力学第二定律这东西啊，它的那个熵的大小，可以看看跟你对应的<font color="#ff0000">那些微观小调皮们的数量</font>有多少。也就是说，熵增加，就是你那小小的微观状态小巧可爱的宏观态，越过了微观状态多如牛毛的宏观态，也就是说，你从那概率小得可怜的状态，<font color="#ff0000">勇敢地走向了那些概率高到飞起的道路</font>。解释熵增说什么能量流向稀疏，用扩散来说明有序和无序的矛盾，似乎更加深入人心哦。<font color="#ff0000">从微观的角度来看，这个熵增其实就是一种机会大把抓，不可错过的说法</font>。那说到温度与熵呀，它们不过是在我们没有掌握足够信息的情况下，对于这个世界的一种简单粗暴的统计描绘罢了。熵增大可能是宏观秩序崩盘的铁证，对单个粒子来说嘛，那可是没半点儿意思的。当你深入到那个碧海蓝天的量子层面，研究物质和时空那更深层次的奥秘时，时间的概念可能就开始迷失了方向，比如说那个被咱膜拜的圈量子引力理论，你都找不到时间参数在哪儿。</p>
+<p>热力学第二定律这东西啊，它的那个熵的大小，可以看看跟你对应的<font color="#ff0000">那些微观小调皮们的数量</font>有多少。也就是说，熵增加，就是你那小小的微观状态小巧可爱的宏观态，越过了微观状态多如牛毛的宏观态，也就是说，你从那概率小得可怜的状态，<font color="#ff0000">勇敢地走向了那些概率高到飞起的道路</font>。解释熵增说什么能量流向稀疏，用扩散来说明有序和无序的矛盾，似乎更加深入人心哦。<font color="#ff0000">从微观的角度来看，这个熵增其实就是一种机会大把抓，不可错过的说法</font>。那说到温度与熵呀，它们不过是在我们没有掌握足够信息的情况下，对于这个世界的一种简单粗暴的统计描绘罢了。熵增大可能是宏观秩序崩盘的铁证，对单个粒子来说嘛，那可是没半点儿意思的。当你深入到那个碧海蓝天的量子层面，研究物质和时空那更深层次的奥秘时，时间的概念可能就开始迷失了方向，比如说那个有可能一统理论的圈量子引力理论，你都找不到时间参数在哪儿。</p>
 <p><font color="#ff0000">那么问题来了，时间会不会是那个让我们从概率演化状态序列中认知出来的方向呢</font>？让我们来想想，为什么我们大脑中的时间概念竟然与统计概率如此吻合？比如说，你看了一张鸡蛋的照片，再看一幅鸡蛋碎裂的图片，按照咱们大脑里固有的时间观念，我们就可以斩钉截铁地告诉全世界，碎掉的鸡蛋肯定位于完整鸡蛋的未来，而非从前。</p>
 <p>爱因斯斯坦晚年他曾写道:空间－时间未必能看作是可以脱离物质世界的真实客体而独立存在的东西。并不是物体存在于空间中，而是这些物体具有空间广延性。这样看来，‘关于一无所有的空间’的概念就失去了意义。<font color="#ff0000">按照这一思路，当物质不存在的时候，时空也不应存在。但是狭义相对论与广义相对论并未能作到这一点。在相对论中，物质不存在的时候，时空并未消失，而只是变得平坦</font>。</p>
 <h1 id="量子力学基本知识" tabindex="-1">量子力学基本知识</h1>
@@ -1085,6 +1085,8 @@
 <a class="internal-link" target="" data-note-icon="" href="/Knowledge/Physical/量子力学之纠缠/">量子力学之纠缠</a><br>
 <a class="internal-link" target="" data-note-icon="" href="/Knowledge/Physical/量子力学之退相干/">量子力学之退相干</a><br>
 <a class="internal-link" target="" data-note-icon="" href="/Knowledge/Physical/量子力学之延迟选择实验/">量子力学之延迟选择实验</a></p>
+<h3 id="留言板" tabindex="-1">留言板</h3>
+<iframe src="https://knowfoot.net/static/tools/messages.html" width="800" height="400" > </iframe>  
 <h1 id="附录：" tabindex="-1">附录：</h1>
 <p><a class="internal-link" target="" data-note-icon="" href="/Knowledge/Physical/爱因斯坦和波尔之间一场著名的论战/">爱因斯坦和波尔之间一场著名的论战</a></p>
 
@@ -1358,6 +1360,12 @@
             		</li>
 
                     <li><a href="#量子力学基本知识">量子力学基本知识</a>
+            
+                <ol>
+                    
+                    <li><a href="#留言板">留言板</a>
+            		</li>
+                </ol>
             		</li>
 
                     <li><a href="#附录：">附录：</a>
