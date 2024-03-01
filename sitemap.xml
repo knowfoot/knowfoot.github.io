@@ -47,11 +47,6 @@
         </url>
     
         <url>
-            <loc>/Knowledge/Physical/量子力学之纠缠/</loc>
-            <lastmod>2024-03-01T08:05:16.427Z</lastmod>
-        </url>
-    
-        <url>
             <loc>/Knowledge/Physical/量子力学之薛定谔方程/</loc>
             <lastmod>2024-03-01T08:05:16.428Z</lastmod>
         </url>
@@ -164,6 +159,11 @@
         <url>
             <loc>/Knowledge/Physical/量子力学之全同粒子/</loc>
             <lastmod>2024-03-01T15:17:36.119Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/Knowledge/Physical/量子力学之纠缠/</loc>
+            <lastmod>2024-03-01T15:37:37.039Z</lastmod>
         </url>
     
 </urlset>
