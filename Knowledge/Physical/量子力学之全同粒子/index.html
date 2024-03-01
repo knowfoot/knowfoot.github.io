@@ -760,7 +760,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2024-03-01T15:13:06.546Z';
+        const searchIndexDate = '2024-03-01T15:17:40.184Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -772,9 +772,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2024-03-01T15:13:06.546Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2024-03-01T15:17:40.184Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-03-01T15:13:06.546Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-03-01T15:17:40.184Z', docs}));
             window.docs = docs
             window.index = index;
         }
@@ -1045,7 +1045,7 @@
 <p>那些坚实靠谱的物理学家们啊，把这种实在让人摸不着头脑的东西叫做“全同粒子”。那啥，你看咱日常生活中的电子、质子、中子这些玩意儿可都是全同粒子哦！</p>
 <p>全同粒子可不止是外表和物理性质一毛一样那么简单，事实上，从根基、从数学角度来说，你简直找不到任何能将它们区分开来的特征。所以说，在统计物理学这个大舞台上，处理全同粒子的方法可跟咱们平时应对宏观物体的手段就有如天壤之别啦。</p>
 <p>说到这儿，我们再来回顾一下之前提到过的洪欧—曼德尔效应。就拿那些看似毫无二致的两个入射光子来说吧，情况2和情况3究竟哪个才是哪个，咱们却永远也无法搞清楚。尽管如此，为啥这两种情况会集体失踪呢？</p>
-<p>这事儿得怪分束器，这货一个显著的特点就是，来自镀银的那头反射回来的光子，其偏振方向会发生足足180度的变化。这预示着其复数得掉个个儿，而其他情况却丝毫不动。因此，若要用总的复数列式，就是这么回事儿：</p>
+<p>这事儿得怪分束器，这货一个显著的特点就是，来自镀银的那头反射回来的光子，其偏振方向会发生足足180度的变化。这预示着它的态函数得掉个个儿，而其他情况却丝毫不动。因此，若要用总的态函数表述，就是这么回事儿：</p>
 <p>ψ=情况 1+情况2-情况3-情况4</p>
 <p>然而情况2和情况3又无法轻易辨认出谁是谁，所以这俩兄弟就互相搂抱、烟消云散咯。</p>
 <p>切记，这跟咱们平时认为的光的相消干涉大相径庭。光的相消干涉通常可是要等两束光线神奇地交织在一起才会出现的；<font color="#ff0000">但是这回嘛，两个光子在各自飞奔而行的道路中所引发的、两个量子态事件的概率居然在无形之中相互抵消了</font>。洪欧曼德尔效应再一次严肃宣告：量子叠加态才是比波函数更加深厚奥妙的体现哦！</p>
