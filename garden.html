@@ -343,6 +343,17 @@
         
     
                     
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Science/科学运动与健康饮食：塑造更健康的生活/">科学运动与健康饮食：塑造更健康的生活 </a>
+                </div>
+            
+        </div>
+        
+    
+                    
                 </div>
             
         </div>
@@ -758,7 +769,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2024-03-01T16:25:56.703Z';
+        const searchIndexDate = '2024-03-12T10:22:50.166Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -770,9 +781,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2024-03-01T16:25:56.703Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2024-03-12T10:22:50.166Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-03-01T16:25:56.703Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-03-12T10:22:50.166Z', docs}));
             window.docs = docs
             window.index = index;
         }
