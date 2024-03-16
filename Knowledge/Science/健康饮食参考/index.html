@@ -815,7 +815,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2024-03-13T07:37:40.006Z';
+        const searchIndexDate = '2024-03-16T11:45:58.069Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -827,9 +827,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2024-03-13T07:37:40.006Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2024-03-16T11:45:58.069Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-03-13T07:37:40.006Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-03-16T11:45:58.069Z', docs}));
             window.docs = docs
             window.index = index;
         }
@@ -1629,6 +1629,7 @@
 <li><strong>加工肉类和红肉</strong>：过多摄入可能与某些癌症风险增加有关，加工肉类含有添加剂和防腐剂，可能对健康不利。</li>
 </ul>
 <p>为了维持健康的饮食，建议以上述健康食品为主，限制不健康食品的摄入，并保持均衡的饮食模式。同时，注意食品的烹饪方式，尽量选择蒸、煮等健康的烹饪方法，避免烤，油炸或过多的油脂使用。</p>
+<p>控制牛肉、猪肉和羊肉等肉类的摄入量，也要避免加工过的肉类食物，如：熏肉，冷切肉，热狗等食物，因为随着时间的推移，规律性的吃这些食物即使是少量的，也会增加心脏病，糖尿病和结肠癌等患病的风险。</p>
 
       
       
