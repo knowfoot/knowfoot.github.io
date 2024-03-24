@@ -381,7 +381,7 @@
     
         <div x-show="isOpen" style="display:none" class="filelist">
             
-                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Science/科学运动与健康饮食：塑造更健康的生活/">科学运动与健康饮食：塑造更健康的生活 </a>
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Science/宇宙与基因对生命起源的猜想/">宇宙与基因对生命起源的猜想 </a>
                 </div>
             
         </div>
@@ -815,7 +815,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2024-03-16T14:01:39.358Z';
+        const searchIndexDate = '2024-03-24T03:37:17.460Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -827,9 +827,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2024-03-16T14:01:39.358Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2024-03-24T03:37:17.460Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-03-16T14:01:39.358Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-03-24T03:37:17.460Z', docs}));
             window.docs = docs
             window.index = index;
         }
