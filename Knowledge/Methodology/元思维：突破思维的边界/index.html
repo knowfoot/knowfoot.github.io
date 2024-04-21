@@ -879,7 +879,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2024-04-21T11:59:12.590Z';
+        const searchIndexDate = '2024-04-21T11:59:50.193Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -891,9 +891,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2024-04-21T11:59:12.590Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2024-04-21T11:59:50.193Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-04-21T11:59:12.590Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-04-21T11:59:50.193Z', docs}));
             window.docs = docs
             window.index = index;
         }
@@ -1140,7 +1140,8 @@
       </header>
       
       
-      <p>通过元思维，我们可以审视自己的思维方式，意识到其中的局限性，并探索更广阔、更深刻的思考领域。<font color="#ff0000">元思维可以帮助我们发现新的思维模式、解决复杂问题，并创造出创新的解决方案，从而做出更明智的决策和行动</font>。</p>
+      <p>在我们日常生活和工作中，我们经常会被约束在一种特定的思维模式中，导致我们无法看到问题的本质或发现更好的解决方案。元思维（Meta-thinking）指对自己的思维进行思考的过程，它包括反思自己的思维过程，分析自己的心智模式，意识到自己的偏见、假设和思维模式。它就是审视自己的思维，质疑自己的假设，并认识到自己知识和观点的局限性。<font color="#ff0000">它是一种超越传统思维范式的思考方式，它能让我们跳出思维的局限，以更高层的视角审视和解决问题，它关注的不是问题本身，而是对解决问题的思考过程的反思和抽象</font>。</p>
+<p>通过元思维，我们可以审视自己的思维方式，意识到其中的局限性，并探索更广阔、更深刻的思考领域。<font color="#ff0000">元思维可以帮助我们发现新的思维模式、解决复杂问题，并创造出创新的解决方案，从而做出更明智的决策和行动</font>。</p>
 <h3 id="缺乏元思维的危害" tabindex="-1">缺乏元思维的危害</h3>
 <p>然而，缺乏元思维在工作和生活中可能导致许多严重的弊端和害处，<font color="#ff0000">包括决策偏见、创新受阻、问题解决能力下降等</font>。下面我将详细描述这些危害。</p>
 <p>缺乏元思维可能导致决策过程中的偏见，也往往缺少批判性思维能力，使得决策者仅仅局限于已有的惯性思维模式，而忽视了其他可能性。<font color="#ff0000">这种偏见可能源于损失厌恶、过度自信、群体思维或先入为主的观念</font>。</p>
