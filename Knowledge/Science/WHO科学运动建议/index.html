@@ -62,7 +62,7 @@
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <link href="/styles/digital-garden-base.css" rel="stylesheet">
     <link href="/styles/obsidian-base.css" rel="stylesheet">
-    <link href="/styles/_theme.007274e5.css" rel="stylesheet">
+    <link href="/styles/_theme.803b8327.css" rel="stylesheet">
 
 
 <link href="/styles/custom-style.css" rel="stylesheet">
@@ -184,6 +184,38 @@
                     
                         
     
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div class="folder inner-folder"  x-data="{isOpen: $persist(false).as('Knowledge/Methodology')}" @click.stop="isOpen=!isOpen">
+                    <div class="foldername-wrapper align-icon">
+                    <i x-show="isOpen" style="display: none;"  icon-name="chevron-down"></i>
+                    <i x-show="!isOpen"  icon-name="chevron-right"></i>
+                    <span class="foldername">Methodology</span>
+                    </div>
+                    
+                        
+    
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Methodology/元思维：突破思维的边界/">元思维：突破思维的边界 </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                </div>
+            
+        </div>
+        
     
                     
                         
@@ -847,7 +879,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2024-04-06T02:13:13.673Z';
+        const searchIndexDate = '2024-04-21T10:10:03.542Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -859,9 +891,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2024-04-06T02:13:13.673Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2024-04-21T10:10:03.542Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-04-06T02:13:13.673Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-04-21T10:10:03.542Z', docs}));
             window.docs = docs
             window.index = index;
         }
@@ -1108,7 +1140,24 @@
       </header>
       
       
-      <p>在快节奏的现代生活中，保持健康的身体和心理状态变得越来越重要。缺乏锻炼可能会导致一系列健康问题，包括但不限于：长时间久坐缺乏锻炼会导致肌肉萎缩和关节僵硬，骨质疏松，<font color="#ff0000">增加受伤和骨折的风险</font>。根据美国骨质疏松基金会的数据，每年因骨折导致的医疗费用约为200亿美元。长期不锻炼可能削弱免疫系统功能，增加感染疾病的风险。<font color="#ff0000">一项发表在《流行病学与感染》杂志上的研究发现，每周锻炼三次以上的人感染呼吸道疾病的风险降低了约30%</font>。缺乏运动会影响睡眠质量，增加失眠和其他睡眠障碍的风险。根据美国国家睡眠基金会的数据，<font color="#ff0000">每周锻炼150分钟的人比不锻炼的人更容易获得良好的睡眠</font>。久坐缺乏锻炼会减慢新陈代谢，增加患肥胖、糖尿病等慢性病的风险。研究发现，每天长时间久坐与患2型糖尿病的风险成正相关。久坐不动与心血管疾病的发病率增加密切相关。据美国心脏病学会的数据，<font color="#ff0000">每天久坐时间每增加一小时，患心血管疾病的风险就增加11%</font>。</p>
+      <p><picture src="/img/user/Attachment/Pasted%20image%2020240324173234.png" alt="Pasted image 20240324173234.png"><source       media="(max-width:480px)"
+      srcset="/img/optimized/PxCgMiQ49T-500.webp"
+      type="image/webp"
+      >
+      <source       media="(max-width:480px)"
+      srcset="/img/optimized/PxCgMiQ49T-500.jpeg"
+      >
+      <source         media="(max-width:1920px)"
+        srcset="/img/optimized/PxCgMiQ49T-656.webp"
+        type="image/webp"
+        ><source         media="(max-width:1920px)"
+        srcset="/img/optimized/PxCgMiQ49T-656.jpeg"
+        ><img       class=""
+      src="/img/user/Attachment/Pasted%20image%2020240324173234.png"
+      alt="Pasted image 20240324173234.png"
+      width=""
+      ></picture><br>
+在快节奏的现代生活中，保持健康的身体和心理状态变得越来越重要。缺乏锻炼可能会导致一系列健康问题，包括但不限于：长时间久坐缺乏锻炼会导致肌肉萎缩和关节僵硬，骨质疏松，<font color="#ff0000">增加受伤和骨折的风险</font>。根据美国骨质疏松基金会的数据，每年因骨折导致的医疗费用约为200亿美元。长期不锻炼可能削弱免疫系统功能，增加感染疾病的风险。<font color="#ff0000">一项发表在《流行病学与感染》杂志上的研究发现，每周锻炼三次以上的人感染呼吸道疾病的风险降低了约30%</font>。缺乏运动会影响睡眠质量，增加失眠和其他睡眠障碍的风险。根据美国国家睡眠基金会的数据，<font color="#ff0000">每周锻炼150分钟的人比不锻炼的人更容易获得良好的睡眠</font>。久坐缺乏锻炼会减慢新陈代谢，增加患肥胖、糖尿病等慢性病的风险。研究发现，每天长时间久坐与患2型糖尿病的风险成正相关。久坐不动与心血管疾病的发病率增加密切相关。据美国心脏病学会的数据，<font color="#ff0000">每天久坐时间每增加一小时，患心血管疾病的风险就增加11%</font>。</p>
 <p>缺乏运动还容易导致情绪不稳定和情绪低落。一项发表在《健康心理学》期刊上的研究发现，每周进行适度运动的人更倾向于情绪稳定和情绪积极。<font color="#ff0000">长期不锻炼可能降低个体的自我价值感和自尊心</font>。根据美国心理学会的数据，适度运动与增强自尊心和自我价值感之间存在明显的正相关。缺乏锻炼可能影响大脑认知功能，<font color="#ff0000">增加记忆力和思维能力下降的风险</font>。一项发表在《神经学》期刊上的研究发现，定期进行有氧运动可以改善认知功能，并减缓认知能力下降的速度。适度的有氧运动有助于降低血压、改善血液循环，减少心脏病和中风的风险。根据美国心脏协会的数据，<font color="#ff0000">每周进行150分钟的中等强度有氧运动可以降低心血管疾病的发病率高达20%-30%</font>。科学运动有助于消耗多余的卡路里，维持健康的体重。研究表明，每周进行至少150分钟的中等强度有氧运动结合力量训练，<font color="#ff0000">可以有效控制体重</font>。锻炼可以释放内啡肽等神经递质，提升心情，减轻焦虑和抑郁。<font color="#ff0000">根据世界卫生组织的数据，每周进行适度的运动可以降低抑郁风险约30%</font>。</p>
 <p>世界卫生组织（WHO）发布的《关于身体活动和久坐行为的指南》为我们提供了科学的运动建议和健康益处的详细信息，结合健康饮食，我们可以构建一个全面的健康生活方式。</p>
 <h3 id="who" tabindex="-1">WHO运动建议</h3>

@@ -62,7 +62,7 @@
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <link href="/styles/digital-garden-base.css" rel="stylesheet">
     <link href="/styles/obsidian-base.css" rel="stylesheet">
-    <link href="/styles/_theme.007274e5.css" rel="stylesheet">
+    <link href="/styles/_theme.803b8327.css" rel="stylesheet">
 
 
 <link href="/styles/custom-style.css" rel="stylesheet">
@@ -184,6 +184,38 @@
                     
                         
     
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div class="folder inner-folder"  x-data="{isOpen: $persist(false).as('Knowledge/Methodology')}" @click.stop="isOpen=!isOpen">
+                    <div class="foldername-wrapper align-icon">
+                    <i x-show="isOpen" style="display: none;"  icon-name="chevron-down"></i>
+                    <i x-show="!isOpen"  icon-name="chevron-right"></i>
+                    <span class="foldername">Methodology</span>
+                    </div>
+                    
+                        
+    
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Methodology/元思维：突破思维的边界/">元思维：突破思维的边界 </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                </div>
+            
+        </div>
+        
     
                     
                         
@@ -847,7 +879,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2024-04-06T02:13:13.673Z';
+        const searchIndexDate = '2024-04-21T10:10:03.542Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -859,9 +891,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2024-04-06T02:13:13.673Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2024-04-21T10:10:03.542Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-04-06T02:13:13.673Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-04-21T10:10:03.542Z', docs}));
             window.docs = docs
             window.index = index;
         }
@@ -1110,7 +1142,8 @@
       
       <p>汉娜·阿伦特是 20 世纪最重要的政治思想家之一，她对极权主义、自由主义、民主等政治现象进行了深刻的分析和批判。在她的著作中，阿伦特提出了“平民之罪”、“公民不服从”、“参与公共名誉”、“反人类罪”、“贫穷之恶”等重要概念，这些概念对理解现代政治具有重要意义。</p>
 <h3 id="平民之罪" tabindex="-1">平民之罪</h3>
-<p>阿伦特认为，在极权主义社会中，普通民众并非是无辜的旁观者，他们也对极权主义的罪行负有责任。她将这种责任称为“平民之罪”。</p>
+<p>阿伦特认为，在极权主义社会中，普通</p>
+<p>民众并非是无辜的旁观者，他们也对极权主义的罪行负有责任。她将这种责任称为“平民之罪”。</p>
 <p>平民之罪并不是指普通民众直接参与了极权主义的罪行，而是指他们对极权主义的罪行保持沉默，袖手旁观，甚至在内心深处认同极权主义的意识形态。</p>
 <p>阿伦特认为，<strong>平民之罪是极权主义得以存在和壮大的重要原因</strong>。当普通民众对极权主义的罪行保持沉默时，他们就是在纵容和默许这些罪行。当他们袖手旁观时，他们就是在为极权主义提供支持。当他们在内心深处认同极权主义的意识形态时，他们就是在为极权主义提供思想基础。</p>
 <h3 id="公民不服从" tabindex="-1">公民不服从</h3>

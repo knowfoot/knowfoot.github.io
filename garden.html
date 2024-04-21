@@ -62,7 +62,7 @@
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <link href="/styles/digital-garden-base.css" rel="stylesheet">
     <link href="/styles/obsidian-base.css" rel="stylesheet">
-    <link href="/styles/_theme.007274e5.css" rel="stylesheet">
+    <link href="/styles/_theme.803b8327.css" rel="stylesheet">
 
 
 <link href="/styles/custom-style.css" rel="stylesheet">
@@ -183,6 +183,38 @@
                     
                         
     
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div class="folder inner-folder"  x-data="{isOpen: $persist(false).as('Knowledge/Methodology')}" @click.stop="isOpen=!isOpen">
+                    <div class="foldername-wrapper align-icon">
+                    <i x-show="isOpen" style="display: none;"  icon-name="chevron-down"></i>
+                    <i x-show="!isOpen"  icon-name="chevron-right"></i>
+                    <span class="foldername">Methodology</span>
+                    </div>
+                    
+                        
+    
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Methodology/元思维：突破思维的边界/">元思维：突破思维的边界 </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                </div>
+            
+        </div>
+        
     
                     
                         
@@ -845,7 +877,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2024-04-06T02:13:13.673Z';
+        const searchIndexDate = '2024-04-21T10:10:03.542Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -857,9 +889,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2024-04-06T02:13:13.673Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2024-04-21T10:10:03.542Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-04-06T02:13:13.673Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-04-21T10:10:03.542Z', docs}));
             window.docs = docs
             window.index = index;
         }
