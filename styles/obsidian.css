@@ -1,0 +1,17 @@
+/* Error: Expected whitespace.
+ *       ,
+ * 20934 | @media screen and(min-width: 480px) and (max-width: 767px) {
+ *       |                  ^
+ *       '
+ *   src/site/styles/obsidian.css 20934:18  root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Expected whitespace.\a       \2577 \a 20934 \2502  @media screen and(min-width: 480px) and (max-width: 767px) {\a       \2502                   ^\a       \2575 \a   src/site/styles/obsidian.css 20934:18  root stylesheet";
+}
