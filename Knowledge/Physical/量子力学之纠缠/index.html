@@ -62,7 +62,7 @@
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <link href="/styles/digital-garden-base.css" rel="stylesheet">
     <link href="/styles/obsidian-base.css" rel="stylesheet">
-    <link href="/styles/_theme.42881484.css" rel="stylesheet">
+    <link href="/styles/_theme.d7b89a0d.css" rel="stylesheet">
 
 
 <link href="/styles/custom-style.css" rel="stylesheet">
@@ -890,7 +890,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2024-05-25T07:31:13.097Z';
+        const searchIndexDate = '2024-07-28T03:43:37.717Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -902,9 +902,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2024-05-25T07:31:13.097Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2024-07-28T03:43:37.717Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-05-25T07:31:13.097Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-07-28T03:43:37.717Z', docs}));
             window.docs = docs
             window.index = index;
         }
@@ -1494,8 +1494,8 @@
                               
                               <div class="backlinks">
                                     <div class="backlink-title" style="margin: 4px 0 !important;">Pages mentioning this page</div>
-                                          <div class="backlink-list"><div class="backlink-card"><a href="/Knowledge/Physical/量子力学杂谈/" data-note-icon="" class="backlink">量子力学杂谈</a>
-                                                </div><div class="backlink-card"><a href="/Knowledge/Physical/量子力学之退相干/" data-note-icon="" class="backlink">量子力学之退相干</a>
+                                          <div class="backlink-list"><div class="backlink-card"><a href="/Knowledge/Physical/量子力学之退相干/" data-note-icon="" class="backlink">量子力学之退相干</a>
+                                                </div><div class="backlink-card"><a href="/Knowledge/Physical/量子力学杂谈/" data-note-icon="" class="backlink">量子力学杂谈</a>
                                                 </div></div>
                               </div>
                         
