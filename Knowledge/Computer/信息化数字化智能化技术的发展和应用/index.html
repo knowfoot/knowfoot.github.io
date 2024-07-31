@@ -1,0 +1,1998 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <title>信息化数字化智能化技术的发展和应用</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://fastly.jsdelivr.net/npm/mermaid@9.4.0/dist/mermaid.min.js"></script>
+<script>
+    mermaid.initialize({
+        startOnLoad: true,
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-sv0slik/5O0JIPdLBCR2A3XDg/1U3WuDEheZfI/DI5n8Yqc3h5kjrnr46FGBNiUAJF7rE4LHKwQ/SoSLRKAxEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/lucide@0.115.0/dist/umd/lucide.min.js"></script>
+<script>
+    // Create callout icons
+    window.addEventListener("load", () => {
+        document.querySelectorAll(".callout").forEach((elem) => {
+            const icon = getComputedStyle(elem).getPropertyValue('--callout-icon');
+            const iconName = icon && icon.trim().replace(/^lucide-/, "");
+
+            if (iconName) {
+                const calloutTitle = elem.querySelector(".callout-title");
+
+                if (calloutTitle) {
+                    const calloutIconContainer = document.createElement("div");
+                    const calloutIcon = document.createElement("i");
+
+                    calloutIconContainer.appendChild(calloutIcon);
+                    calloutIcon.setAttribute("icon-name", iconName);
+                    calloutIconContainer.setAttribute("class", "callout-icon");
+                    calloutTitle.insertBefore(calloutIconContainer, calloutTitle.firstChild);
+                }
+            }
+        });
+
+        lucide.createIcons();
+
+        // Collapse callouts
+        Array.from(document.querySelectorAll(".callout.is-collapsible")).forEach((elem) => {
+            elem.querySelector('.callout-title').addEventListener("click", (event) => {
+                if (elem.classList.contains("is-collapsed")) {
+                    elem.classList.remove("is-collapsed");
+                } else {
+                    elem.classList.add("is-collapsed");
+                }
+            });
+        });
+    });
+</script>
+
+
+<script src="https://fastly.jsdelivr.net/npm/force-graph@1.43.0/dist/force-graph.min.js"></script>
+
+<script defer src="https://fastly.jsdelivr.net/npm/@alpinejs/persist@3.11.1/dist/cdn.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/alpinejs@3.11.1/dist/cdn.min.js" defer></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+<script src="https://fastly.jsdelivr.net/npm/whatwg-fetch@3.6.2/dist/fetch.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<link href="/styles/digital-garden-base.css" rel="stylesheet">
+    <link href="/styles/obsidian-base.css" rel="stylesheet">
+    <link href="/styles/_theme.d7b89a0d.css" rel="stylesheet">
+
+
+<link href="/styles/custom-style.css" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+
+
+
+
+
+<style></style>
+    
+    
+  </head>
+  <body class="theme-light markdown-preview-view markdown-rendered markdown-preview-section title-note-icon filetree-note-icon links-note-icon backlinks-note-icon">
+    
+    
+    
+      
+    
+    <div x-init="isDesktop = (window.innerWidth>=1400) ? true: false;" 
+            x-on:resize.window="isDesktop = (window.innerWidth>=1400) ? true : false;" 
+            x-data="{isDesktop: true, showFilesMobile: false}">
+
+        <div x-show.important="!isDesktop" style="display: none;">
+            <nav class="navbar">
+    <div class="navbar-inner">
+        <span style="font-size: 1.5rem; margin-right: 10px;" @click="showFilesMobile=!showFilesMobile"><i  icon-name="menu"></i></span>
+        
+        <a href="/" style="text-decoration: none;">
+            <h1 style="margin: 15px !important;">数字花园</h1>
+        </a>
+        
+    </div>
+    
+    
+        <div class="search-button align-icon" onclick="toggleSearch()">
+    <span class="search-icon">
+        <i icon-name="search" ></i>
+    </span>
+    <span class="search-text">
+        <span>Search</span>
+        <span style="font-size: 0.6rem; padding: 2px 2px 0 6px; text-align:center; transform: translateY(4px);" class="search-keys">
+            CTRL + K
+        </span>
+    </span>
+</div>
+    
+</nav>
+        </div>
+        
+        <div x-show="showFilesMobile && !isDesktop" @click="showFilesMobile = false" style="display:none;" class="fullpage-overlay"></div>
+
+      <nav class="filetree-sidebar"  x-show.important="isDesktop || showFilesMobile" style="display: none;">
+        
+         <a href="/" style="text-decoration: none;">
+               <h1 style="text-align:center;">数字花园</h1>
+         </a>
+         
+        
+            <div style="display: flex; justify-content: center;">
+                <div class="search-button align-icon" onclick="toggleSearch()">
+    <span class="search-icon">
+        <i icon-name="search" ></i>
+    </span>
+    <span class="search-text">
+        <span>Search</span>
+        <span style="font-size: 0.6rem; padding: 2px 2px 0 6px; text-align:center; transform: translateY(4px);" class="search-keys">
+            CTRL + K
+        </span>
+    </span>
+</div>
+            </div>
+        
+         <div class="folder" x-data="{isOpen: true}">
+    
+        <div x-show="isOpen" style="display:none" class="">
+            
+                <div class="folder inner-folder"  x-data="{isOpen: $persist(false).as('Knowledge')}" @click.stop="isOpen=!isOpen">
+                    <div class="foldername-wrapper align-icon">
+                    <i x-show="isOpen" style="display: none;"  icon-name="chevron-down"></i>
+                    <i x-show="!isOpen"  icon-name="chevron-right"></i>
+                    <span class="foldername">Knowledge</span>
+                    </div>
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div class="folder inner-folder"  x-data="{isOpen: $persist(false).as('Knowledge/Book')}" @click.stop="isOpen=!isOpen">
+                    <div class="foldername-wrapper align-icon">
+                    <i x-show="isOpen" style="display: none;"  icon-name="chevron-down"></i>
+                    <i x-show="!isOpen"  icon-name="chevron-right"></i>
+                    <span class="foldername">Book</span>
+                    </div>
+                    
+                        
+    
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Book/《深度乌托邦：在完美世界中生活的意义》带来的思考/">《深度乌托邦：在完美世界中生活的意义》带来的思考 </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                </div>
+            
+        </div>
+        
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div class="folder inner-folder"  x-data="{isOpen: $persist(false).as('Knowledge/Computer')}" @click.stop="isOpen=!isOpen">
+                    <div class="foldername-wrapper align-icon">
+                    <i x-show="isOpen" style="display: none;"  icon-name="chevron-down"></i>
+                    <i x-show="!isOpen"  icon-name="chevron-right"></i>
+                    <span class="foldername">Computer</span>
+                    </div>
+                    
+                        
+    
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div @click.stop class="notelink active-note"><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Computer/信息化数字化智能化技术的发展和应用/">信息化数字化智能化技术的发展和应用 </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                </div>
+            
+        </div>
+        
+    
+                    
+                        
+    
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div class="folder inner-folder"  x-data="{isOpen: $persist(false).as('Knowledge/Methodology')}" @click.stop="isOpen=!isOpen">
+                    <div class="foldername-wrapper align-icon">
+                    <i x-show="isOpen" style="display: none;"  icon-name="chevron-down"></i>
+                    <i x-show="!isOpen"  icon-name="chevron-right"></i>
+                    <span class="foldername">Methodology</span>
+                    </div>
+                    
+                        
+    
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Methodology/元思维-突破思维的边界/">元思维-突破思维的边界 </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                </div>
+            
+        </div>
+        
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div class="folder inner-folder"  x-data="{isOpen: $persist(false).as('Knowledge/Physical')}" @click.stop="isOpen=!isOpen">
+                    <div class="foldername-wrapper align-icon">
+                    <i x-show="isOpen" style="display: none;"  icon-name="chevron-down"></i>
+                    <i x-show="!isOpen"  icon-name="chevron-right"></i>
+                    <span class="foldername">Physical</span>
+                    </div>
+                    
+                        
+    
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Physical/爱因斯坦和波尔之间一场著名的论战/">爱因斯坦和波尔之间一场著名的论战 </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Physical/狭义相对论杂谈/">狭义相对论杂谈 </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Physical/狭义相对论部分方程推导/">狭义相对论部分方程推导 </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Physical/量子力学之不确定性/">量子力学之不确定性 </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Physical/量子力学之全同粒子/">量子力学之全同粒子 </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Physical/量子力学之延迟选择实验/">量子力学之延迟选择实验 </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Physical/量子力学之泡利不相容原理/">量子力学之泡利不相容原理 </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Physical/量子力学之物质波/">量子力学之物质波 </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Physical/量子力学之狄拉克方程/">量子力学之狄拉克方程 </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Physical/量子力学之纠缠/">量子力学之纠缠 </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Physical/量子力学之薛定谔方程/">量子力学之薛定谔方程 </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Physical/量子力学之退相干/">量子力学之退相干 </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Physical/量子力学之量子隧穿/">量子力学之量子隧穿 </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Physical/量子力学杂谈/">量子力学杂谈 </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                </div>
+            
+        </div>
+        
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div class="folder inner-folder"  x-data="{isOpen: $persist(false).as('Knowledge/Science')}" @click.stop="isOpen=!isOpen">
+                    <div class="foldername-wrapper align-icon">
+                    <i x-show="isOpen" style="display: none;"  icon-name="chevron-down"></i>
+                    <i x-show="!isOpen"  icon-name="chevron-right"></i>
+                    <span class="foldername">Science</span>
+                    </div>
+                    
+                        
+    
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Science/WHO健康饮食建议/">WHO健康饮食建议 </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Science/WHO科学运动建议/">WHO科学运动建议 </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Science/健康饮食参考/">健康饮食参考 </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Science/孩子高烧物理降温处理和注意事项/">孩子高烧物理降温处理和注意事项 </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Science/宇宙与基因对生命起源的猜想/">宇宙与基因对生命起源的猜想 </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Science/运动强度参考/">运动强度参考 </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                </div>
+            
+        </div>
+        
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div class="folder inner-folder"  x-data="{isOpen: $persist(false).as('Knowledge/Social')}" @click.stop="isOpen=!isOpen">
+                    <div class="foldername-wrapper align-icon">
+                    <i x-show="isOpen" style="display: none;"  icon-name="chevron-down"></i>
+                    <i x-show="!isOpen"  icon-name="chevron-right"></i>
+                    <span class="foldername">Social</span>
+                    </div>
+                    
+                        
+    
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Social/凯恩斯的通论和影响力/">凯恩斯的通论和影响力 </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Social/吉登斯资本主义与现代社会学理论/">吉登斯资本主义与现代社会学理论 </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Social/哈耶克的自由至上主义/">哈耶克的自由至上主义 </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Social/国家社会个人/">国家社会个人 </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Social/桑德尔共同体主义/">桑德尔共同体主义 </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Social/法兰克福学派和马尔库塞、哈贝马斯 社会批判/">法兰克福学派和马尔库塞、哈贝马斯 社会批判 </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Social/法国激进自由主义与德国浪漫自由主义/">法国激进自由主义与德国浪漫自由主义 </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Social/洛克的政府论/">洛克的政府论 </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Social/现代国家社会个人的300年及当代主要政治哲学流派/">现代国家社会个人的300年及当代主要政治哲学流派 </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Social/福柯的后现代主义/">福柯的后现代主义 </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Social/罗尔斯的平等的自由主义/">罗尔斯的平等的自由主义 </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Social/美国自由主义/">美国自由主义 </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Social/英国的消极自由主义/">英国的消极自由主义 </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Social/阿伦特的古典共和主义/">阿伦特的古典共和主义 </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Social/霍布斯的利维坦/">霍布斯的利维坦 </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                </div>
+            
+        </div>
+        
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div class="folder inner-folder"  x-data="{isOpen: $persist(false).as('Knowledge/Story')}" @click.stop="isOpen=!isOpen">
+                    <div class="foldername-wrapper align-icon">
+                    <i x-show="isOpen" style="display: none;"  icon-name="chevron-down"></i>
+                    <i x-show="!isOpen"  icon-name="chevron-right"></i>
+                    <span class="foldername">Story</span>
+                    </div>
+                    
+                        
+    
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Story/庞加莱与爱因斯坦(转)/">庞加莱与爱因斯坦(转) </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Story/爱因斯坦成长小记/">爱因斯坦成长小记 </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                </div>
+            
+        </div>
+        
+    
+                    
+                </div>
+            
+        </div>
+        
+    
+    
+        <div x-show="isOpen" style="display:none" class="">
+            
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/">index </a>
+                </div>
+            
+        </div>
+        
+    </div>
+      </nav>
+    </div>
+
+    
+
+    
+      <div class="search-container" id="globalsearch" onclick="toggleSearch()">
+    <div class="search-box">
+        <input type="search" id="term" placeholder="Start typing...">
+        <div id="search-results"></div>
+        <footer class="search-box-footer">
+            <div class="navigation-hint">
+                <span>Enter to select</span>
+            </div>
+
+            <div class="navigation-hint align-icon">
+                <i  icon-name="arrow-up" aria-hidden="true"></i>
+                <i  icon-name="arrow-down" aria-hidden="true"></i>
+                <span>to navigate</span>
+            </div>
+
+            <div class="navigation-hint">
+                <span>ESC to close</span>
+            </div>
+
+        </footer>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/flexsearch@0.7.21/dist/flexsearch.bundle.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', init, false);
+    document.addEventListener('DOMContentLoaded', setCorrectShortcut, false);
+
+    window.toggleSearch = function () {
+        if (document.getElementById('globalsearch').classList.contains('active')) {
+            document
+                .getElementById('globalsearch')
+                .classList
+                .remove('active');
+        } else {
+            document
+                .getElementById('globalsearch')
+                .classList
+                .add('active');
+            document
+                .getElementById('term')
+                .focus();
+        }
+    }
+
+    window.toggleTagSearch = function (evt) {
+        console.log(evt.textContent);
+        const term = evt.textContent;
+        if (term) {
+            window
+                .document
+                .getElementById('term')
+                .value = term.trim();
+            window.toggleSearch();
+            window.search();
+        }
+    }
+
+    const loadingSvg = `
+    <svg width="100" height="100" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" stroke="#fff">
+      <g fill="none" fill-rule="evenodd" transform="translate(1 1)" stroke-width="2">
+          <circle cx="22" cy="22" r="6" stroke-opacity="0">
+              <animate attributeName="r"
+                   begin="1.5s" dur="3s"
+                   values="6;22"
+                   calcMode="linear"
+                   repeatCount="indefinite" />
+              <animate attributeName="stroke-opacity"
+                   begin="1.5s" dur="3s"
+                   values="1;0" calcMode="linear"
+                   repeatCount="indefinite" />
+              <animate attributeName="stroke-width"
+                   begin="1.5s" dur="3s"
+                   values="2;0" calcMode="linear"
+                   repeatCount="indefinite" />
+          </circle>
+          <circle cx="22" cy="22" r="6" stroke-opacity="0">
+              <animate attributeName="r"
+                   begin="3s" dur="3s"
+                   values="6;22"
+                   calcMode="linear"
+                   repeatCount="indefinite" />
+              <animate attributeName="stroke-opacity"
+                   begin="3s" dur="3s"
+                   values="1;0" calcMode="linear"
+                   repeatCount="indefinite" />
+              <animate attributeName="stroke-width"
+                   begin="3s" dur="3s"
+                   values="2;0" calcMode="linear"
+                   repeatCount="indefinite" />
+          </circle>
+          <circle cx="22" cy="22" r="8">
+              <animate attributeName="r"
+                   begin="0s" dur="1.5s"
+                   values="6;1;2;3;4;5;6"
+                   calcMode="linear"
+                   repeatCount="indefinite" />
+          </circle>
+      </g>
+  </svg>`;
+
+    function debounce(func, wait, immediate) {
+        var timeout;
+        return function () {
+            var context = this,
+                args = arguments;
+            var later = function () {
+                timeout = null;
+                if (!immediate) 
+                    func.apply(context, args);
+                };
+            var callNow = immediate && !timeout;
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+            if (callNow) 
+                func.apply(context, args);
+            };
+    };
+
+    function setCorrectShortcut() {
+        if (navigator.platform.toUpperCase().indexOf('MAC') >= 0) {
+            document
+                .querySelectorAll(".search-keys")
+                .forEach(x => x.innerHTML = "⌘ + K");
+        }
+    }
+
+    function createIndex(posts) {
+        const encoder = (str) => str
+            .toLowerCase()
+            .split(/([^a-z]|[^\x00-\x7F])/)
+        const contentIndex = new FlexSearch.Document({
+            cache: true,
+            charset: "latin:extra",
+            optimize: true,
+            index: [
+                {
+                    field: "content",
+                    tokenize: "reverse",
+                    encode: encoder
+                }, {
+                    field: "title",
+                    tokenize: "forward",
+                    encode: encoder
+                }, {
+                    field: "tags",
+                    tokenize: "forward",
+                    encode: encoder
+                }
+            ]
+        })
+        posts.forEach((p, idx) => {
+            contentIndex.add({
+                id: idx, title: p.title, content: p.content, tags: p.tags //Change to removeHTML
+            })
+        });
+        return contentIndex;
+    }
+
+    async function init() {
+        //init offline search index
+
+        const searchIndexDate = '2024-07-31T10:03:21.582Z';
+        let shouldFetch = true;
+        if(localStorage.getItem("searchIndex")) {
+            let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
+            if(date === searchIndexDate){
+                shouldFetch = false;
+                let index = createIndex(docs);
+                window.docs = docs
+                window.index = index;
+            }        
+        }
+        if(shouldFetch){
+            let docs = await(await fetch('/searchIndex.json?v=2024-07-31T10:03:21.582Z')).json();
+            let index = createIndex(docs);
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-07-31T10:03:21.582Z', docs}));
+            window.docs = docs
+            window.index = index;
+        }
+
+        //open searchmodal when ctrl + k is pressed, cmd + k on mac
+        document.addEventListener('keydown', (e) => {
+            if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+                e.preventDefault();
+                toggleSearch();
+            }
+            if (e.key === 'Escape') {
+                document
+                    .getElementById('globalsearch')
+                    .classList
+                    .remove('active');
+            }
+
+            //navigate search results with arrow keys
+            if (document.getElementById('globalsearch').classList.contains('active')) {
+                if (e.key === 'ArrowDown') {
+                    e.preventDefault();
+                    let active = document.querySelector('.searchresult.active');
+                    if (active) {
+                        active
+                            .classList
+                            .remove('active');
+                        if (active.nextElementSibling) {
+                            active
+                                .nextElementSibling
+                                .classList
+                                .add('active');
+                        } else {
+                            document
+                                .querySelector('.searchresult')
+                                .classList
+                                .add('active');
+                        }
+                    } else {
+                        document
+                            .querySelector('.searchresult')
+                            .classList
+                            .add('active');
+                    }
+
+                    let currentActive = document.querySelector('.searchresult.active');
+                    if (currentActive) {
+                        currentActive.scrollIntoView({behavior: 'smooth', block: 'nearest', inline: 'start'});
+                    }
+                }
+                if (e.key === 'ArrowUp') {
+                    e.preventDefault();
+                    let active = document.querySelector('.searchresult.active');
+                    if (active) {
+                        active
+                            .classList
+                            .remove('active');
+                        if (active.previousElementSibling) {
+                            active
+                                .previousElementSibling
+                                .classList
+                                .add('active');
+                        } else {
+                            document
+                                .querySelectorAll('.searchresult')
+                                .forEach((el) => {
+                                    if (!el.nextElementSibling) {
+                                        el
+                                            .classList
+                                            .add('active');
+                                    }
+                                });
+                        }
+                    } else {
+                        document
+                            .querySelectorAll('.searchresult')
+                            .forEach((el) => {
+                                if (el.nextElementSibling) {
+                                    el
+                                        .classList
+                                        .add('active');
+                                }
+                            });
+                    }
+
+                    let currentActive = document.querySelector('.searchresult.active');
+                    if (currentActive) {
+                        currentActive.scrollIntoView({behavior: 'smooth', block: 'nearest', inline: 'start'});
+                    }
+
+                }
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    let active = document.querySelector('.searchresult.active');
+                    if (active) {
+                        window.location.href = active
+                            .querySelector("a")
+                            .href;
+                    }
+                }
+            }
+        });
+
+        const debouncedSearch = debounce(search, 200, false);
+        field = document.querySelector('#term');
+        field.addEventListener('keydown', (e) => {
+            if (e.key !== 'ArrowDown' && e.key !== 'ArrowUp') {
+                debouncedSearch();
+            }
+        });
+        resultsDiv = document.querySelector('#search-results');
+
+        const params = new URL(location.href).searchParams;
+        if (params.get('q')) {
+            field.setAttribute('value', params.get('q'));
+            toggleSearch();
+            search();
+        }
+    }
+    window.lastSearch = '';
+    async function search() {
+        let search = field
+            .value
+            .trim();
+        if (!search) 
+            return;
+        if (search == lastSearch) 
+            return;
+        console.log(`search for ${search}`);
+        window.lastSearch = search;
+
+        resultsDiv.innerHTML = loadingSvg;
+        //let searchRequest = await fetch(`/api/search?term=${encodeURIComponent(search)}`);
+        //let results = await searchRequest.json();
+        let results = offlineSearch(search);
+        let resultsHTML = '';
+        if (!results.length) {
+            let resultParagraph = document.createElement("p");
+            resultParagraph.innerText = `No results for "${search}"`;
+            resultsDiv.innerHTML = '';
+            resultsDiv.appendChild(resultParagraph);
+            return;
+        }
+        resultsHTML += '<div style="max-width:100%;">';
+        // we need to add title, url from ref
+        results.forEach(r => {
+            if(r.tags && r.tags.length > 0){
+                resultsHTML += `<div class="searchresult">
+                    <a class="search-link" href="${r.url}">${r.title}</a>
+                    <div onclick="window.location='${r.url}'">
+                        <div class="header-meta">
+                            <div class="header-tags">
+                                ${r.tags.map(tag=>'<a class="tag" href="JavaScript:Void(0);">#'+tag+'</a>').join("")}
+                            </div>
+                        </div>
+                        ${r.content}
+                    </div>
+                </div>`;
+            } else {
+                resultsHTML += `<div class="searchresult">
+                    <a class="search-link" href="${r.url}">${r.title}</a>
+                    <div onclick="window.location='${r.url}'">
+                        ${r.content}
+                    </div>
+                </div>`;
+            }
+        });
+        resultsHTML += '</div>';
+        resultsDiv.innerHTML = resultsHTML;
+    }
+
+    function truncate(str, size) {
+        //first, remove HTML
+        str = str.replaceAll(/<[^>]*>/g, '');
+        if (str.length < size) 
+            return str;
+        return str.substring(0, size - 3) + '...';
+    }
+
+    function offlineSearch(searchQuery) {
+        let data = window.docs;
+
+        let isTagSearch = searchQuery[0] === "#" && searchQuery.length > 1;
+
+        let searchResults = isTagSearch
+            ? index.search(searchQuery.substring(1), [
+                {
+                    field: "tags"
+                }
+            ])
+            : index.search(searchQuery, [
+                {
+                    field: "title",
+                    limit: 5
+                }, {
+                    field: "content",
+                    weight: 10
+                }
+            ]);
+
+        const getByField = (field) => {
+            const results = searchResults.filter((x) => x.field === field)
+            if (results.length === 0) {
+                return []
+            } else {
+                return [...results[0].result]
+            }
+        }
+        const allIds = new Set([
+            ...getByField("title"),
+            ...getByField("content"),
+            ...getByField("tags")
+        ])
+        const dataIds = [...allIds];
+        const finalResults = dataIds.map((id) => {
+            let result = data[id];
+            result.content = truncate(result.content, 400);
+            result.tags = result
+                .tags
+                .filter((x) => x != "gardenEntry" && x != "note"); //Note is automatically added by 11ty. GardenEntry is used internally to mark the home page
+
+            return result;
+        })
+        return finalResults;
+
+    }
+</script>
+    
+
+    <main class="content cm-s-obsidian ">
+      <header>
+        
+          <h1 data-note-icon="">信息化数字化智能化技术的发展和应用</h1>
+        
+        <div class="header-meta">
+          
+            <div class="header-tags">
+              
+                
+              
+                
+                  <a class="tag" onclick="toggleTagSearch(this)">
+                    ##Input/Article
+                  </a>
+                
+              
+                
+                  <a class="tag" onclick="toggleTagSearch(this)">
+                    ##Fleeting
+                  </a>
+                
+              
+            </div>
+          <div class="timestamps"><div><i icon-name="calendar-plus"></i> <span class="human-date" data-date="2024-06-02T22:41:59.732+08:00"></span></div></div></div>
+      
+      
+      </header>
+      
+      
+      <h2 id="一、什么是信息化、数字化和智能化" tabindex="-1">一、什么是信息化、数字化和智能化</h2>
+<p>在聊信息化、数字化和智能化之前我想聊下DIKW（Data-Information-Knowledge-Wisdom）模型，因该不少人都知道的，它是一种描述比较广义信息(最广义的信息描述的宇宙就是一个信息比特海)层次关系的模型，<br>
+其中的数据（Data）的定义是原始的、未经处理的事实和数字。它是信息的基础。比如金融交易记录、传感器读数、客户点击记录。信息（Information）的定义是经过处理和结构化的数据，具有目的、意义和用途。例如月度销售报表、客户购买历史、市场趋势分析。 知识（Knowledge）的定义<font color="#ff0000">是通过对信息的理解和应用，从信息总结出来的一些规律，形成的经验和洞察，也有基于一些知识作为前提逻辑演绎出来的</font>。比如投资策略、风险管理方案、客户偏好分析这些就算是知识的范畴。最后我们能看智慧（Wisdom）的定义是对知识的深度理解和洞察，能够做出前瞻性和战略性的决策。智慧不仅基于知识，更需要综合考虑各种因素，形成全面和长远的判断。例如定企业长期战略、预测市场变化、创新产品和服务。</p>
+<p>为啥想先聊下这个模型了，其实通过这个模型，我们可以更好地理解数字化、信息化和智能化的概念。这里知识和智慧有很强的相似点，主要区别就是知识是通过经验和学习积累而来，用于具体问题的解决。<font color="#ff0000">而智慧则是在知识的基础上在各领域扩展迁移能力，还能在时间线上的融合就成了我们说的智慧了</font>， 智慧强调的是综合多领域、多因素的深度洞察力，能跨域领域和时间的迁移的认识和创新。那我们开始进入正题，先看看什么是信息化。</p>
+<h3 id="1" tabindex="-1">1、什么是信息化及其发展过程</h3>
+<p>信息化是一个复杂而又持续变化的过程，每个阶段的信息和信息化定义均有其特定的技术和社会背景。</p>
+<p>比如20世纪中叶的时候，ENIAC（电子数字积分计算机）问世，被认为是世界上第一台通用电子计算机，使用磁带和打孔卡进行数据存储和传输。最初用于军事计算，如弹道计算和密码破译。大型企业开始使用计算机进行数据处理，如银行的记账和库存管理。信息被视为数据的记录和传输。香农和韦弗的《通信的数学理论》定义信息为通过符号传递的消息。当时的信息化是指使用<font color="#ff0000">电子计算设备</font>进行数据处理，提高工作效率和准确性。这一概念在IBM等企业的早期应用中得到体现。</p>
+<p>到了20世纪的60，70年代 集成电路的发明极大地提高了计算机的性能和普及。数据库管理系统的出现，如IBM的IMS和Oracle的初代产品。开始出现信息管理系统，帮助企业提高效率和决策能力，如财务管理、库存控制和人力资源管理。政府也开始使用计算机进行人口普查、税务管理和公共服务。信息开始被视为一种重要资源，扩展到商业和科学领域。<font color="#ff0000">信息化指将计算机技术应用于管理和业务流程，形成管理信息系统</font>。</p>
+<p>到20世纪80年代左右 出现个人电脑  1976年苹果的Apple I和1981年的IBM PC 。Ethernet等技术使得计算机网络在企业内部得到广泛应用。计算机进入家庭，个人计算机成为日常生活和教育的重要工具。电子表格、文字处理和电子邮件等软件改变了办公方式，提高了工作效率。这时候<br>
+信息被进一步细化，包括文本、图像、声音等多媒体形式。<font color="#ff0000">信息化概念扩展到个人层面，计算机技术进入家庭和个人生活。</font>这在Apple和IBM等公司的推广中得以体现。</p>
+<p>到20世纪90年代左右，TCP/IP协议的广泛采用和万维网（WWW）蓬勃发展。移动电话和无线通信技术的也得到快速发展。互联网使信息传播无国界，促进了全球经济和文化的交流。网上购物、网上银行和在线服务改变了传统商业模式。电子邮件、即时通讯和社交媒体改变了人们的交流方式和社交习惯。信息被视为一种数字化资产，可以在全球范围内快速传输和共享。<font color="#ff0000">信息化涵盖全球信息网络的建设和应用，互联网成为核心</font>。</p>
+<p>21世纪后数据分析和机器学习技术的进步，使得从大量数据中提取有用信息成为可能。计算技术使得数据存储和计算能力可以通过互联网按需获取。物联网技术使得各种设备可以互联，形成智能家居和智能城市。信息技术的全面普及和应用使得各行业的效率和服务质量大幅提升，生活质量得到显著改善，社会生产方式发生变革。信息包括大数据、人工智能处理的信息，信息量和处理复杂度大幅提升。<font color="#ff0000">信息化在这一阶段指的是信息技术的全面应用，涵盖智能设备、云计算、物联网等</font>。</p>
+<p>信息化定义不断演化，从早期的数据处理到个人计算，再到全球网络的普及。每个阶段的技术进步都带来了深刻的社会变化，不仅提高了工作效率和生产力，还改变了人们的生活方式和社会结构。通过信息技术的发展，人们逐步打通了各种信息壁垒，我们看到了一个更加互联、更加高效的世界。各个时期的技术和社会影响都在推动信息化的进程，为现代信息社会的形成奠定了基础。</p>
+<h3 id="2" tabindex="-1">2、什么是数字化及其发展过程</h3>
+<p>随着早期计算机如ENIAC和UNIVAC的出现，使得大量数据的处理变得可能。发展出数字信号处理技术，如调制解调器的发明，使得数据可以通过电话线传输，奠定了互联网的基础。大企业开始使用计算机进行数据管理和处理，提高了工作效率。政府和科研机构也利用计算机进行复杂的计算和数据分析。这个时候数字化是指将文字、声音、图像等传统信息转换为数字格式，以便通过计算机进行处理和传输。不过因为早期计算机的存储传输处理能力的限制，这个过程伴随着信息化逐步发展起来。</p>
+<p>到了20世纪90年代，万维网，使得信息可以通过超链接在全球范围内互相连接和访问。浏览器如Netscape和Internet Explorer的出现，使得普通人也能轻松上网。电子邮件（如Hotmail）和即时通讯工具（如ICQ、MSN Messenger）的普及，改变了人们的沟通方式。Amazon和eBay等电子商务平台的兴起，改变了购物和商业交易的模式。<font color="#ff0000">互联网时代的数字化是指通过全球计算机网络进行信息交换和资源共享</font>。</p>
+<p>iPhone（2007年）的推出标志着智能手机时代的开始，各种移动应用程序（App）迅速发展。Facebook、Twitter、Instagram等社交媒体平台的普及，改变了人们的社交方式。Amazon Web Services（AWS）等云计算服务的发展，使得数据存储和处理更加灵活和高效。人们随时随地可以获取信息、进行社交活动和处理工作事务。社交媒体在信息传播、舆论引导和社交互动中发挥了重要作用。<font color="#ff0000">移动互联网时代的数字化是指通过移动设备（如智能手机和平板电脑）访问互联网和使用各类应用程序</font>。</p>
+<p>随着软硬件技术的快速发展，数字化的能力越来越强，比如Hadoop、Spark等大数据处理框架的发展，使得海量数据的存储和分析变得可能。深度学习算法（如TensorFlow和PyTorch）的普及，推动了图像识别、自然语言处理和自动驾驶等领域的发展。智能家居设备、可穿戴设备和工业物联网的普及，使得设备之间的互联和数据共享更加广泛。社会效率和生活质量显著提高。<font color="#ff0000">大数据和人工智能时代的数字化是指通过收集、存储和分析海量数据，利用机器学习和人工智能技术进行智能决策和自动化处理。</font></p>
+<p>数字化主要关注信息的形式转换，即将信息转化为数字格式。而信息化则是一个更广泛的概念，涵盖了信息技术的全面应用，包括数据的处理、存储、传输和利用。数字化更多地涉及底层技术，如数据采集、编码和压缩等；信息化则更关注信息技术的应用层面，如信息系统的构建和信息资源的管理。数字化的目标是实现信息的数字表示和处理，而信息化的目标是通过信息技术的应用，提高各个领域的效率和效益，推动社会和经济的发展。</p>
+<p>数字化是信息化的基础。只有通过数字化，将各种信息转换为数字形式，才能利用信息技术进行处理、存储和传输，从而实现信息化。信息化的发展需要不断提升数字化技术，如更高效的数据采集和处理技术；而数字化技术的发展也依赖于信息化带来的需求和应用场景，如大数据分析和人工智能。</p>
+<h3 id="3" tabindex="-1">3、什么是智能化及其发展过程</h3>
+<p>1950s-1970s  逻辑定理证明器和通用问题解决器是早期人工智能研究的重要里程碑。逻辑定理证明器（Logic Theorist）的目标是模拟人类的逻辑推理过程，特别是证明数学定理。具体来说，它尝试从已知的公理和推理规则出发，通过应用这些规则逐步推导出定理。 通用问题解决器GPS（General Problem Solver）的目标是解决不同类型的问题，包括逻辑推理、数学问题、游戏等。它将问题分解为更小的子问题。然后，它尝试通过应用各种操作（手段）来逐步解决这些子问题，直到最终达到目标。</p>
+<p>它们展示了计算机不仅可以执行预设程序，还可以模拟人类的逻辑推理和问题解决过程。如工厂中的自动化生产线。提高了生产效率，特别是在制造业领域，自动化生产线开始代替人力劳动。计算机科学作为一门独立学科逐渐成型。这个时候提出人工智能的定义，指的是使机器能够执行需要智能的任务的科学和工程。<font color="#ff0000">此时的智能化主要集中在自动化，指的是使用技术和设备来减少人工干预，实现某些任务的自动执行。</font></p>
+<p>1980-2000 20世纪70年代早期在斯坦福大学开发的专家系统MYCIN。它是为了帮助医生诊断和治疗细菌感染和血液感染而设计的。也出现利用简单的神经网络实现基于规则的学习系统。专家系统在医疗、金融和制造等领域的应用，提高了决策效率和准确性。计算机开始普及，PC机进入家庭和办公场所，信息化程度提高。这里AI扩展为包括知识表示、机器学习和专家系统的领域。定义为能够模仿或执行复杂认知任务的计算系统。<font color="#ff0000">智能化在这一阶段指的是通过信息技术和系统工程，使得系统具备一定的自适应和学习能力。</font></p>
+<p>21世纪早期10年，在Hadoop和Spark，支持大规模数据存储和处理，更多设备之间的互联互通，在算法创新下出现了如卷积神经网络（CNN）和递归神经网络（RNN）在图像识别和自然语言处理中的应用。数据驱动的决策和服务成为主流，个性化推荐系统广泛应用于各类平台。智能家居、智慧城市等概念开始萌芽，AI的定义拓展至包括大规模数据处理和深度学习在内的高级计算技术，强调从大量数据中学习和预测的能力。<font color="#ff0000">智能化在这一阶段指的是利用互联网和数据分析，实现系统和服务的高度自适应和个性化。</font></p>
+<p>2010年到现在 如GPT-3及其后续版本，实现了高质量的人机对话。在自动驾驶、机器人控制等领域取得突破。边缘计算提高了物联网设备的数据处理能力和响应速度。自动驾驶汽车、无人机配送等技术的应用，改变了交通和物流行业。智能医疗系统如远程医疗、智能诊断，提升了医疗服务的效率和覆盖面。智能制造和工业4.0的推进，进一步提升了生产效率和灵活性。AI的广泛应用引发了对就业市场和隐私保护的深刻讨论和政策调整。AI被定义为能够自主学习、推理和决策的高度智能系统，包括通用人工智能（AGI）和狭义人工智能（Narrow AI）。<font color="#ff0000">智能化在这一阶段指的是通过AI和自动化技术，实现系统和服务的全面智能化和无缝整合。</font></p>
+<p>从起步阶段到深度智能化阶段，人工智能和智能化技术的发展不仅改变了技术定义和范畴，也对社会各个层面产生了深远影响。每个阶段的进步都显著提升了人类的生产力和生活质量。</p>
+<h1 id="二、信息化、数字化和智能化在行业发展过程" tabindex="-1">二、信息化、数字化和智能化在行业发展过程</h1>
+<h3 id="1-1" tabindex="-1">1. 广电行业</h3>
+<p>20世纪初，随着无线电技术的发展，广播电台开始传输音频信号，听众通过收音机接收广播节目。这是信息化在广电行业的早期应用，使得信息可以通过无线电波传播到千家万户。</p>
+<p>到了20世纪60年代，电视的普及进一步推动了广电行业的信息化进程。彩色电视和有线电视的出现，丰富了电视内容和节目种类。电视台通过卫星传输信号，使得节目可以跨越国界，覆盖全球。这一时期的广电行业，信息化主要体现在电视信号的传输和内容的多样化上。</p>
+<p>上世纪80年代，随着卫星电视和有线电视的普及，信息化技术让电视信号覆盖范围更广，内容更加丰富。</p>
+<p>进入90年代，广电行业迎来了数字化革命。数字电视和高清电视的出现，使得图像和声音质量大幅提高。数字化技术还使得互动电视成为可能，观众可以通过遥控器参与节目互动。</p>
+<p>在广播领域，数字音频广播（DAB）取代了模拟信号广播，提高了音质和传输效率。广电行业通过数字化技术，不仅提升了节目质量，还实现了内容的多样化和个性化服务。</p>
+<p>当下在广电行业，智能化体现在内容制作、分发和观众互动上。智能电视和流媒体平台的普及，使得观众可以根据个人喜好选择内容，算法推荐系统大大提升了用户体验。Netflix通过分析用户的观看习惯，精准推荐内容，极大地提高了用户粘性。</p>
+<p>在内容制作方面，AI技术被用于视频编辑、特效制作和内容创作。智能化技术不仅提高了制作效率，还为观众带来了更丰富的视听体验。</p>
+<h3 id="2-1" tabindex="-1">2. 物流行业</h3>
+<p>20世纪70年代，条形码技术开始在超市和仓库中普及，商品的进出库管理变得更加高效和准确。物流公司通过计算机系统管理货物信息，提高了运输和配送效率。</p>
+<p>进入90年代，计算机的普及和互联网的崛起标志着数字化时代的到来。信息不再仅仅是静态的数据，而是可以被处理和分析的资源。物流行业的数字化主要体现在仓储和配送系统的智能化管理上。条形码技术进一步发展为RFID技术，使得货物信息可以实时更新和追踪。物流公司通过GPS系统和电子数据交换（EDI），实现了货物的全程监控和信息共享。</p>
+<p>一个具体的案例是UPS在1992年推出的Package Tracking System，这一系统使得客户可以实时追踪包裹的位置，提高了服务透明度和客户满意度。</p>
+<p>物流行业同样受益于智能化的发展。无人仓库、无人机配送、智能物流系统等技术应用，显著提高了物流效率和服务质量。亚马逊的智能仓储系统，通过机器人分拣、自动包装等技术，实现了仓储管理的高效运作。</p>
+<p>一个具体的案例是京东的“亚洲一号”智能物流中心，它通过全自动化的分拣和配送系统，实现了物流过程的全程智能化管理。客户可以在下单后短时间内收到商品，极大提升了购物体验。</p>
+<h3 id="3-1" tabindex="-1">3. 社交行业</h3>
+<p>20世纪80年代，电话通信网络覆盖全球，人们可以通过电话和传真机传递信息和文件。虽然这时的社交仍以面对面交流为主，但信息化技术已经开始改变人们的交流方式。</p>
+<p>社交行业的数字化始于互联网的普及和电子邮件的出现。从1991年开始，国内开始了第一个BBS站。经过长时间的发展，直到1995年，随着计算机及其外设的大幅降价，BBS才逐渐被人们所认识。1996年更是以惊人的速度发展起来。1997年，六度分隔理论（Six Degrees）的网站上线，这是最早的社交网络网站之一。用户可以创建个人资料，添加好友，分享信息和图片。这一时期的社交网络，虽然功能简单，但已经开始改变人们的社交方式。</p>
+<p>随着智能手机的普及和移动互联网的发展，社交网络迅速扩展。Facebook、Twitter和微信等平台，通过数字化技术连接全球用户，实现了信息的快速传播和互动交流。</p>
+<p>后续随着智能化体现在内容推荐和广告推送上。Facebook和微博通过大数据分析用户行为，提供个性化的内容和广告。AI技术还被用于图像识别、语音识别和自然语言处理，使得社交平台能够提供更智能的服务。</p>
+<p>例如，Instagram的算法推荐系统，通过分析用户的浏览和点赞记录，推荐用户可能感兴趣的图片和视频。智能化技术使得社交平台更加个性化和互动化。</p>
+<h3 id="4" tabindex="-1">4. 电商行业</h3>
+<p>早期的电商平台，如20世纪90年代的亚马逊和eBay，通过互联网实现了商品信息的发布和交易。消费者可以通过网站浏览商品，在线下单，商家通过邮件和电话与客户沟通。</p>
+<p>在支付系统方面，数字化技术使得在线支付和移动支付成为可能。PayPal、支付宝和微信支付，通过安全便捷的支付通道，使得电商交易更加高效和可靠。</p>
+<p>像阿里巴巴和亚马逊，利用大数据和人工智能技术，实现精准营销和智能客服。通过分析用户浏览和购买记录，提供个性化的购物推荐，极大提升了购物体验。</p>
+<p>一个典型的案例是阿里巴巴的“千人千面”技术，通过智能算法为每个用户提供个性化的购物页面和商品推荐。智能客服系统，如阿里的“客服小蜜”，可以通过自然语言处理技术，快速回答客户问题，提升服务效率。</p>
+<h3 id="5" tabindex="-1">5. 金融行业</h3>
+<p>20世纪70年代，自动取款机（ATM）和电子转账系统的出现，使得金融交易更加便捷。银行通过计算机系统管理客户信息和交易记录，提高了服务效率和安全性。</p>
+<p>金融行业的数字化主要体现在网上银行和电子支付系统的发展上。20世纪末，网上银行服务开始普及，客户可以通过互联网进行账户查询、转账和支付。电子支付系统，如PayPal和信用卡支付，极大地便利了在线交易和国际支付。</p>
+<p>金融行业通过智能化技术实现了风控、智能投顾和个性化理财服务。例如，蚂蚁金服的“芝麻信用”，通过对用户行为数据的分析，让它有能力提供信用评分，帮助用户获得贷款理财等金融服务。</p>
+<p>智能投顾平台，如Wealthfront和Betterment，通过AI算法为客户提供个性化的投资建议和组合管理。智能化技术不仅提高了投资回报率，还降低了投资风险。</p>
+<p>这里我拿以两个事情为信息化、数字化、智能化做个结尾，本来是放到行业发展过程的结尾的。我觉得放到这里也可以。</p>
+<p>SpaceX公司的 猎鹰九号,它（9台发动机-《星球大战》中的“千年隼”）近地轨道运载能力大约为22.8吨，已完成了超过300多次的发射任务，是当下为止最稳定可靠火箭。重型猎鹰用了三台猎鹰九号，到现在为止发射次数比较少，6月26号完成了第10次发射任务，一直保持100%发射成功率，星舰的出现是除了提供更大的负载，其负载100吨左右，还有就是二级助推也要能回收，这是重型猎鹰不能实现的。</p>
+<p>他们在设计、制造、发射和监控过程中，广泛应用了信息化、数字化和智能化技术，例如全面使用计算机辅助设计，进行复杂的空气动力学和结构数字化仿真。利用数字孪生技术进行测试和改进，确保设计和制造的一致性。采用最先进的制造技术，如3D打印和智能机器人装配。全自动化的发射控制系统，利用星链卫星支持低延时全程远程操作和监控。整合全面的传感器网络，实时数据分析，监控飞行器的所有关键指标。主导航和着陆系统，利用AI技术进行路径规划和故障诊断。算是把这些技术高效整合的示例额。</p>
+<p>全自动驾驶（Full Self-Driving, FSD） 是一个端到端的自动驾驶解决方案，从感知到决策再到执行，全部由特斯拉自行开发和集成。用神经网络和高级传感器，FSD 可以在毫秒级别内对周围环境进行感知和决策。FSD在高速公路和城市街道上表现还可以，尤其是在自动变道、自动跟车和停车方面。当然FSD 在某些复杂交通场景下仍有局限性。从12版本后其决策的神经网络的决策过程都是从人类操作中学习，而不是以前人事先做的规则定义，那学的越多，这个决策效果就会更好,预计经过60亿英里的验证里程基本就可以实现全自动驾驶了，当然这个学习训练过程还需要庞大的计算资源支持。所以除了特斯拉投入今年会开始投入自动驾驶出租车外(未来这可能会是一个很大的市场)进化验证系统能力，当然还会购买更多gpu构建更庞大的计算中心。</p>
+<h1 id="三、当下的信息化、数字化主要技术介绍" tabindex="-1">三、当下的信息化、数字化主要技术介绍</h1>
+<h3 id="1-5-g" tabindex="-1">1. 5G和下一代通信技术</h3>
+<p>5G（第五代移动通信技术）是最新一代的移动通信标准，继承了4G（LTE）的技术，并在其基础上进行了显著的提升。5G由国际电信联盟（ITU）定义，主要特点是更高的速度、更低的延迟和更大的连接密度。使用24 GHz及以上频段，可以提供更高的数据速率和容量。在同一物理网络上创建多个虚拟网络，以满足不同应用的需求。<br>
+下一代通信技术预计将在2030年前后推出。虽然目前尚未标准化，但下一代通信技术预计将进一步提升通信能力，包括更高的速度、更低的延迟和更广泛的应用场景。将会使用太赫兹通信等更高频段，提供更高的数据传输速率。使用人工智能进行网络优化和自动管理。支持高质量的全息图传输，实现更加沉浸式的虚拟现实体验。</p>
+<p>5G技术的普及将大大提升数据传输速度和稳定性，推动物联网的发展。广电行业将实现更高质量的4K/8K超高清直播，物流行业将实现全程实时监控和追踪，社交平台将提供更流畅的直播互动体验。5G的普及将推动各行业通信基础设施的全面升级，促进数字化转型。高速、低延迟的网络将进一步促进人际和设备之间的连接，提高信息传输的效率和质量。主要应用场景有 自动驾驶中5G和下一代通讯技术支持实时数据传输，确保自动驾驶车辆的安全性和可靠性。在工业自动化中，可以实现设备之间的实时通信，提高生产效率和灵活性。5G和下一代通讯技术的高速率和低延迟特性将大幅提升AR和VR的体验，应用于娱乐、教育、培训等领域。</p>
+<h3 id="2-io-t" tabindex="-1">2. 物联网（IoT）</h3>
+<p>物联网（Internet of Things, IoT）指通过互联网将各种物理设备连接起来，使这些设备能够互相通信、交换数据，并通过智能化的处理实现自动化和远程控制。IoT设备包括但不限于传感器、智能家电、可穿戴设备、工业机械和交通工具等。各种传感器用于检测和收集环境中的物理数据，如温度、湿度、光线、运动等。各种连接技术和协议确保设备之间以及设备与云端的通信，包括Wi-Fi、蓝牙、Zigbee、LoRa、NB-IoT、5G等。通过边缘计算和云计算平台对大量数据进行实时处理和分析。</p>
+<p>物联网的作为数据数字化的基础技术之一，极大的扩展了我们数据集，从而也实现更多对终端的控制能力。IoT落地将大幅提升日常生活的便捷性和舒适度。主要应用场景 家庭中的各种设备可以互联互通，实现智能控制。例如，智能恒温器、智能灯光和安防系统等，提升生活便利性和安全性。在城市管理中，IoT可以用于环境监测、交通管理、能源管理、垃圾处理等多个方面，提高城市运行效率和居民生活质量。智能农业利用IoT设备监测土壤湿度、天气情况、作物生长状态等，优化农业生产，提高产量和质量。</p>
+<h3 id="3-2" tabindex="-1">3.虚拟技术</h3>
+<p>虚拟现实（VR）、增强现实（AR）和混合现实（MR），虚拟现实（Virtual Reality, VR）是利用计算机技术生成的逼真三维环境，用户可以通过专用设备（如头戴显示器、手柄等）沉浸在这个虚拟环境中，与其互动。包括的主要技术有三维图形渲染、头部追踪、运动追踪、触觉反馈、音频模拟等。增强现实（Augmented Reality, AR）是在现实世界的基础上，叠加数字信息或虚拟对象，使用户能够同时看到真实环境和虚拟信息的组合。包括的主要技术有计算机视觉、图像识别、传感器融合、显示技术、位置追踪等。混合现实（Mixed Reality, MR）是融合了虚拟现实和增强现实的技术，可以同时与数字对象与现实环境和物理对象进行互动。MR创建了一个真实世界和虚拟世界的融合环境，用户可以在其中自由交互。包括的主要技术有高级传感器、环境理解、空间映射、自然用户界面、光场显示等。</p>
+<p>这些技术增强了用户体验，提高了培训和教育的效果，促进了设计和工程的创新和优化。应用场景主要有 提供沉浸式游戏体验和虚拟现实电影。模拟真实环境进行训练和教育，如飞行员训练和医学手术模拟。用户可以通过VR进行虚拟旅游，探索全球各地的名胜古迹和自然景观。通过AR技术让顾客虚拟试穿衣物或查看家具摆放效果。AR在教育领域也有广泛应用，如增强教科书内容、虚拟实验室、历史遗址复原等。MR允许团队成员在虚拟和现实融合的环境中协同工作，如共同设计产品、建筑等。通过MR，专家可以远程指导现场工作人员，提供实时的帮助和支持。还可以帮助医生在手术过程中可视化患者的内部结构，提高手术精度。</p>
+<h3 id="4-1" tabindex="-1">4. 区块链技术</h3>
+<p>区块链是一种分布式账本技术，它通过加密算法将数据块按时间顺序连接成链条，并在多个节点间共享，以确保数据的不可篡改和透明。每个数据块包含若干条交易记录，这些记录通过共识机制验证后被添加到区块链中。所有节点共享同一账本，每个节点都有完整的数据副本，这种去中心化的存储方式增强了系统的透明度和抗攻击性。利用哈希和公私钥的加密算法 ，保证数据完整一致性同时实现了身份认证和交易安全。利用工作量证明（PoW）、权益证明（PoS）等共识机制来确认数据的有效性，这个也是现在区块链技术痛点，如何改进共识机制来提高效率和安全性。</p>
+<p>整体上<font color="#ff0000">区块链保证数字化信息的尽量真实性,通过去中心化和不可篡改的特点，重塑了信任机制，降低了对第三方中介的依赖，可以说重新定义人类的生产关系</font>。</p>
+<p>区块链技术在金融、电商等领域会先落地，通过智能合约实现借贷、交易、支付等金融服务，去中心化应用（DApps）将改变传统的商业模式,数字加密货币和去中心化金融（DeFi）提高金融交易的透明度和安全性，降低交易成本。低成本的跨境支付，减少中间环节，如比特币、以太坊等，为投资和支付提供了新的选择。</p>
+<p>在供应链管理上可以实现供应链的透明化和可追溯性，提高供应链效率，减少假冒伪劣产品。比如对于农产品种植、采摘、运输、仓储、分销和零售每个过程都要求记录到公共的区块链上，因为区块链有防篡改的特性，所以消费者在购买时，可以通过扫描二维码等方式，查看苹果的整个供应链信息，确保所购产品的来源和质量。</p>
+<p>通过智能合约可以实现自动执行合同条款，减少人为干预和纠纷。比如假设两家公司A和B分别位于不同国家，A公司向B公司采购一批机器设备。A公司和B公司在区块链上签订智能合约，约定机器设备的价格、交货时间、支付方式等条款。当机器设备到达A公司并经过验收后，A公司上传验收单据到区块链，智能合约会自动验证验收结果。在运输和验收条件都满足的情况下，智能合约会自动从A公司的账户中扣除货款，并转账到B公司的账户，完成支付过程。通过这种方式，智能合约自动执行合同条款，确保交易过程透明和高效，避免了由于人为因素导致的延误和纠纷。各方可以实时监控合同执行情况，减少不必要的争议和信任成本。</p>
+<h3 id="5-1" tabindex="-1">5.数字孪生</h3>
+<p>数字孪生（Digital Twin）是指物理实体在虚拟世界中的的精确数字化副本。它通过传感器等设备实时获取物理实体的数据，并在虚拟模型中反映这些数据，从而实现对物理实体的监控、分析和优化。提高了系统和设备的可视化、可控性和优化能力。</p>
+<p>它在工业制造、城市管理、医疗健康、建筑房地产、交通物流和能源管理等多个领域将会带来变革。比如制造业用于监控和优化生产设备的运行，提高生产效率，减少停机时间。创建智慧城市模型，优化资源分配，改善城市交通和基础设施管理。模拟人体器官和系统，辅助疾病诊断和治疗方案的制定等。数字孪生是传感器，大数据处理，交互建模仿真，智能分析决策等多种数字化技术整合后的综合应用场景，对技术整合能力要求很高，投入成本大，落地也是一个渐进过程。</p>
+<h3 id="6" tabindex="-1">6.元宇宙</h3>
+<p>元宇宙是一个由虚拟现实（VR）、增强现实（AR）和其他数字技术构建的持久、共享的全面虚拟空间。用户可以在其中以数字身份互动、创作和交易。创造了全新的互动和经济模式，拓展了现实世界的边界，提供了丰富的创作和商业机会。</p>
+<p>应用场景主要有提供新的社交和娱乐平台，用户可以在虚拟世界中互动、游戏和参与活动。创建虚拟市场和经济系统，用户可以在其中进行交易和商业活动。提供虚拟教室和工作空间，促进远程教育和协作办公。</p>
+<p>元宇宙是一个综合了虚拟现实、增强现实和互联网的全面数字化空间，覆盖社交、娱乐、教育、工作等多个方面。其核心技术包括VR/AR、区块链、人工智能、物联网、云计算和5G等。元宇宙与数字孪生有紧密联系，后者可以为前者提供高精度的虚拟模拟。</p>
+<h1 id="ai" tabindex="-1">四 浅谈AI技术</h1>
+<p>对于最近很多大模型翻车的情况，就是13.9和13.11比较大小，按照数学肯定是13.9比13.11大，但是作为现在大模型现在主要的学习方式更多的记忆，尤其人类投喂的文字内容，而在我们文字表述中很多情况比如常见的目录标志或者一些级别定义 13.11是比13.9大的这个认识。这里其实就是一般记忆性认识和数理规律的逻辑推理的两种能力差异，大模型其实在数理推理很弱，你反过去看今年大模型答高考试卷的成绩也能看出# 文科上了一本线，理科只能上二本，数学最差，而靠记忆的回答都不错，数学考试中靠记忆的，比如公式类的乘法口诀这类大模型就能表现的不错也就是这个原因，这也就是这次大模型翻车的核心。大语言模式更像人类的下意识模式，现在它主要还是模仿行为(就是说学会一些人类语言范式和知识语言表达，实现现有知识的混合)，其逻辑推理，计划性能力很弱。而我们人类的额叶这里的酝酿式的慢思考能力需要一种新的范式，这是大模型缺少的。这也是OpenAI在新的大模型主要解决的问题。</p>
+<p>对未来社会影响最大的我觉得是两个技术一个是区块链(Cypto)，它会改变生产关系，算是当下人类能设计中最公平的生产关系，一个就是人工智能（AI）提高生产力，他们会是重构人类社会结构的技术。</p>
+<p>人工智能早期有三个大方向——符号主义、连接主义和行为主义——各自有着不同的发展路径和理论基础。符号主义通过符号操作和逻辑推理模拟智能比如专家系统，连接主义强调仿人脑模型通过神经网络模拟认知过程，而行为主义则通过与环境的交互学习来实现智能，认为控制论和感知-动作型控制系统才是人工智能关键。随着技术的发展，这些流派之间的界限逐渐模糊，而现在发展主流就是以神经网络大模型为主的融合。</p>
+<p>这里我想说说AI大模型技术的发展现状、应用前景，以及它们对我们生活、工作、娱乐和整个社会的深远影响。随着科技的飞速进步，特别是多模态大模型快速发展和人工通用智能（AGI）可能的出现，我们正迎来一个前所未有的新时代。能让大家对这些技术有个简单了解，并看到它们带来的巨大潜力和影响。</p>
+<h2 id="神经网络" tabindex="-1">神经网络</h2>
+<p>神经网络（Neural Network）是一种计算模型，由多个相互连接的节点（称为神经元或节点单元）组成，能够通过训练学习从数据中提取特征和模式。神经网络的设计灵感来源于生物大脑神经元的工作原理。它的发展经历了多个关键阶段，从最初的多层感知机（MLP）到深度神经网络（DNN），再到今天的大模型（Large Model）。这里将对这些技术的做一点简单介绍。</p>
+<h4 id="mlp" tabindex="-1">一、多层感知机（MLP）</h4>
+<p>多层感知机的诞生可以追溯到20世纪60年代。那时，计算机科学家们受到生物大脑的启发，开始研究如何用计算机模拟人类的思维过程。他们发现，大脑中的神经元通过复杂的网络连接，能够处理和分析各种信息。于是，科学家们设计了人工神经网络，其中最早的一种模型就是感知机（Perceptron）。</p>
+<p>感知机只能处理简单的线性问题，但随着科技的进步，科学家们逐渐改进了感知机的结构，增加了更多的隐藏层，并通过非线性激活函数处理输入信号。使其能够处理更加复杂的非线性问题。这样，多层感知机就应运而生了。</p>
+<p>多层感知机（Multilayer Perceptron, MLP）包含一到两层隐藏层，能学习并近似复杂的非线性函数，用于分类、回归等任务。它通过训练调整权重和偏置，使得模型输出接近实际结果。</p>
+<p>后来我们意识到具有隐藏层的前馈神经网络（如多层感知机），只要有足够数量的隐藏层神经元，并且使用非线性激活函数（如sigmoid函数或ReLU函数），就能够以任意精度逼近任何连续函数。换句话说，任意复杂的映射关系，都可以通过适当构造的多层感知机来近似，这使得多层感知机在理论上具备了极强的表达能力。这就是我们说的万能近似定理。</p>
+<p>但由于早期的计算机硬件性能有限，无法支持训练较大的神经网络。MLP还容易过拟合，特别是在数据量不足的情况下。随着层数增加，反向传播中的梯度值可能会逐渐减小，导致训练变得困难。加上算力限制，一直表现不好，所以后续一直没怎么发展。</p>
+<h4 id="dnn" tabindex="-1">二、从多层感知机到深度神经网络（DNN）的技术突破</h4>
+<p>随着技术的发展，2005年左右，图形处理单元（GPU）的崛起提供了强大的并行计算能力，使得训练深层神经网络成为可能，上百层的隐藏层的深度神经网络让可以自动从海量数据集中提取特征，不需要人工干预，这就是无监督学习。Krizhevsky等人在2012年的ImageNet竞赛使用引入非线性的ReLU函数，避免了梯度消失问题，极大地提高了深层网络的训练效率。其计算简单、性能优越，成为深度神经网络中的重要激活函数。Hinton等人在2012年提出了Dropout技术，通过在训练过程中随机丢弃一些神经元，减少了过拟合现象。Kingma和Ba在2014年提出了Adam优化器，它结合了动量和自适应学习率，显著提升了模型的收敛速度和稳定性。2015年，Ioffe和Szegedy提出了批量归一化，通过对每一批数据进行归一化，加速了训练过程并提升了模型的稳定性。</p>
+<p>这些技术和算法的进步导致了深度神经网络（Deep Neural Network, DNN）出现和逐步改善加强，与MLP相比，DNN的隐藏层数更多，通常达到几十甚至上百层，这增强了模型的表达能力和复杂度，对特征提取能力得到一个飞跃。DDN在学习中表现越来越受到关注，2016年(AlphaGo)的围棋战胜人类更是把人工智能推到了公众视野面前。带来人工智能新一轮浪潮。</p>
+<h4 id="dnn-1" tabindex="-1">三、从深度神经网络（DNN）到大模型的发展</h4>
+<p>随着互联网和社交媒体的发展，数据量爆炸式增长，为训练大规模模型提供了充足的数据支持。TensorFlow（Google）和PyTorch（Facebook）等深度学习框架的推出，使得模型开发和训练变得更加便捷和高效。2017年Vaswani等人提出了Transformer架构，这是一种基于注意力机制的深度学习模型，显著提升了自然语言处理任务的性能。Transformer的自注意力机制使得模型能够并行处理序列数据，极大地提升了训练效率。<br>
+BERT（2018年）Devlin等人提出了BERT模型，通过大规模预训练和下游任务微调，实现了在多个自然语言处理任务上的突破。GPT系列（2018年-2020年）OpenAI发布了GPT、GPT-2和GPT-3模型，通过生成式预训练架构，在文本生成和理解任务上取得了显著进展。</p>
+<p>因为上述原因导致了大模型出现和改善，具体什么是大模型了，在人工智能领域，大模型通常指的是那些拥有大量参数和包含复杂结构(如深度卷积神经网络（CNNs）、递归神经网络（RNNs）以及最新的基于变换器（Transformer）的模型)的深度学习模型。这些模型通过处理海量数据，能够在语言理解、图像识别、自然语言生成等多种任务中表现出卓越的能力。以GPT-4为例，它包含了数万亿的参数，经过对海量文本数据的训练，能够生成如人类般流畅的语言，回答复杂的问题，并执行多种任务。</p>
+<p>大模型现在被诟病最多的就是幻觉问题，它指的是AI模型在生成文本时输出不准确或不真实的信息。这就是我前面发那张图的原因，大模型生成幻觉内容与人类看到常见词语乱序或熟悉但错位图像后进行脑补存在一定的相似性。大模型和人类大脑都依赖于识别和理解模式来生成或解读信息。在不完全或混乱的输入下，二者都会尝试通过已有的认识和经验填补空白。无论是大模型生成下一个词语，还是人类在看到熟悉但错位后进行脑补，都是在已有信息基础上进行预测和补全。面对不确定或模糊的信息，大模型和人类都会基于概率或经验进行最可能的猜测，尽管这种猜测可能并不符合原意。</p>
+<p>想减少大模型幻觉问题，我们一般 提高训练数据的质量和多样性，确保数据准确、全面，减少模型学习到错误或偏颇信息的概率。在生成内容时，结合外部知识库或实时校验机制，对生成的文本进行事实验证，确保输出内容的准确性。训练模型时结合多种任务，如阅读理解、摘要生成、问答系统等，提升模型对不同语境和任务的理解能力，从而减少幻觉问题。利用强化学习和人类反馈不断优化模型，从而减少模型在生成过程中的幻觉问题。</p>
+<p>最近OpenAI发布的多模态大模型（如GPT-4o）不仅限于处理单一类型的数据，而是能够同时处理多种类型的数据，如文本、图像、音频等。这类模型通过融合不同模态的信息，能够实现更为全面和智能的任务处理能力。例如，GPT-4o能够在描述一张图片的同时，生成相关的文字解释；或者在处理视频内容时，结合音频和图像信息，生成更加精准和生动的描述。可以实时对音频、视觉和文本进行推理，能够处理50种不同的语言，同时提高了速度和质量，并能够读取人的情绪。可以在短至 232 毫秒的时间内响应音频输入，平均为 320 毫秒，与人类的响应时间相似。可以跨文本、音频和视频进行实时推理。这次多模态大模型之所有有如此优秀表现是因为是基于一个模型实现了多种数据的处理，而不是以前那种大模型agent后给不同特定模型来处理数据。这是向更自然的人机交互迈出的比较重要的一步。</p>
+<p>我们可能正处在人工智能的前牛顿时代，我们通过大力出奇迹的方式让机器越来越智能化，但是我们没法解释它为什么产生，也许未来我们可以发现一个大家认可的基础理论模型可以解释这个原因。</p>
+<h2 id="rag-agent" tabindex="-1">大模型的RAG和Agent的应用</h2>
+<p>无论RAG还是Agent的出现都是为了补充大模型在实际应用中能力不足的问题的（比如逻辑推理和计划能力差，通过人类对某些过程主动固化一些逻辑）。我们现在详细介绍下当下结合大模型很火的技术RAG（检索增强生成）和Agent。RAG技术结合了信息检索和生成模型。它首先从一个大型知识库中检索相关信息，然后利用生成模型（如GPT-4）生成回答。这种方法提高了生成内容的准确性和相关性。比如 用户输入一个问题，例如：“如何治疗2型糖尿病？”，系统从一个包含医学文献、医生指南和健康网站的知识库中检索相关信息。它可能找到几个相关文档，包括“2型糖尿病的治疗方法”、“最新的糖尿病治疗指南”和“糖尿病药物介绍”。使用大模型(如GPT-4)生成模型，将检索到的信息进行整合，生成一个综合性的答案。将不同来源的信息汇总，并用自然语言生成一个清晰的回答。</p>
+<p>Agent技术是指能够自主完成任务的智能代理。它们能够理解指令、计划执行步骤，并在一定范围内自主决策。比如用户对智能家居助手说：“帮我准备一个适合今晚7点的家庭聚餐。”智能家居助手理解用户的需求，需要准备家庭聚餐，涉及的步骤可能包括确定菜单、检查食材、购买缺少的食材、设置餐桌和调整家居环境。Agent询问用户对菜单的偏好，并推荐一些菜品。用户选择后确定最终菜单。Agent通过与智能冰箱和智能橱柜连接，检查是否有足够的食材。如果缺少食材，Agent自动下单，通过在线购物平台购买所需食材。在晚餐前，Agent指示智能扫地机器人清洁餐厅区域，并通过智能照明系统调整灯光。在晚餐前10分钟，Agent通过智能音响播放背景音乐，并将恒温器调节到舒适的温度。如果在准备过程中出现问题，例如在线购物平台上的某种食材缺货，Agent会通知用户并建议替代选项。用户可以根据需要对准备过程进行调整，例如更改菜单或调整时间。聚餐准备完毕，智能家居助手通知用户：“所有准备工作已完成，您可以开始享受家庭聚餐了。”，从这里看RAG可能就是的Agent的一部分。</p>
+<p>大模型技术的Agent技术在学术上现在是蓝海，也正在多个行业中展现出了巨大的潜力和应用前景。现在就算最好的GPT4的推理还是有些浅层的，推理的深度和泛化做的还不好，不稳定，当然通过提示词可以在一定层度解决浅层的推理问题，但还是不够。记忆模块RAG的检索也过于简单，虽然结合全文和知识图谱检索可以提升检索质量，但也是不够。现在Agent技术用不同的记忆库和不同的大模型效果差异也会很大。所以Agent现在落地的整体还是尝试状态，其检索和推理还有许多需要完善的地步，除了大模型自身的发展外，Agent就是这两年被AI关注的重点了，也是当下在大模型行业落地重要实现方式。下面我们简单聊下大模型Agent对行业可能带来的影响。</p>
+<h3 id="医疗领域" tabindex="-1">医疗领域</h3>
+<ul>
+<li>
+<p><strong>个性精准化医疗</strong>：AI将整合基因数据、电子健康记录和生活方式数据，为患者提供个性化的诊断和治疗方案。 例如，GRAIL和Tempus利用AI分析基因数据以优化治疗方案</p>
+</li>
+<li>
+<p><strong>影像分析与智能诊断</strong>：AI驱动的工具将更加精确地分析医学影像，使用深度学习模型进行疾病检测，辅助医生进行诊断和治疗决策，减少误诊和延误如癌症筛查、心脏病预测。例如，Google Health和IBM Watson在影像分析领域取得显著成果。</p>
+</li>
+<li></li>
+<li>
+<p><strong>医疗咨询与虚拟护理</strong>：提供准确的医学知识回答，提高患者教育和支持。通过AI助手和远程诊断设备，提供持续的健康监控和咨询服务，特别是在偏远和资源有限的地区。通过自然语言处理和机器学习为患者提供及时的医疗建议和提醒。 例如，Babylon Health和Ada Health提供AI驱动的健康咨询服务。</p>
+</li>
+<li>
+<p><strong>药物发现和医疗文献检索</strong>*：AI将加速新药研发，通过模拟和分析大规模生物数据发现新药物靶点和候选药物。也能帮助医生和研究人员快速找到相关的医学文献和最新研究。</p>
+</li>
+</ul>
+<h3 id="教育领域" tabindex="-1">教育领域</h3>
+<ul>
+<li><strong>个性化学习平台</strong>：AI将分析学生的学习行为，提供定制化的学习路径和资源，自动生成定制化的学习材料和测验题目，提高教学效果。例如，Knewton和DreamBox Learning利用AI提供个性化教学内容。</li>
+<li><strong>智能评估与反馈</strong>：自动化的评估系统将实时反馈学生的学习进度、兴趣、薄弱点、作业和考试，提供及时反馈和指导并推荐个性化的学习资源，帮助教师优化教学策略。例如, Grammarly和Turnitin利用AI进行语法检查和抄袭检测。</li>
+<li><strong>虚拟导师与学习助理</strong>：AI驱动的虚拟导师将为学生提供个性化辅导、问题解答和复习功课，帮助学生自主学习。例如，Coursera和Khan Academy使用AI提供即时辅导服务。</li>
+<li><strong>沉浸式学习</strong>： 结合AI和虚拟现实（VR）技术，提供更加沉浸式和互动式的学习体验。</li>
+<li><strong>全球化教育</strong>： AI将促进全球教育资源的共享和协作，将深度整合到教育系统中，实现全面个性化和自适应学习教育体验，实现教育资源的公平分配，提高教育质量和公平性。</li>
+</ul>
+<h3 id="金融领域" tabindex="-1">金融领域</h3>
+<ul>
+<li><strong>智能投顾与财富管理</strong>：提供个性化的投资建议和自动资产管理服务，优化投资组合，减少人工干预。例如，Wealthfront和Betterment利用机器学习优化投资组合。</li>
+<li><strong>欺诈检测与风险、预测分析</strong>：自动实时监控交易活动，分析交易模式和行为，检测和预防欺诈行为,识别异常行为，提升金融系统的安全性。通过深度学习模型分析大量历史数据和实时数据，更加准确的市场趋势预测和风险管理，为投资决策提供支持。例如，PayPal和Visa使用AI模型来识别可疑交易。</li>
+<li><strong>客户服务与个性化推荐</strong>：通过自然语言处理和数据分析，快速响应客户的复杂查询，提供更加个性化的金融产品和服务。更加精确的客户行为分析和个性化金融产品推荐通过分析用户的消费习惯、投资偏好等提供更定制化的服务。</li>
+<li><strong>信用评分</strong>： 利用机器学习模型评估借款人的信用风险，提升贷款审批效率。 例如，FICO和ZestFinance使用AI模型进行信用评估。</li>
+<li><strong>区块链与AI结合</strong>：利用AI优化区块链交易和智能合约，提升金融交易的安全性和效率。</li>
+</ul>
+<h3 id="智能家居领域" tabindex="-1">智能家居领域</h3>
+<ul>
+<li><strong>智能助理与家居自动化</strong>：智能助理将控制家中的各种设备，根据用户需求自动生成家务计划和任务提醒，提供更加准确和相关的回答，实现无缝自动化和个性化体验。</li>
+<li><strong>健康监控与安全防护</strong>：通过传感器和AI分析，智能家居系统将提供健康监控并提供相应的提醒和建议，自动监控家庭安全系统，检测和预防安全威胁对家居环境做好应急响应。例如，Ring和Nest提供智能安防解决方案。</li>
+<li><strong>能源管理与环境优化</strong>：AI将优化家居能源使用，将实时学习用户的行为和偏好，自动调整环境参数，如照明、温度和娱乐系统，提高居住生活舒适度和能源效率。例如，Nest Thermostat利用AI学习用户习惯以优化温度设置。</li>
+</ul>
+<h3 id="制造业" tabindex="-1">制造业</h3>
+<ul>
+<li><strong>企业知识管理</strong>：快速检索和生成技术文档，提高工程师和技术人员的工作效率。</li>
+<li><strong>智能制造与自动化</strong>：自动化生产线中的智能代理对设备状态进行实时监控和调整，优化生产流程，预测设备维护需求预防故障，减少停机时间，提高生产效率、质量和灵活性。</li>
+<li><strong>供应链优化</strong>：实时检索和分析供应链数据，调整物流和库存计划，优化供应链管理，减少成本和提高响应速度。</li>
+<li><strong>质量控制与预测性维护</strong>：AI系统将实时监控生产质量，预测并预防设备故障。</li>
+</ul>
+<p>除了上面我提到的这些行业，其实游戏行业Agent应该最容易落地的，让游戏NPC给玩家带来更加个性化人性化的交互体验。</p>
+<h2 id="agi" tabindex="-1">AGI浅谈</h2>
+<p>OpenAI全新的AGI路线图，将AI划分为5个等级，自称其AI模型正处于L1，但很快就会达到L2（推理者）。而根据其前研究员预测，五级AGI最快将在27年实现。<br>
+这五大等级：<br>
+L1：聊天机器人，具有对话能力的AI。<br>
+L2：推理者，像人类一样能够解决问题的AI。<br>
+L3：智能体，不仅能思考，还可以采取行动的AI系统。<br>
+L4：创新者，能够协助发明创造的AI。<br>
+L5：组织者，可以完成组织工作的AI。<br>
+而目前我前面提到的很火Agent，处于Level 3的级别方向上。</p>
+<p>AI领域对AGI是否能实现有以下几种主流观点：</p>
+<ol>
+<li>
+<p><strong>乐观主义者</strong>：一些研究人员和专家认为AGI一定会到来。他们相信随着技术的进步和研究的深入，AGI是一个可以实现的目标。这一观点的代表人物包括雷·库兹韦尔（Ray Kurzweil）等，他们认为AGI的实现只是时间问题。</p>
+</li>
+<li>
+<p><strong>谨慎乐观者</strong>：这一类专家认为AGI有可能实现，但存在很多技术和伦理挑战需要克服。他们承认当前AI技术的进步，但也指出实现AGI需要解决一些根本性问题，如意识、自我反省、常识推理等。</p>
+</li>
+<li>
+<p><strong>怀疑论者</strong>：一些研究人员对AGI的实现持怀疑态度。他们认为AGI可能无法实现，或者即使能实现，也需要很长的时间。他们指出目前的AI进展主要集中在特定任务上，距离通用智能还有很大的差距。</p>
+</li>
+<li>
+<p><strong>不可知论者</strong>：这一观点的持有者认为AGI的实现与否难以预料。他们认为我们目前对智能和意识的理解还不够深入，无法准确预测AGI的未来。</p>
+</li>
+</ol>
+<p>虽然观点有差异但整体上对于是否能出现AGI,大多数AI领域研究者是肯定的。至于实现的时间节点分歧就比较大，很难有大多数的结论。</p>
+<h5 id="strong-strong" tabindex="-1"><strong>乐观预测</strong></h5>
+<ul>
+<li>
+<p><strong>2030年代</strong>：一些人认为，AGI可能在2030年代实现，例如雷·库兹韦尔等。</p>
+</li>
+<li>
+<p><strong>技术突破的信号</strong>：他们基于当前技术发展速度和研究进展，预测技术将在这一时期迎来重大突破。</p>
+</li>
+</ul>
+<h5 id="strong-strong-1" tabindex="-1"><strong>保守预测</strong></h5>
+<ul>
+<li><strong>2050年代或更晚</strong>：一些人认为，AGI的实现可能会在2050年或更晚，甚至有观点认为可能在本世纪末才能实现。这些人强调：
+<ul>
+<li><strong>技术挑战</strong>：解决智能系统的自适应、理解和创造性问题可能需要更多的时间和创新。</li>
+<li><strong>伦理和安全问题</strong>：AGI的开发需要解决大量的伦理、安全和社会问题，确保其安全、可控和有益。</li>
+</ul>
+</li>
+</ul>
+<p>6月5日，ChatGPT 创建者 OpenAI 的前安全研究员 Leopold Aschenbrenner 在其最新的人工智能 (AI) 论文系列中加倍关注通用人工智能 (AGI)。文中概述了近年来语言模型能力快速发展的情况,重点介绍了从GPT-2到GPT-4的进步。它指出,这种进步并非偶然,而是计算能力不断提高、算法效率提升以及模型能力&quot;解锁&quot;的结果。作者认为,通过&quot;量级计算&quot;,可以预测模型能力在2027年前将实现重大质的飞跃,可能导致通用人工智能的出现。 主要观点:</p>
+<ul>
+<li>语言模型能力在短短4年内从GPT-2(学前水平)发展到GPT-4(高中水平)</li>
+<li>计算能力不断提高、算法效率提升和模型能力&quot;解锁&quot;是持续进步的动力</li>
+<li>预计到2027年,模型能力将再次实现GPT-2到GPT-4那样的质的飞跃,可能导致通用人工智能的出现</li>
+<li>需要&quot;量级计算&quot;来预测未来进展,而不是依赖悲观预测</li>
+<li>语言模型的感知局限性不断被打破</li>
+</ul>
+<p>6月12日，谷歌深度学习研究员肖莱（François Chollet）也是神经网络库Keras的创建者在与播客主Dwarkesh Patel （帕特尔）对话时，表达了他对 AGI（通用人工智能）研究现状的担忧。肖莱表示，几年前所有最先进的研究成果都是公开分享和发表的，但现在情况已经不再如此。他将这一变化归因于 OpenAI 的影响，指责他们导致了“前沿研究出版的完全关闭”（complete closing down of frontier research publishing）。肖莱批评 OpenAI 引发了对大语言模型的炒作，他认为这转移了资源和注意力，使其他潜在的 AGI 研究领域被忽视。他表示，OpenAI“凭一己之力改变了游戏规则”， 基本上将通向 AGI 的进展推迟了好几年，可能是五到十年。</p>
+<p>当然OpenAI本身还是一直把实现AGI作为使命和目标的，当然这个也是我2012年接触深度学习后的梦想。当下人类面对不少需要解决的问题，比如 比如能源问题、气候变化、癌症研究、宇宙探索等。我们的生产力提升还有很大空间，我们的医疗保健、教育和公共服务也需要改进，我们需要在理论和技术有更多创新和突破。而现在能看到比较好解决这些问题可能就是AGI，当然也有可能带来更多不确定性</p>
+<p>所以同时我们希望在AGI这条路上确保 AGI 系统是安全和可靠的，避免出现不受控制或有害的行为。让AGI 的发展和应用是公平的，不会加剧社会不平等。 AGI 的研发过程中保持透明，公开研究进展和发现。研究机构、政府和组织的合作，共同制定 AGI 的发展路线和伦理标准。让 AGI 技术惠及所有人，而不是被少数人所垄断。</p>
+<p>李飞飞觉得在未来5-10年，AI一个是在应用方面比如科研和制造业教育，医疗都会有突破性的应用出现，一个是视觉技术会带来新的一轮AI的革命，我们正处在另一个突破的边缘。李飞飞觉得空间智能是迈向AGI的重要的一步，所以她现在成立一个4个月公司就是研究这方面技术，现在估值10亿美金。</p>
+<p>Meta的杨立昆（Yann LeCun）觉得现在通过大模型实现AGI可能并是对的道路，他一直觉得要建立世界模型，当然他也在做这方面工作。</p>
+<p>微软的AI CEO 根据现在大模型的发展路径15-20年后，信息经济学将彻底变革，新的科学知识生产的边际成本会接近为零，我们人类这种知识和智力生产引擎进入历史上的一个转折点，我们要做的就是加速这个引擎出现。</p>
+<p>库兹维尔未来学家，他参与并关注人工智快60年了，他的AGI主要观点就是算力，算力主要推动人类智能技术的向前发展，他通过从1939年到1979年人类计算力变化，在40年前就判断人类如果想实现AGI按照这个算力变化情况，随着算力增加人类必然会达到AGI。在2029年实现每秒一万亿次的计算能力就会出现AGI。</p>
+<p>谷歌deepmind实验室的联合创始人shanglegg 兼首席科学家在2001年就提出2028年到2029年实现AGI。他举例aphago和李世石的围棋中走的一个很奇怪的37步，并在最后获胜中产生重要影响。通过这个他觉得要获取创造性的东西，你需要搜索可能性空间，然后做决策，也就是下一步怎么走，他觉得这个就是创造性。他觉得大语言模型加上蒙特卡罗树的搜索是大模型的重要一步。</p>
+<p>维诺德，特斯拉 sun公司的创始人，也是风险投资者，2019年7月投资openai，那个时候刚退出gpt2。他觉得未来专业知识几乎免费，将会为每个人提供免费的IA医生。为孩子提供免费的AI老师，大多数的专业知识都会免费。这个基本是基于AGI的的描述。律师和医生在未来5年左右成本会很低。劳动力将几乎免费，会出现大规模的各种机器人，尤其是双足机器人，比如特斯拉的擎天柱，这个数量会10亿数量级。人类不需要做一些不受欢迎枯燥繁琐奴役的重复性工作。比如各种工业生产线。计算机的使用会更大范围的扩展，计算机将适应人类，而不是人类适应计算机。AI会在娱乐和设计中发挥重要作用，音乐和娱乐创意会变的更多样个性化，以后访问互联网大部分是代理来实现也可以说真正的个人AI助理，互联网上以后会出现百亿的代理实现每个人的点到点的需求。可能会出现新的食物将会出阿信啊更好替代蛋白质生产来取代传统的动物蛋白。人类可能会再次重新做一次农业革命。个人出行会普遍robot tax化，将有更高速的飞机减少我们远距离旅程，甚至是星舰这种飞行。更清洁的能源，核聚成为现实。资源和碳排放会得到解决。</p>
+<p>希望是好的，现实肯定是多变和不确定性，这个很难有银弹，总体上我是觉得AGI可能利大于弊，也许正向循环的飞轮就转起来，否则人类存在的意义又是什么。</p>
+
+      
+      
+    </main>
+
+    
+      <aside>
+      <div class="sidebar">
+            <div class="sidebar-container">
+                  
+                  
+                        <script>
+    async function fetchGraphData() {
+        const graphData = await fetch('/graph.json').then(res => res.json());
+        const fullGraphData  = filterFullGraphData(graphData);
+        return {graphData, fullGraphData}
+    }
+
+    function getNextLevelNeighbours(existing, remaining) {
+        const keys = Object.values(existing).map((n) => n.neighbors).flat();
+        const n_remaining = Object.keys(remaining).reduce((acc, key) => {
+                if (keys.indexOf(key) != -1) {
+                    if (!remaining[key].hide) {
+                        existing[key] = remaining[key];
+                    }
+                } else {
+                    acc[key] = remaining[key];
+                }
+                return acc;
+            }, {});
+        return existing, n_remaining;
+    }
+
+    function filterLocalGraphData(graphData, depth) {
+        if (graphData == null) {
+            return null;
+        }
+        let remaining = JSON.parse(JSON.stringify(graphData.nodes));
+        let links = JSON.parse(JSON.stringify(graphData.links));
+        let currentLink = decodeURI(window.location.pathname);
+        let currentNode = remaining[currentLink] || Object.values(remaining).find((v) => v.home);
+        delete remaining[currentNode.url];
+        if (!currentNode.home) {
+            let home = Object.values(remaining).find((v) => v.home);
+            delete remaining[home.url];
+        }
+        currentNode.current = true;
+        let existing = {};
+        existing[currentNode.url] = currentNode;
+        for (let i = 0; i < depth; i++) {
+            existing, remaining = getNextLevelNeighbours(existing, remaining);
+        }
+        nodes = Object.values(existing);
+        if (!currentNode.home) {
+            nodes = nodes.filter(n => !n.home);
+        }
+        let ids = nodes.map((n) => n.id);
+        return {
+            nodes,
+            links: links.filter(function (con) {
+                return ids.indexOf(con.target) > -1 && ids.indexOf(con.source) > -1;
+            }),
+        }
+    }
+
+    function getCssVar(variable) {return getComputedStyle(document.body).getPropertyValue(variable)}
+
+    function htmlDecode(input) {
+        var doc = new DOMParser().parseFromString(input, "text/html");
+        return doc.documentElement.textContent;
+    }
+
+    function renderGraph(graphData, id, delay, fullScreen) {
+        if (graphData == null) {
+            return;
+        }
+        const el = document.getElementById(id);
+        width = el.offsetWidth;
+        height = el.offsetHeight;
+        const highlightNodes = new Set();
+        let hoverNode = null;
+        const color = getCssVar("--graph-main");
+        const mutedColor = getCssVar("--graph-muted");
+        let Graph = ForceGraph()
+        (el)
+            .graphData(graphData)
+            .nodeId('id')
+            .nodeLabel('title')
+            .linkSource('source')
+            .linkTarget('target')
+            .d3AlphaDecay(0.10)
+            .width(width)
+            .height(height)
+            .linkDirectionalArrowLength(2)
+            .linkDirectionalArrowRelPos(0.5)
+            .autoPauseRedraw(false)
+            .linkColor((link) => {
+                if (hoverNode == null) {
+                    return color;
+                }
+                if (link.source.id == hoverNode.id || link.target.id == hoverNode.id) {
+                    return color;
+                } else {
+                    return mutedColor;
+                }
+                
+            })
+            .nodeCanvasObject((node, ctx) => {
+                const numberOfNeighbours = (node.neighbors && node.neighbors.length) || 2;
+                const nodeR = Math.min(7, Math.max(numberOfNeighbours / 2, 2));
+                
+                ctx.beginPath();
+                ctx.arc(node.x, node.y, nodeR, 0, 2 * Math.PI, false);
+                if (hoverNode == null) {
+                    ctx.fillStyle = color;
+                } else {
+                    if (node == hoverNode || highlightNodes.has(node.url)) {
+                        ctx.fillStyle = color;
+                    } else {
+                        ctx.fillStyle = mutedColor;
+                    }
+                }
+                 
+                ctx.fill();
+                
+                if (node.current) {
+                    ctx.beginPath();
+                    ctx.arc(node.x, node.y, nodeR + 1, 0, 2 * Math.PI, false);
+                    ctx.lineWidth = 0.5;
+                    ctx.strokeStyle = color;
+                    ctx.stroke();
+                }
+
+                const label = htmlDecode(node.title)
+                const fontSize = 3.5;
+                ctx.font = `${fontSize}px Sans-Serif`;
+
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'top';
+                ctx.fillText(label, node.x, node.y + nodeR + 2);
+            })
+            .onNodeClick(node => {
+                window.location = node.url;
+            })
+            .onNodeHover(node => {
+                highlightNodes.clear();
+                if (node) {
+                highlightNodes.add(node);
+                node.neighbors.forEach(neighbor => highlightNodes.add(neighbor));
+                }
+                hoverNode = node || null;
+                
+            });
+            if (fullScreen || (delay != null && graphData.nodes.length > 4)) {
+                setTimeout(() => {
+                    Graph.zoomToFit(5, 75);
+                }, delay || 200);
+            }
+        return Graph;
+    }
+
+    function renderLocalGraph(graphData, depth, fullScreen) {
+        if (window.graph){
+            window.graph._destructor();
+        }
+        const data = filterLocalGraphData(graphData, depth);
+        return renderGraph(data, 'link-graph', null, fullScreen);
+    }
+
+    function filterFullGraphData(graphData) {
+        if (graphData == null) {
+            return null;
+        }
+        graphData = JSON.parse(JSON.stringify(graphData));
+        const hiddens = Object.values(graphData.nodes).filter((n) => n.hide).map((n) => n.id);
+        const data = {
+            links: JSON.parse(JSON.stringify(graphData.links)).filter((l) => hiddens.indexOf(l.source) == -1 && hiddens.indexOf(l.target) == -1),
+            nodes: [...Object.values(graphData.nodes).filter((n) => !n.hide)]
+        }
+        return data
+    }
+
+    function openFullGraph(fullGraphData) {
+        lucide.createIcons({
+                attrs: {
+                    class: ["svg-icon"]
+                }
+            });
+        return renderGraph(fullGraphData, "full-graph-container", 200, false);;
+    }
+
+    function closefullGraph(fullGraph) {
+        if (fullGraph) {
+            fullGraph._destructor();
+        }
+        return null;
+    }
+</script>
+<div  x-init="{graphData, fullGraphData} = await fetchGraphData();" x-data="{ graphData: null, depth: 1, graph: null, fullGraph: null, showFullGraph: false, fullScreen: false, fullGraphData: null}" id="graph-component" x-bind:class="fullScreen ? 'graph graph-fs' : 'graph'" v-scope>
+    <div class="graph-title-container">
+        <div class="graph-title">Connected Pages</div>
+        <div id="graph-controls">
+                <div class="depth-control">
+                    <label for="graph-depth">Depth</label>
+                    <div class="slider">
+                            <input x-model.number="depth" name="graph-depth" list="depthmarkers" type="range" step="1" min="1" max="3" id="graph-depth">
+                    <datalist id="depthmarkers">
+                            <option value="1" label="1"></option>
+                            <option value="2" label="2"></option>
+                            <option value="3" label="3"></option>
+                    </datalist>
+                    </div>
+                    <span id="depth-display" x-text="depth"></span>
+                </div>
+                <div class="ctrl-right">
+                    <span id="global-graph-btn" x-on:click="showFullGraph = true; setTimeout(() => {fullGraph = openFullGraph(fullGraphData)}, 100)"><i  icon-name="globe" aria-hidden="true"></i></span>
+                    <span  id="graph-fs-btn"  x-on:click="fullScreen = !fullScreen"><i  icon-name="expand" aria-hidden="true"></i></span>
+                </div>
+        </div>
+    </div>
+    <div x-effect="window.graph = renderLocalGraph(graphData, depth, fullScreen)" id="link-graph" ></div>
+    <div x-show="showFullGraph" id="full-graph" class="show" style="display: none;">
+        <span id="full-graph-close" x-on:click="fullGraph = closefullGraph(fullGraph); showFullGraph = false;"><i icon-name="x" aria-hidden="true"></i></span><div id="full-graph-container"></div>
+    </div>
+</div>
+                  
+
+                  
+                        
+                        
+                              <div class="toc">
+                                    <div class="toc-title-container">
+                                          <div class="toc-title">
+                                                On this page
+                                          </div>
+                                    </div>
+                                    <div class="toc-container">
+                                          <nav class="toc">
+                <ol>
+                    
+                    <li><a href="#一、什么是信息化、数字化和智能化">一、什么是信息化、数字化和智能化</a>
+            
+                <ol>
+                    
+                    <li><a href="#1">1、什么是信息化及其发展过程</a>
+            		</li>
+
+                    <li><a href="#2">2、什么是数字化及其发展过程</a>
+            		</li>
+
+                    <li><a href="#3">3、什么是智能化及其发展过程</a>
+            		</li>
+                </ol>
+            		</li>
+
+                    <li><a href="#二、信息化、数字化和智能化在行业发展过程">二、信息化、数字化和智能化在行业发展过程</a>
+            
+                <ol>
+                    
+                    <li><a href="#1-1">1. 广电行业</a>
+            		</li>
+
+                    <li><a href="#2-1">2. 物流行业</a>
+            		</li>
+
+                    <li><a href="#3-1">3. 社交行业</a>
+            		</li>
+
+                    <li><a href="#4">4. 电商行业</a>
+            		</li>
+
+                    <li><a href="#5">5. 金融行业</a>
+            		</li>
+                </ol>
+            		</li>
+
+                    <li><a href="#三、当下的信息化、数字化主要技术介绍">三、当下的信息化、数字化主要技术介绍</a>
+            
+                <ol>
+                    
+                    <li><a href="#1-5-g">1. 5G和下一代通信技术</a>
+            		</li>
+
+                    <li><a href="#2-io-t">2. 物联网（IoT）</a>
+            		</li>
+
+                    <li><a href="#3-2">3.虚拟技术</a>
+            		</li>
+
+                    <li><a href="#4-1">4. 区块链技术</a>
+            		</li>
+
+                    <li><a href="#5-1">5.数字孪生</a>
+            		</li>
+
+                    <li><a href="#6">6.元宇宙</a>
+            		</li>
+                </ol>
+            		</li>
+
+                    <li><a href="#ai">四 浅谈AI技术</a>
+            
+                <ol>
+                    
+                    <li><a href="#神经网络">神经网络</a>
+            
+                <ol>
+                    
+                    <li><a href="#mlp">一、多层感知机（MLP）</a>
+            		</li>
+
+                    <li><a href="#dnn">二、从多层感知机到深度神经网络（DNN）的技术突破</a>
+            		</li>
+
+                    <li><a href="#dnn-1">三、从深度神经网络（DNN）到大模型的发展</a>
+            		</li>
+                </ol>
+            		</li>
+
+                    <li><a href="#rag-agent">大模型的RAG和Agent的应用</a>
+            
+                <ol>
+                    
+                    <li><a href="#医疗领域">医疗领域</a>
+            		</li>
+
+                    <li><a href="#教育领域">教育领域</a>
+            		</li>
+
+                    <li><a href="#金融领域">金融领域</a>
+            		</li>
+
+                    <li><a href="#智能家居领域">智能家居领域</a>
+            		</li>
+
+                    <li><a href="#制造业">制造业</a>
+            		</li>
+                </ol>
+            		</li>
+
+                    <li><a href="#agi">AGI浅谈</a>
+            
+                <ol>
+                    
+                    <li><a href="#strong-strong">乐观预测</a>
+            		</li>
+
+                    <li><a href="#strong-strong-1">保守预测</a>
+            		</li>
+                </ol>
+            		</li>
+                </ol>
+            		</li>
+                </ol>
+            </nav>
+                                    </div>
+                              </div>
+                        
+
+                  
+
+                        
+                              
+                              <div class="backlinks">
+                                    <div class="backlink-title" style="margin: 4px 0 !important;">Pages mentioning this page</div>
+                                          <div class="backlink-list"><div class="backlink-card">
+                                                            <span class="no-backlinks-message">No other pages mentions this page</span>
+                                                      </div></div>
+                              </div>
+                        
+                  
+                  
+            </div>
+      </div>
+</aside>
+    
+
+    
+      
+<style>
+#tooltip-wrapper {
+  background: var(--background-primary);
+  padding: 1em;
+  border-radius: 4px;
+  overflow: hidden;
+  position: fixed;
+  width: 80%;
+  max-width: 400px;
+  height: auto;
+  max-height: 300px;
+  font-size: 0.8em;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  opacity: 0;
+  transition: opacity 100ms;
+  unicode-bidi: plaintext;
+  overflow-y: scroll;
+  z-index: 10;
+}
+
+#tooltip-wrapper:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  width: 100%;
+  unicode-bidi: plaintext;
+  height: 75px;
+}
+</style>
+<div style="opacity: 0; display: none;" id='tooltip-wrapper'>
+  <div id='tooltip-content'>
+  </div>
+</div>
+
+<iframe style="display: none; height: 0; width: 0;" id='link-preview-iframe' src="">
+</iframe>
+
+<script>
+  var opacityTimeout;
+  var contentTimeout;
+  var transitionDurationMs = 100;
+
+  var iframe = document.getElementById('link-preview-iframe')
+  var tooltipWrapper = document.getElementById('tooltip-wrapper')
+  var tooltipContent = document.getElementById('tooltip-content')
+
+  var linkHistories = {};
+
+  function hideTooltip() {
+    opacityTimeout = setTimeout(function () {
+      tooltipWrapper.style.opacity = 0;
+      contentTimeout = setTimeout(function () {
+        tooltipContent.innerHTML = '';
+        tooltipWrapper.style.display = 'none';
+      }, transitionDurationMs + 1);
+    }, transitionDurationMs)
+  }
+
+  function showTooltip(event) {
+    var elem = event.target;
+    var elem_props = elem.getClientRects()[elem.getClientRects().length - 1];
+    var top = window.pageYOffset || document.documentElement.scrollTop;
+    var url = event.target.getAttribute("href");
+    if (url.indexOf("http") === -1 || url.indexOf(window.location.host) !== -1) {
+      let contentURL = url.split('#')[0]
+      if (!linkHistories[contentURL]) {
+        iframe.src = contentURL
+        iframe.onload = function () {
+          tooltipContentHtml = ''
+          tooltipContentHtml += '<div style="font-weight: bold; unicode-bidi: plaintext;">' + iframe.contentWindow.document.querySelector('h1').innerHTML + '</div>'
+          tooltipContentHtml += iframe.contentWindow.document.querySelector('.content').innerHTML
+          tooltipContent.innerHTML = tooltipContentHtml
+          linkHistories[contentURL] = tooltipContentHtml
+          tooltipWrapper.style.display = 'block';
+          tooltipWrapper.scrollTop = 0;
+          setTimeout(function () {
+            tooltipWrapper.style.opacity = 1;
+            if (url.indexOf("#") != -1) {
+              let id = url.split('#')[1];
+              const focus = tooltipWrapper.querySelector(`[id='${id}']`);
+              focus.classList.add('referred');
+              console.log(focus);
+              focus.scrollIntoView({behavior: 'smooth'}, true)
+            } else {
+              tooltipWrapper.scroll(0, 0);
+            }
+          }, 1)
+        }
+      } else {
+        tooltipContent.innerHTML = linkHistories[contentURL]
+        tooltipWrapper.style.display = 'block';
+        setTimeout(function () {
+          tooltipWrapper.style.opacity = 1;
+          if (url.indexOf("#") != -1) {
+              let id = url.split('#')[1];
+              const focus = tooltipWrapper.querySelector(`[id='${id}']`);
+              focus.classList.add('referred');
+              focus.scrollIntoView({behavior: 'smooth'}, true)
+          } else {
+              tooltipWrapper.scroll(0, 0);
+          }
+        }, 1)
+      }
+
+      function getInnerWidth(elem) {
+        var style = window.getComputedStyle(elem);
+        return elem.offsetWidth - parseFloat(style.paddingLeft) - parseFloat(style.paddingRight) - parseFloat(style.borderLeft) - parseFloat(style.borderRight) - parseFloat(style.marginLeft) - parseFloat(style.marginRight);
+      }
+
+      tooltipWrapper.style.left = elem_props.left - (tooltipWrapper.offsetWidth / 2) + (elem_props.width / 2) + "px";
+
+      if ((window.innerHeight - elem_props.top) < (tooltipWrapper.offsetHeight)) {
+        tooltipWrapper.style.top = elem_props.top + top - tooltipWrapper.offsetHeight - 10 + "px";
+      } else if ((window.innerHeight - elem_props.top) > (tooltipWrapper.offsetHeight)) {
+        tooltipWrapper.style.top = elem_props.top + top + 35 + "px";
+      }
+
+      if ((elem_props.left + (elem_props.width / 2)) < (tooltipWrapper.offsetWidth / 2)) {
+        tooltipWrapper.style.left = "10px";
+      } else if ((document.body.clientWidth - elem_props.left - (elem_props.width / 2)) < (tooltipWrapper.offsetWidth / 2)) {
+        tooltipWrapper.style.left = document.body.clientWidth - tooltipWrapper.offsetWidth - 20 + "px";
+      }
+    }
+  }
+
+  function setupListeners(linkElement) {
+    linkElement.addEventListener('mouseleave', function (_event) {
+      hideTooltip();
+    });
+
+    tooltipWrapper.addEventListener('mouseleave', function (_event) {
+      hideTooltip();
+    });
+
+    linkElement.addEventListener('mouseenter', function (event) {
+      clearTimeout(opacityTimeout);
+      clearTimeout(contentTimeout);
+      showTooltip(event);
+    });
+
+    tooltipWrapper.addEventListener('mouseenter', function (event) {
+      clearTimeout(opacityTimeout);
+      clearTimeout(contentTimeout);
+    });
+  }
+
+  window.addEventListener("load", function(event) 
+  {
+    document.querySelectorAll('.internal-link').forEach(setupListeners);
+    document.querySelectorAll('.backlink-card a').forEach(setupListeners);
+  });
+</script>
+
+    
+        <script>
+      if (window.location.hash) {
+        document.getElementById(window.location.hash.slice(1)).classList.add('referred');
+      }
+      window.addEventListener('hashchange', (evt) => {
+        const oldParts = evt.oldURL.split("#");
+        if (oldParts[1]) {
+          document.getElementById(oldParts[1]).classList.remove('referred');
+        }
+        const newParts = evt.newURL.split("#");
+        if (newParts[1]) {
+          document.getElementById(newParts[1]).classList.add('referred');
+        }
+      }, false);
+      const url_parts = window.location.href.split("#")
+      const url = url_parts[0];
+      const referrence = url_parts[1];
+      document.querySelectorAll(".cm-s-obsidian > *[id]").forEach(function (el) {
+        el.ondblclick = function(evt) {
+          const ref_url = url + '#' + evt.target.id
+          navigator.clipboard.writeText(ref_url);
+      }
+      });
+
+      
+    </script>
+    <script src=" https://fastly.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js "></script>
+<script defer>
+    TIMESTAMP_FORMAT = "MMM dd, yyyy h:mm a";
+    document.querySelectorAll('.human-date').forEach(function (el) {
+        el.innerHTML = luxon.DateTime.fromISO(el.getAttribute('data-date') || el.innerText).toFormat(TIMESTAMP_FORMAT);
+      });
+</script>
+    
+    
+    <script>
+lucide.createIcons({
+            attrs: {
+                class: ["svg-icon"]
+            }
+        });
+</script>
+  </body>
+</html>
