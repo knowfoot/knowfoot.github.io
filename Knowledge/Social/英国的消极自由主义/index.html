@@ -933,7 +933,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2024-09-07T12:14:15.447Z';
+        const searchIndexDate = '2024-09-13T09:55:08.177Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -945,9 +945,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2024-09-07T12:14:15.447Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2024-09-13T09:55:08.177Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-09-07T12:14:15.447Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-09-13T09:55:08.177Z', docs}));
             window.docs = docs
             window.index = index;
         }
@@ -1504,11 +1504,11 @@
                               
                               <div class="backlinks">
                                     <div class="backlink-title" style="margin: 4px 0 !important;">Pages mentioning this page</div>
-                                          <div class="backlink-list"><div class="backlink-card"><a href="/Knowledge/Social/吉登斯资本主义与现代社会学理论/" data-note-icon="" class="backlink">吉登斯资本主义与现代社会学理论</a>
-                                                </div><div class="backlink-card"><a href="/Knowledge/Social/凯恩斯的通论和影响力/" data-note-icon="" class="backlink">凯恩斯的通论和影响力</a>
+                                          <div class="backlink-list"><div class="backlink-card"><a href="/Knowledge/Social/凯恩斯的通论和影响力/" data-note-icon="" class="backlink">凯恩斯的通论和影响力</a>
+                                                </div><div class="backlink-card"><a href="/Knowledge/Social/吉登斯资本主义与现代社会学理论/" data-note-icon="" class="backlink">吉登斯资本主义与现代社会学理论</a>
                                                 </div><div class="backlink-card"><a href="/Knowledge/Social/法国激进自由主义与德国浪漫自由主义/" data-note-icon="" class="backlink">法国激进自由主义与德国浪漫自由主义</a>
-                                                </div><div class="backlink-card"><a href="/Knowledge/Social/美国自由主义/" data-note-icon="" class="backlink">美国自由主义</a>
                                                 </div><div class="backlink-card"><a href="/Knowledge/Social/现代国家社会个人的300年及当代主要政治哲学流派/" data-note-icon="" class="backlink">现代国家社会个人的300年及当代主要政治哲学流派</a>
+                                                </div><div class="backlink-card"><a href="/Knowledge/Social/美国自由主义/" data-note-icon="" class="backlink">美国自由主义</a>
                                                 </div></div>
                               </div>
                         
