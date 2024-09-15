@@ -143,6 +143,57 @@
     
         <div x-show="isOpen" style="display:none" class="">
             
+                <div class="folder inner-folder"  x-data="{isOpen: $persist(false).as('InputNote')}" @click.stop="isOpen=!isOpen">
+                    <div class="foldername-wrapper align-icon">
+                    <i x-show="isOpen" style="display: none;"  icon-name="chevron-down"></i>
+                    <i x-show="!isOpen"  icon-name="chevron-right"></i>
+                    <span class="foldername">InputNote</span>
+                    </div>
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div class="folder inner-folder"  x-data="{isOpen: $persist(false).as('InputNote/Article')}" @click.stop="isOpen=!isOpen">
+                    <div class="foldername-wrapper align-icon">
+                    <i x-show="isOpen" style="display: none;"  icon-name="chevron-down"></i>
+                    <i x-show="!isOpen"  icon-name="chevron-right"></i>
+                    <span class="foldername">Article</span>
+                    </div>
+                    
+                        
+    
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/InputNote/Article/科学：不断逼近客观规律的旅程/">科学：不断逼近客观规律的旅程 </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                </div>
+            
+        </div>
+        
+    
+                    
+                        
+    
+    
+                    
+                </div>
+            
+        </div>
+        
+    
+    
+        <div x-show="isOpen" style="display:none" class="">
+            
                 <div class="folder inner-folder"  x-data="{isOpen: $persist(false).as('Knowledge')}" @click.stop="isOpen=!isOpen">
                     <div class="foldername-wrapper align-icon">
                     <i x-show="isOpen" style="display: none;"  icon-name="chevron-down"></i>
@@ -933,7 +984,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2024-09-13T09:55:08.177Z';
+        const searchIndexDate = '2024-09-15T13:00:13.584Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -945,9 +996,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2024-09-13T09:55:08.177Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2024-09-15T13:00:13.584Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-09-13T09:55:08.177Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-09-15T13:00:13.584Z', docs}));
             window.docs = docs
             window.index = index;
         }
@@ -1555,8 +1606,8 @@
                               
                               <div class="backlinks">
                                     <div class="backlink-title" style="margin: 4px 0 !important;">Pages mentioning this page</div>
-                                          <div class="backlink-list"><div class="backlink-card"><a href="/" data-note-icon="" class="backlink">notes</a>
-                                                </div><div class="backlink-card"><a href="/Knowledge/Physical/量子力学之泡利不相容原理/" data-note-icon="" class="backlink">量子力学之泡利不相容原理</a>
+                                          <div class="backlink-list"><div class="backlink-card"><a href="/Knowledge/Physical/量子力学之泡利不相容原理/" data-note-icon="" class="backlink">量子力学之泡利不相容原理</a>
+                                                </div><div class="backlink-card"><a href="/" data-note-icon="" class="backlink">notes</a>
                                                 </div></div>
                               </div>
                         
