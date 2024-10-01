@@ -984,7 +984,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2024-09-15T13:00:13.584Z';
+        const searchIndexDate = '2024-10-01T04:43:00.258Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -996,9 +996,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2024-09-15T13:00:13.584Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2024-10-01T04:43:00.258Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-09-15T13:00:13.584Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-10-01T04:43:00.258Z', docs}));
             window.docs = docs
             window.index = index;
         }
@@ -1800,11 +1800,11 @@
                               
                               <div class="backlinks">
                                     <div class="backlink-title" style="margin: 4px 0 !important;">Pages mentioning this page</div>
-                                          <div class="backlink-list"><div class="backlink-card"><a href="/Knowledge/Physical/狭义相对论部分方程推导/" data-note-icon="" class="backlink">狭义相对论部分方程推导</a>
+                                          <div class="backlink-list"><div class="backlink-card"><a href="/" data-note-icon="" class="backlink">notes</a>
+                                                </div><div class="backlink-card"><a href="/Knowledge/Physical/狭义相对论部分方程推导/" data-note-icon="" class="backlink">狭义相对论部分方程推导</a>
                                                 </div><div class="backlink-card"><a href="/Knowledge/Physical/量子力学之泡利不相容原理/" data-note-icon="" class="backlink">量子力学之泡利不相容原理</a>
                                                 </div><div class="backlink-card"><a href="/Knowledge/Physical/量子力学之物质波/" data-note-icon="" class="backlink">量子力学之物质波</a>
                                                 </div><div class="backlink-card"><a href="/Knowledge/Physical/量子力学之狄拉克方程/" data-note-icon="" class="backlink">量子力学之狄拉克方程</a>
-                                                </div><div class="backlink-card"><a href="/" data-note-icon="" class="backlink">notes</a>
                                                 </div></div>
                               </div>
                         
