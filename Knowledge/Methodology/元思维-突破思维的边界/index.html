@@ -143,63 +143,44 @@
     
         <div x-show="isOpen" style="display:none" class="">
             
-                <div class="folder inner-folder"  x-data="{isOpen: $persist(false).as('InputNote')}" @click.stop="isOpen=!isOpen">
-                    <div class="foldername-wrapper align-icon">
-                    <i x-show="isOpen" style="display: none;"  icon-name="chevron-down"></i>
-                    <i x-show="!isOpen"  icon-name="chevron-right"></i>
-                    <span class="foldername">InputNote</span>
-                    </div>
-                    
-                        
-    
-        <div x-show="isOpen" style="display:none" class="filelist">
-            
-                <div class="folder inner-folder"  x-data="{isOpen: $persist(false).as('InputNote/Article')}" @click.stop="isOpen=!isOpen">
-                    <div class="foldername-wrapper align-icon">
-                    <i x-show="isOpen" style="display: none;"  icon-name="chevron-down"></i>
-                    <i x-show="!isOpen"  icon-name="chevron-right"></i>
-                    <span class="foldername">Article</span>
-                    </div>
-                    
-                        
-    
-    
-                    
-                        
-    
-        <div x-show="isOpen" style="display:none" class="filelist">
-            
-                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/InputNote/Article/科学：不断逼近客观规律的旅程/">科学：不断逼近客观规律的旅程 </a>
-                </div>
-            
-        </div>
-        
-    
-                    
-                </div>
-            
-        </div>
-        
-    
-                    
-                        
-    
-    
-                    
-                </div>
-            
-        </div>
-        
-    
-    
-        <div x-show="isOpen" style="display:none" class="">
-            
                 <div class="folder inner-folder"  x-data="{isOpen: $persist(false).as('Knowledge')}" @click.stop="isOpen=!isOpen">
                     <div class="foldername-wrapper align-icon">
                     <i x-show="isOpen" style="display: none;"  icon-name="chevron-down"></i>
                     <i x-show="!isOpen"  icon-name="chevron-right"></i>
                     <span class="foldername">Knowledge</span>
                     </div>
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div class="folder inner-folder"  x-data="{isOpen: $persist(false).as('Knowledge/AI')}" @click.stop="isOpen=!isOpen">
+                    <div class="foldername-wrapper align-icon">
+                    <i x-show="isOpen" style="display: none;"  icon-name="chevron-down"></i>
+                    <i x-show="!isOpen"  icon-name="chevron-right"></i>
+                    <span class="foldername">AI</span>
+                    </div>
+                    
+                        
+    
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/AI/AI作弊和欺骗的风险/">AI作弊和欺骗的风险 </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                </div>
+            
+        </div>
+        
+    
                     
                         
     
@@ -253,6 +234,17 @@
         <div x-show="isOpen" style="display:none" class="filelist">
             
                 <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Computer/信息化数字化智能化技术的发展和应用/">信息化数字化智能化技术的发展和应用 </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Computer/推荐一些当下入门、流行热门的开发板和套件/">推荐一些当下入门、流行热门的开发板和套件 </a>
                 </div>
             
         </div>
@@ -995,7 +987,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2024-10-20T03:50:20.686Z';
+        const searchIndexDate = '2025-01-18T11:23:33.605Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -1007,9 +999,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2024-10-20T03:50:20.686Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2025-01-18T11:23:33.605Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-10-20T03:50:20.686Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2025-01-18T11:23:33.605Z', docs}));
             window.docs = docs
             window.index = index;
         }
@@ -1326,8 +1318,9 @@
 <p>[3] Kahneman, D., &amp; Tversky, A. (1979). 前景理论： 风险下的决策分析》。Econometrica, 47(2), 263-292.</p>
 <p>[4] Slovic, P. (1987). Perception of risk. Science, 236(4799), 280-285.</p>
 <p>[5] Newell, A., &amp; Simon, H. A. (1972). Human problem solving. Prentice Hall.</p>
-<p>[6] Anderson, J. R. (2005). 认知心理学与教学设计》。Worth Publishers.</p>
-<p>[7] Amabile, T. M. (1988). A model of creativity and innovation in organizations. 组织行为研究》，10，123-167。</p>
+<p>[6] Anderson, J. R. (2005). 认知心理学与教学设计》。Worth Publishers.<br>
+<a href="" target="_blank" class="external-link"></a><br>
+[7] Amabile, T. M. (1988). A model of creativity and innovation in organizations. 组织行为研究》，10，123-167。</p>
 <p>[8] Dweck, C. S. (2000). The role of mindsets in facilitating success. In R. J. Sternberg &amp; E. L. Grigorenko (Eds.), Perspectives on human cognitive abilities (pp. 137-154). 剑桥大学出版社。</p>
 <p>[9] Simon, H. A. (1957). Models of man. Wiley.</p>
 <p>[10] Cyert, R. M., &amp; March, J. G. (1963). A behavioral theory of the firm. Prentice Hall.</p>

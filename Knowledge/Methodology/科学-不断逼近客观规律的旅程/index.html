@@ -143,63 +143,44 @@
     
         <div x-show="isOpen" style="display:none" class="">
             
-                <div class="folder inner-folder"  x-data="{isOpen: $persist(false).as('InputNote')}" @click.stop="isOpen=!isOpen">
-                    <div class="foldername-wrapper align-icon">
-                    <i x-show="isOpen" style="display: none;"  icon-name="chevron-down"></i>
-                    <i x-show="!isOpen"  icon-name="chevron-right"></i>
-                    <span class="foldername">InputNote</span>
-                    </div>
-                    
-                        
-    
-        <div x-show="isOpen" style="display:none" class="filelist">
-            
-                <div class="folder inner-folder"  x-data="{isOpen: $persist(false).as('InputNote/Article')}" @click.stop="isOpen=!isOpen">
-                    <div class="foldername-wrapper align-icon">
-                    <i x-show="isOpen" style="display: none;"  icon-name="chevron-down"></i>
-                    <i x-show="!isOpen"  icon-name="chevron-right"></i>
-                    <span class="foldername">Article</span>
-                    </div>
-                    
-                        
-    
-    
-                    
-                        
-    
-        <div x-show="isOpen" style="display:none" class="filelist">
-            
-                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/InputNote/Article/科学：不断逼近客观规律的旅程/">科学：不断逼近客观规律的旅程 </a>
-                </div>
-            
-        </div>
-        
-    
-                    
-                </div>
-            
-        </div>
-        
-    
-                    
-                        
-    
-    
-                    
-                </div>
-            
-        </div>
-        
-    
-    
-        <div x-show="isOpen" style="display:none" class="">
-            
                 <div class="folder inner-folder"  x-data="{isOpen: $persist(false).as('Knowledge')}" @click.stop="isOpen=!isOpen">
                     <div class="foldername-wrapper align-icon">
                     <i x-show="isOpen" style="display: none;"  icon-name="chevron-down"></i>
                     <i x-show="!isOpen"  icon-name="chevron-right"></i>
                     <span class="foldername">Knowledge</span>
                     </div>
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div class="folder inner-folder"  x-data="{isOpen: $persist(false).as('Knowledge/AI')}" @click.stop="isOpen=!isOpen">
+                    <div class="foldername-wrapper align-icon">
+                    <i x-show="isOpen" style="display: none;"  icon-name="chevron-down"></i>
+                    <i x-show="!isOpen"  icon-name="chevron-right"></i>
+                    <span class="foldername">AI</span>
+                    </div>
+                    
+                        
+    
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/AI/AI作弊和欺骗的风险/">AI作弊和欺骗的风险 </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                </div>
+            
+        </div>
+        
+    
                     
                         
     
@@ -253,6 +234,17 @@
         <div x-show="isOpen" style="display:none" class="filelist">
             
                 <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Computer/信息化数字化智能化技术的发展和应用/">信息化数字化智能化技术的发展和应用 </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Computer/推荐一些当下入门、流行热门的开发板和套件/">推荐一些当下入门、流行热门的开发板和套件 </a>
                 </div>
             
         </div>
@@ -995,7 +987,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2024-10-20T03:50:20.686Z';
+        const searchIndexDate = '2025-01-18T11:23:33.605Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -1007,9 +999,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2024-10-20T03:50:20.686Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2025-01-18T11:23:33.605Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2024-10-20T03:50:20.686Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2025-01-18T11:23:33.605Z', docs}));
             window.docs = docs
             window.index = index;
         }
@@ -1332,7 +1324,7 @@
 <p>爱迪生的这些行为表明，当一个社会和学术环境充斥着垄断、无法公开批评的氛围时，创新和技术进步会遭受严重打击。</p>
 <p>信息不透明加剧了科学和社会的封闭性，阻碍了批评性讨论和开放交流。科学和社会的进步依赖于信息的公开与共享，只有在充分的交流和批评中，错误才能被纠正。批评作为推动社会进步和改良的强大力量，不可或缺。当尖锐的批评消失，温和的批评变得刺耳，乃至沉默都被视作居心叵测时，社会便步入了危险之境。一个社会的进步需要真实的批判，唯有在多元的批评声中，才能持续发现问题并加以解决，为科学和文明的发展注入源源不断的活力。若一个社会只允许一种声音存在，那必然充斥着谎言，进而走向深渊。</p>
 <p>从历史发展来看，科学与文明的进步需要一个鼓励批评、遵循逻辑、保障自由、避免集权的社会环境。批评能够让我们不断反思和改进，逻辑为我们提供正确的思维方式，自由赋予人们创造的动力，而避免集权则能确保社会的多元性和活力。只有当这些因素共同发挥作用时，科学与文明才能蓬勃发展，人类才能不断迈向更高的境界。</p>
-<p>总之，科学的概念在人类历史进程中不断演变和发展。从把科学当真理的认识阶段，到波普尔的可证伪性、可验证性、可重复性，置信度贝叶斯主义、以及研究热度与时间维度等多方面辅助考量，科学在人类的探索中不断前行。<font color="#ff0000">我们应以开放的心态理解科学，认识到科学不是一成不变的教条，而是一个充满活力和挑战的领域。</font>我们应当重视批评的价值，培养正确的逻辑思维，努力争取和维护自由，警惕集权的倾向。只有这样，我们才能更好地利用科学的力量，推动人类社会的进步。</p>
+<p>总之，科学的概念在人类历史进程中不断      演变和发展。从把科学当真理的认识阶段，到波普尔的可证伪性、可验证性、可重复性，置信度贝叶斯主义、以及研究热度与时间维度等多方面辅助考量，科学在人类的探索中不断前行。<font color="#ff0000">我们应以开放的心态理解科学，认识到科学不是一成不变的教条，而是一个充满活力和挑战的领域。</font>我们应当重视批评的价值，培养正确的逻辑思维，努力争取和维护自由，警惕集权的倾向。只有这样，我们才能更好地利用科学的力量，推动人类社会的进步。</p>
 
       
       
