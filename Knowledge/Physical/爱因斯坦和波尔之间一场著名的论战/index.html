@@ -585,6 +585,17 @@
     
         <div x-show="isOpen" style="display:none" class="filelist">
             
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Social/从第一性原理看川普执政和公权力监督/">从第一性原理看川普执政和公权力监督 </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
                 <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Social/凯恩斯的通论和影响力/">凯恩斯的通论和影响力 </a>
                 </div>
             
@@ -987,7 +998,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2025-01-18T11:23:33.605Z';
+        const searchIndexDate = '2025-03-05T14:19:26.233Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -999,9 +1010,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2025-01-18T11:23:33.605Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2025-03-05T14:19:26.233Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2025-01-18T11:23:33.605Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2025-03-05T14:19:26.233Z', docs}));
             window.docs = docs
             window.index = index;
         }
@@ -1542,8 +1553,8 @@
                               
                               <div class="backlinks">
                                     <div class="backlink-title" style="margin: 4px 0 !important;">Pages mentioning this page</div>
-                                          <div class="backlink-list"><div class="backlink-card"><a href="/Knowledge/Physical/量子力学之薛定谔方程/" data-note-icon="" class="backlink">量子力学之薛定谔方程</a>
-                                                </div><div class="backlink-card"><a href="/Knowledge/Physical/量子力学杂谈/" data-note-icon="" class="backlink">量子力学杂谈</a>
+                                          <div class="backlink-list"><div class="backlink-card"><a href="/Knowledge/Physical/量子力学杂谈/" data-note-icon="" class="backlink">量子力学杂谈</a>
+                                                </div><div class="backlink-card"><a href="/Knowledge/Physical/量子力学之薛定谔方程/" data-note-icon="" class="backlink">量子力学之薛定谔方程</a>
                                                 </div></div>
                               </div>
                         
