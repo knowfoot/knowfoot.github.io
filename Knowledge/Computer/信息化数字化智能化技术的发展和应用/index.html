@@ -169,6 +169,17 @@
     
         <div x-show="isOpen" style="display:none" class="filelist">
             
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/AI/50系显卡畅玩秋叶SD-webui,提供5060Ti教程和修复后的包，其他50系此方案还是包都应该都可以（保姆级避坑指南）/">50系显卡畅玩秋叶SD-webui,提供5060Ti教程和修复后的包，其他50系此方案还是包都应该都可以（保姆级避坑指南） </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
                 <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/AI/AI作弊和欺骗的风险/">AI作弊和欺骗的风险 </a>
                 </div>
             
@@ -270,6 +281,49 @@
                     
                         
     
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div class="folder inner-folder"  x-data="{isOpen: $persist(false).as('Knowledge/Math')}" @click.stop="isOpen=!isOpen">
+                    <div class="foldername-wrapper align-icon">
+                    <i x-show="isOpen" style="display: none;"  icon-name="chevron-down"></i>
+                    <i x-show="!isOpen"  icon-name="chevron-right"></i>
+                    <span class="foldername">Math</span>
+                    </div>
+                    
+                        
+    
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Math/关于数学分支和发展的简单介绍/">关于数学分支和发展的简单介绍 </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Math/关于数学分支和发展的简单脉络/">关于数学分支和发展的简单脉络 </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                </div>
+            
+        </div>
+        
     
                     
                         
@@ -1042,7 +1096,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2025-04-04T10:21:15.548Z';
+        const searchIndexDate = '2025-04-25T12:27:18.391Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -1054,9 +1108,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2025-04-04T10:21:15.548Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2025-04-25T12:27:18.391Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2025-04-04T10:21:15.548Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2025-04-25T12:27:18.391Z', docs}));
             window.docs = docs
             window.index = index;
         }
@@ -1536,6 +1590,47 @@ L5：组织者，可以完成组织工作的AI。<br>
 <p>谷歌deepmind实验室的联合创始人shanglegg 兼首席科学家在2001年就提出2028年到2029年实现AGI。他举例aphago和李世石的围棋中走的一个很奇怪的37步，并在最后获胜中产生重要影响。通过这个他觉得要获取创造性的东西，你需要搜索可能性空间，然后做决策，也就是下一步怎么走，他觉得这个就是创造性。他觉得大语言模型加上蒙特卡罗树的搜索是大模型的重要一步。</p>
 <p>维诺德，特斯拉 sun公司的创始人，也是风险投资者，2019年7月投资openai，那个时候刚退出gpt2。他觉得未来专业知识几乎免费，将会为每个人提供免费的IA医生。为孩子提供免费的AI老师，大多数的专业知识都会免费。这个基本是基于AGI的的描述。律师和医生在未来5年左右成本会很低。劳动力将几乎免费，会出现大规模的各种机器人，尤其是双足机器人，比如特斯拉的擎天柱，这个数量会10亿数量级。人类不需要做一些不受欢迎枯燥繁琐奴役的重复性工作。比如各种工业生产线。计算机的使用会更大范围的扩展，计算机将适应人类，而不是人类适应计算机。AI会在娱乐和设计中发挥重要作用，音乐和娱乐创意会变的更多样个性化，以后访问互联网大部分是代理来实现也可以说真正的个人AI助理，互联网上以后会出现百亿的代理实现每个人的点到点的需求。可能会出现新的食物将会出阿信啊更好替代蛋白质生产来取代传统的动物蛋白。人类可能会再次重新做一次农业革命。个人出行会普遍robot tax化，将有更高速的飞机减少我们远距离旅程，甚至是星舰这种飞行。更清洁的能源，核聚成为现实。资源和碳排放会得到解决。</p>
 <p>希望是好的，现实肯定是多变和不确定性，这个很难有银弹，总体上我是觉得AGI可能利大于弊，也许正向循环的飞轮就转起来，否则人类存在的意义又是什么。</p>
+<h2 id="deep-seek-ai" tabindex="-1">DeepSeek大模型助力企业AI落地</h2>
+<h3 id="概要" tabindex="-1">概要</h3>
+<p>在当今人工智能蓬勃发展的时代，大模型落地企业已成为众多企业提升竞争力的关键举措。DeepSeek作为一款备受瞩目的大模型，在企业落地过程中展现出诸多核心优势，尤其体现在交互体验革新、数据利用以及算力算法优化等方面。</p>
+<p>在引入AI大模型落地时，有两个重要关注点。<font color="#ff0000">其一，对于有交互方式体验革新需求的场景，DeepSeek能发挥重要作用。传统的交互方式往往效率低下、体验不佳，而DeepSeek凭借强大的语言理解和生成能力，可以实现更加自然、智能的人机交互。例如，在智能客服场景中，它能精准理解客户问题并快速给出准确解答，大幅提升客户服务体验。其二，拥有精准且覆盖业务的数据是企业应用AI的基础。DeepSeek能够充分挖掘和利用这些数据，通过对业务数据的深度分析和学习，为企业提供更具针对性的决策支持和解决方案</font>。</p>
+<p>在算力方面，DeepSeek展现出显著优势。其预训练算力成本大幅降低，约五百万美元左右。这使得企业在应用大模型时无需承担过高的算力成本，降低了技术门槛。同时，在预训练和微调过程中，DeepSeek具有良好的收敛和拟合效果。收敛速度快意味着模型能够更快地达到稳定状态，提高训练效率；而优秀的拟合能力则能使模型更好地适应不同的业务数据和场景，输出更准确的结果。</p>
+<p>在算法层面，DeepSeek进行了多方面的优化。采用MOE模型，在671B的规模下生成每个token仅激活37B，有效减少了计算量。多头潜在注意力模型在更高层做了分块并发，增强了并发性，降低了推理和训练成本。此外，还提供了无辅助负载均衡策略，解决了并发过程中的多任务协调问题，减少了因多任务协调导致的效率下降。同时，DeepSeek实践了FP8混合精度的可行性，进一步提升了计算效率。在蒸馏技术方面，包括白盒蒸馏和黑盒蒸馏，能够在不损失太多性能的情况下，将大模型的知识迁移到小模型中，方便企业在不同的计算资源环境下应用。</p>
+<p>在学习方式上，监督学习和强化学习各有特点。监督学习是基于有标签的数据进行训练，模型的学习目标明确，通过对大量标注数据的学习来提高预测的准确性。而强化学习则目标明确但路径模糊，通过与环境的交互获得奖励信号来学习最优策略。然而，强化学习面临环境变化导致反馈的不确定性等问题。DeepSeek可以根据不同的业务场景灵活选择合适的学习方式，以达到最佳的效果。</p>
+<p>当下AI产业主要三个大部分，预训练的大模型的基座，微调行业大模型，RAG,Agent的代理大模型推理应用, 未来，AI架构和算法的突破点，推理和微调的融合，那么预训练就没有现在这么重要了。</p>
+<h3 id="一 应用场景" tabindex="-1">一 应用场景</h3>
+<p>1数据分析与商业智能：DeepSeek可以在海量数据中提取有用信息，可以对市场数据进行分析，预测市场发展趋势，制定更适合企业的发展策略。<br>
+2自动化业务流程：DeepSeek可以自动化处理多种重复性工作，提升工作效率。<br>
+3智能客服与客户支撑：DeepSeek能够快速响应客户的咨询与问题，同时根据客户反馈，提炼客户痛点帮助企业更好优化产品。<br>
+4 企业的知识库，提升企业的开发，客服等知识库的建设和自动维护，更方便快捷的真正实现对企业知识的积累，不仅仅在积累上更在知识库使用上更便捷和智能高效,企业技能职业培训，辅助学习</p>
+<h3 id="deep-seek" tabindex="-1">二 如何使用DeepSeek</h3>
+<p>1访问方式：可以使用网页版/APP，或调用<br>
+API/进行本地化部署<br>
+2部署方式：<br>
+公有云在线部署：这种部署方式适合对数据隐私要求不是很高的中小微企业。<br>
+私有化算力实例部署：对于数据隐私要求较高的中小企业可以选择这种部署方式。<br>
+3使用技巧：DeepSeek提问指令一般遵循STAR提问原则：<br>
+Situation（背景） +Task （任务）+Action （行动） +Result （结果）。</p>
+<h3 id="三 实际使用案例" tabindex="-1">三 实际使用案例</h3>
+<p>1智能客服系统：某电商平台引入<br>
+DeepSeek开发的智能客服系统后，客户满意度提升了20%，客服团队的工作负担也得到了有效减轻。</p>
+<p>2数据分析：某汽车零件工厂，引入DeepSeek 开发的数据分析系统后，提前检测到某机器会出现问题，工厂提前安排进行检修，避免因设备故障而导致生产停滞。</p>
+<p>3网络运维：某企业网络经常出现异常，DeepSeek通过实时监控网络状况和性能指标等，快速定位故障根源且提供详细排查建议，避免了网络中断造成的业务损失</p>
+<p>4医疗咨询系统：医院引进DeepSeek开发的智能医疗咨询系统后，线上问诊响应速度更快且准确率更高。</p>
+<p>5智能问答系统：在DeepSeek的助力下，平安企业宝3月19日将推出“平安风控小助手”功能，快速回应企业相关风控问题，同时主动根据您的问题推荐针对性的风控服务，减少企业主自行寻找时间。</p>
+<h2 id="素材" tabindex="-1">素材</h2>
+<p>ai企业落地核心，两个重要关注点</p>
+<p>1、有对交互方式体验的革新需求的场景</p>
+<p>2、有精准和并覆盖业务的数据</p>
+<p>算力和算法高的依赖大模型为主</p>
+<p>算力 deepseek预训练算力降低 五百万美元左右</p>
+<p>deepseek在预训练和微调中 收敛 ，拟合 优势有那些</p>
+<p>算法 deepseek算法的优化 MOE模型，671B生成每个token激活 37B,多头潜在注意力模型，在更高层做了分块并发，并发性更强，推理和训练成本更低，为此还提供了无辅助负载均衡策略，因为并发就会有多任务协调问题，减少多任务协调带来效率下降问题，R1的强化模型就</p>
+<p>deepseek实践了 FP8混合精度可行性</p>
+<p>deepseek的蒸馏技术 白盒蒸馏，黑盒蒸馏</p>
+<p>强化学习 目标明确但路径模糊，所有累计奖励效果，环境变化导致反馈的不确定性，没有细节</p>
+<p>监督学习特点，和强化学习区别</p>
+<p>未来ai超越预训练，实时都是微调</p>
 
       
       
@@ -1886,6 +1981,27 @@ L5：组织者，可以完成组织工作的AI。<br>
                     <li><a href="#strong-strong-1">保守预测</a>
             		</li>
                 </ol>
+            		</li>
+
+                    <li><a href="#deep-seek-ai">DeepSeek大模型助力企业AI落地</a>
+            
+                <ol>
+                    
+                    <li><a href="#概要">概要</a>
+            		</li>
+
+                    <li><a href="#一 应用场景">一 应用场景</a>
+            		</li>
+
+                    <li><a href="#deep-seek">二 如何使用DeepSeek</a>
+            		</li>
+
+                    <li><a href="#三 实际使用案例">三 实际使用案例</a>
+            		</li>
+                </ol>
+            		</li>
+
+                    <li><a href="#素材">素材</a>
             		</li>
                 </ol>
             		</li>

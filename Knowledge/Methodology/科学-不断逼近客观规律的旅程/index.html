@@ -169,6 +169,17 @@
     
         <div x-show="isOpen" style="display:none" class="filelist">
             
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/AI/50系显卡畅玩秋叶SD-webui,提供5060Ti教程和修复后的包，其他50系此方案还是包都应该都可以（保姆级避坑指南）/">50系显卡畅玩秋叶SD-webui,提供5060Ti教程和修复后的包，其他50系此方案还是包都应该都可以（保姆级避坑指南） </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
                 <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/AI/AI作弊和欺骗的风险/">AI作弊和欺骗的风险 </a>
                 </div>
             
@@ -270,6 +281,49 @@
                     
                         
     
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div class="folder inner-folder"  x-data="{isOpen: $persist(false).as('Knowledge/Math')}" @click.stop="isOpen=!isOpen">
+                    <div class="foldername-wrapper align-icon">
+                    <i x-show="isOpen" style="display: none;"  icon-name="chevron-down"></i>
+                    <i x-show="!isOpen"  icon-name="chevron-right"></i>
+                    <span class="foldername">Math</span>
+                    </div>
+                    
+                        
+    
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Math/关于数学分支和发展的简单介绍/">关于数学分支和发展的简单介绍 </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                        
+    
+        <div x-show="isOpen" style="display:none" class="filelist">
+            
+                <div @click.stop class="notelink "><a data-note-icon="" style="text-decoration: none;" class="filename" href="/Knowledge/Math/关于数学分支和发展的简单脉络/">关于数学分支和发展的简单脉络 </a>
+                </div>
+            
+        </div>
+        
+    
+                    
+                </div>
+            
+        </div>
+        
     
                     
                         
@@ -1042,7 +1096,7 @@
     async function init() {
         //init offline search index
 
-        const searchIndexDate = '2025-04-04T10:21:15.548Z';
+        const searchIndexDate = '2025-04-25T12:27:18.391Z';
         let shouldFetch = true;
         if(localStorage.getItem("searchIndex")) {
             let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
@@ -1054,9 +1108,9 @@
             }        
         }
         if(shouldFetch){
-            let docs = await(await fetch('/searchIndex.json?v=2025-04-04T10:21:15.548Z')).json();
+            let docs = await(await fetch('/searchIndex.json?v=2025-04-25T12:27:18.391Z')).json();
             let index = createIndex(docs);
-            localStorage.setItem("searchIndex", JSON.stringify({date: '2025-04-04T10:21:15.548Z', docs}));
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2025-04-25T12:27:18.391Z', docs}));
             window.docs = docs
             window.index = index;
         }
@@ -1363,7 +1417,8 @@
 <p>类比推理虽然是一种常见的逻辑推理方式，但它的结论并不是必然的。在科学研究中，类比推理可以为我们提供新的思路和方法，但我们必须谨慎对待其结论，通过进一步的实验和观察来验证。例如，科学家们通过类比地球上的生命现象，推测其他星球上可能也存在生命。但这只是一种可能性，需要通过更多的研究来证实。在文明的发展中，我们也应该避免滥用类比推理，尤其是那些牵强的类比。不同的事物往往具有不同的特点和背景，不能简单地进行类比。</p>
 <p>二元思维，即非黑即白的思维模式，是我们在思考问题时容易陷入的陷阱。这种思维模式忽略了事物的多样性和复杂性，限制了我们的思维和创造力。在科学研究中，我们需要认识到事物往往不是非此即彼的，而是存在多种可能性和中间状态。例如，光既具有波动性，又具有粒子性，这是一种超越二元思维的认识。在文明的发展中，我们也应该摒弃二元思维，尊重不同的观点和选择，促进多元文化的交流和融合。</p>
 <p>在科学上，这种逻辑错误主要体现在以下几个方面：首先，科学研究强调以客观事实为依据，通过严谨的实验、观察和分析来得出结论。而这种 “不看事实只论观点” 的做法完全违背了科学精神。例如，在科学实验中，如果仅仅因为对某个国家有偏见，就否定来自这个国家的科学成果，或者因为个人观点而忽视与自己观点不符的实验数据，这将严重阻碍科学的进步。其次，科学是一个不断发展和完善的过程，需要不同的观点和批评来推动。如果将批评视为 “卖国”，将夸赞其他国家视为 “不爱国”，那么就会抑制科学创新所必需的交流与合作。科学家们来自不同的国家，他们的研究成果往往是全人类的共同财富，不能因为国籍而进行片面的评判。</p>
-<p>这种错误逻辑在科学和文明中有着极大的危害。在科学领域，它会阻碍知识的传播和创新。当人们不敢客观地评价不同国家的科学成就，不敢提出批评意见时，科学发展就会陷入停滞。同时，这种错误逻辑也会破坏科学共同体的团结与合作，使得科学家们因为无端的指责而不敢进行正常的学术交流。在文明方面，它会加剧社会的对立和冲突。不同的观点和文化本应在交流中相互促进、共同发展，但这种错误逻辑会导致人们盲目排外，拒绝接受其他国家的优秀文明成果，从而使整个社会陷入封闭和落后。此外，这种逻辑还会助长愚昧和谎言的泛滥，让人们失去理性思考的能力，无法正确认识世界和解决问题。最终，它将严重损害人类的科学和文明进步。</p>
+<p>这种错误逻辑在科学和文明中有着极大的危害。在科学领域，它会阻碍知识的传播和创新。当人们不敢客<br>
+观地评价不同国家的科学成就，不敢提出批评意见时，科学发展就会陷入停滞。同时，这种错误逻辑也会破坏科学共同体的团结与合作，使得科学家们因为无端的指责而不敢进行正常的学术交流。在文明方面，它会加剧社会的对立和冲突。不同的观点和文化本应在交流中相互促进、共同发展，但这种错误逻辑会导致人们盲目排外，拒绝接受其他国家的优秀文明成果，从而使整个社会陷入封闭和落后。此外，这种逻辑还会助长愚昧和谎言的泛滥，让人们失去理性思考的能力，无法正确认识世界和解决问题。最终，它将严重损害人类的科学和文明进步。</p>
 <h3 id="三、垄断，学阀，信息不透明学术氛围对创新和科学危害" tabindex="-1">三、垄断，学阀，信息不透明学术氛围对创新和科学危害</h3>
 <p>牛顿不仅是划时代的物理学家和数学家，也是英国皇家学会主席。尽管他的贡献不可否认，但他在处理学术争议时，采取了压制性策略，打压与自己持不同意见的科学家，这种行为最终使英国的科学活力受损，科学中心逐渐转移到了法国。</p>
 <p>牛顿与德国莱布尼茨在微积分的发明权上发生了激烈争论。牛顿不仅通过皇家学会主导了对莱布尼茨的审查，还发表匿名报告，断言莱布尼茨抄袭了他的成果。这一争端最终演变为英德两国科学界的对立，阻碍了科学家之间的交流与合作。英国的科学家由于牛顿的强势控制，越来越陷入孤立，而法国在这个时期逐渐成为科学创新的中心。</p>
